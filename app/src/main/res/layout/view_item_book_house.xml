@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="@dimen/x8">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_w"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+
+
+    <ImageView
+        android:id="@+id/item_book_house_avatar"
+        android:layout_width="@dimen/dp_85"
+        android:layout_height="@dimen/dp_120"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_item_delete"
+        android:layout_width="@dimen/x25"
+        android:layout_height="@dimen/x25"
+        android:scaleType="centerInside"
+        android:src="@drawable/delete"
+        android:focusable="false"
+        app:layout_constraintRight_toRightOf="@id/item_book_house_avatar" />
+
+    <TextView
+        android:id="@+id/item_book_house_name"
+        android:layout_width="@dimen/dp_85"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y5"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="故宫"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_book_house_avatar" />
+
+    <ImageView
+        android:id="@+id/item_book_house_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:src="@drawable/book_house_label"
+        app:layout_constraintLeft_toLeftOf="@id/item_book_house_avatar"
+        app:layout_constraintTop_toTopOf="@id/item_book_house_avatar" />
+
+</android.support.constraint.ConstraintLayout>

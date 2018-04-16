@@ -1,0 +1,208 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dingshi.com.hibook.ui.fragment.BookMyFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@color/white"
+            app:contentScrim="@color/white"
+            app:expandedTitleMarginBottom="100dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <ImageView
+                android:id="@+id/user_photo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/test_banner" />
+
+
+            <!--<android.support.v7.widget.Toolbar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/appbar_height"-->
+            <!--android:layout_gravity="top"-->
+            <!--app:layout_collapseMode="pin">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/user_back"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:drawableLeft="@drawable/ic_arrow_back_black_24dp"-->
+            <!--android:drawablePadding="@dimen/dp_10"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="个人信息"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/dp_17" />-->
+            <!--</android.support.v7.widget.Toolbar>-->
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_f1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/user_nick"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/text_label"
+                    android:text="@string/nick" />
+
+                <TextView
+                    android:id="@+id/user_nick_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/dp_10"
+                    android:text="点击设置"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/user_gender"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/text_label"
+                    android:text="@string/gender" />
+
+                <TextView
+                    android:id="@+id/user_gender_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/dp_10"
+                    android:text="男"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/user_born"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/text_label"
+                    android:text="@string/born" />
+
+                <TextView
+                    android:id="@+id/user_born_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/dp_10"
+                    android:text="未设置"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/user_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/text_label"
+                    android:text="@string/phone" />
+
+                <TextView
+                    android:id="@+id/user_mobile_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/dp_10"
+                    android:text="未设置"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/text_label"
+                    android:text="@string/register" />
+
+                <TextView
+                    android:id="@+id/user_time_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/dp_10"
+                    android:text="2017-08-10"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

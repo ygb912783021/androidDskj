@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BottomBarItem">
+        <attr name="normal_icon" format="reference" />
+        <attr name="focus_icon" format="reference" />
+        <attr name="bottom_text" format="string" />
+        <attr name="normal_color" format="color" />
+        <attr name="focus_color" format="color" />
+        <attr name="icon_size" format="dimension" />
+        <attr name="text_size" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SwitchViewPager">
+        <attr name="normal_text_color" format="color" />
+        <attr name="focus_text_color" format="color" />
+        <attr name="text_size_switch" format="dimension" />
+        <attr name="normal_img" format="reference" />
+        <attr name="focus_img" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TitleView">
+        <attr name="center_content" format="string" />
+        <attr name="right_content" format="string" />
+        <attr name="have_back_img" format="boolean" />
+        <attr name="backgroud_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="QuantityView">
+        <attr name="quan_width" format="dimension" />
+        <attr name="quan_color" format="color" />
+        <attr name="quan_min" format="integer" />
+        <attr name="quan_max" format="integer" />
+        <attr name="quan_src" format="reference" />
+        <attr name="quan_tip" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingLayout">
+        <attr name="empty_img" format="reference" />
+        <attr name="empty_txt" format="string" />
+    </declare-styleable>
+
+</resources>

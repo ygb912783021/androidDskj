@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_10"
+    android:paddingLeft="@dimen/dp_10"
+    android:paddingRight="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_10">
+
+    <ImageView
+        android:id="@+id/book_details_person_photo"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/book_details_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_3"
+        android:maxLength="5"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/book_details_person_photo" />
+
+    <TextView
+        android:id="@+id/book_details_person_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_3"
+        android:lineSpacingExtra="5sp"
+        android:text="0.1km"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/book_details_person_name"
+        tools:text="读书78本 | 藏书99本" />
+
+    <ImageView
+        android:id="@+id/item_book_details_person_choose"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/charge_choose"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/book_details_person_photo" />
+</android.support.constraint.ConstraintLayout>

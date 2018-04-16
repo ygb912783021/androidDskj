@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="dingshi.com.hibook.ui.library.JoinLibActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <ImageView
+                android:src="@drawable/icon_lib"
+                android:id="@+id/join_lib_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_180"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:scaleType="centerCrop"
+                app:layout_scrollFlags="scroll|enterAlways" />
+
+            <dingshi.com.hibook.view.SwitchViewPager
+                android:id="@+id/join_lib_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:fillViewport="false"
+                app:text_size_switch="@dimen/sp_4" />
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/join_lib_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+
+    <TextView
+        android:id="@+id/join_lib_submit"
+        style="@style/submit_but"
+        android:background="@drawable/shap_gray_7"
+        android:clickable="false"
+        android:text="当前不允许加入" />
+</LinearLayout>

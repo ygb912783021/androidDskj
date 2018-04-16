@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="dingshi.com.hibook.ui.fragment.MsgFragment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/theme"
+        android:gravity="center"
+        android:text="消息"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_e"
+
+        />
+
+    <dingshi.com.hibook.view.SwitchViewPager
+        android:id="@+id/msg_switch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        app:focus_text_color="@color/gold_d9"
+        app:normal_text_color="@color/black_90" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/msg_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center"-->
+        <!--&gt;-->
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/dp_15"-->
+            <!--android:src="@drawable/home_news_flag" />-->
+
+        <!--<dingshi.com.hibook.view.UpDownTextView-->
+            <!--android:id="@+id/item_news_title"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/dp_31"-->
+            <!--android:layout_marginLeft="@dimen/dp_15"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/dp_15"-->
+            <!--android:src="@drawable/go_next" />-->
+    <!--</LinearLayout>-->
+    <!--<GridView-->
+        <!--android:id="@+id/electroic_gridview_book"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="15dp"-->
+        <!--android:background="@color/white"-->
+        <!--android:numColumns="3"-->
+        <!--android:stretchMode="columnWidth">-->
+    <!--</GridView>-->
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/book_house_smart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <GridView
+        android:id="@+id/electroic_gridview_book"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        android:numColumns="3"
+        android:stretchMode="columnWidth">
+        </GridView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/electroi_book_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#eeeeee"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:id="@+id/electroi_book_yidao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/yidongdao"
+                android:layout_gravity="center_vertical"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="移动"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:layout_margin="10dp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#b4b2b2"></View>
+        <LinearLayout
+            android:id="@+id/electroi_book_yichu_remove"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/yichushujia"
+                android:layout_gravity="center_vertical"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="移出"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:layout_margin="10dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

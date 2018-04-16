@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        tools:context="dingshi.com.hibook.ui.library.CreateLibActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:text="基本设置"
+                android:textColor="@color/gray_a5"
+                android:textSize="@dimen/sp_14" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    style="@style/my_text"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="图书馆类别" />
+
+                <TextView
+                    android:id="@+id/create_lib_type"
+                    style="@style/edit_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:drawableRight="@drawable/jump"
+                    android:text="请选择"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_myName"
+                    style="@style/my_text"
+                    android:text="图书馆名称" />
+
+                <EditText
+                    android:id="@+id/create_lib_name"
+                    style="@style/edit_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_needCheck"
+                    style="@style/my_text"
+                    android:text="加入图书馆审核" />
+
+                <TextView
+                    android:id="@+id/create_lib_check"
+                    style="@style/edit_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:drawableRight="@drawable/jump"
+                    android:text="请选择" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:text="其他设置"
+                android:textColor="@color/gray_a5"
+                android:textSize="@dimen/sp_14" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_decribe"
+                    style="@style/my_text"
+                    android:text="图书馆描述" />
+
+                <EditText
+                    android:id="@+id/create_lib_describe"
+                    style="@style/edit_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/my_text"
+                    android:text="手机号加密" />
+
+                <TextView
+                    android:id="@+id/create_lib_psw"
+                    style="@style/edit_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:drawableRight="@drawable/jump"
+                    android:text="请选择" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_pickIcon"
+                style="@style/my_text"
+                android:text="图书馆图标" />
+
+            <ImageView
+                android:id="@+id/create_lib_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_60"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/dp_10"
+                android:src="@drawable/add_book"
+                android:text="入图书馆需要我的审核" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/create_lib_create"
+        style="@style/submit_but"
+        android:text="创建" />
+
+</LinearLayout>

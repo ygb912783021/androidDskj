@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="dingshi.com.hibook.ui.BookDetailsActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10">
+
+            <ImageView
+                android:id="@+id/book_details_img"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_150"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_15"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/book_details_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_20"
+                android:text="解忧杂货铺"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toRightOf="@+id/book_details_img"
+                app:layout_constraintTop_toTopOf="@+id/book_details_img"
+
+
+                />
+
+
+            <TextView
+                android:id="@+id/book_details_concern"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="作者"
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_14"
+
+                app:layout_constraintBottom_toTopOf="@+id/book_details_author"
+                app:layout_constraintLeft_toLeftOf="@+id/book_details_book"
+                app:layout_constraintTop_toBottomOf="@+id/book_details_book"
+
+                />
+
+            <TextView
+                android:id="@+id/book_details_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出版社"
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toTopOf="@+id/book_details_concern_time"
+                app:layout_constraintLeft_toLeftOf="@+id/book_details_concern"
+                app:layout_constraintTop_toBottomOf="@+id/book_details_concern" />
+
+            <TextView
+                android:id="@+id/book_details_concern_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出版社时间"
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toTopOf="@+id/book_details_douban"
+                app:layout_constraintLeft_toLeftOf="@+id/book_details_author"
+                app:layout_constraintTop_toBottomOf="@+id/book_details_author" />
+
+            <LinearLayout
+                android:id="@+id/book_details_douban"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/book_details_img"
+                app:layout_constraintLeft_toLeftOf="@+id/book_details_book">
+
+                <TextView
+                    android:id="@+id/book_details_douban_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textColor="@color/blue_32"
+                    android:textSize="@dimen/sp_11" />
+
+                <android.support.v7.widget.AppCompatRatingBar
+                    android:theme="@style/RatingBar"
+                    android:id="@+id/book_details_douban_rating"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    />
+
+                <TextView
+                    android:id="@+id/book_details_douban_eval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="豆瓣600人评论"
+                    android:textColor="@color/black_90"
+                    android:textSize="@dimen/sp_11" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/book_details_line"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@color/black_90"
+                app:layout_constraintBottom_toBottomOf="@+id/book_details_douban"
+                app:layout_constraintLeft_toLeftOf="@+id/book_details_douban"
+                app:layout_constraintRight_toRightOf="@+id/book_details_hibook"
+                app:layout_constraintTop_toTopOf="@+id/book_details_douban" />
+
+
+            <LinearLayout
+                android:id="@+id/book_details_hibook"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toRightOf="@+id/book_details_line"
+                app:layout_constraintTop_toTopOf="@+id/book_details_douban">
+
+                <TextView
+                    android:id="@+id/book_details_hibook_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textColor="@color/blue_32"
+                    android:textSize="@dimen/sp_11" />
+
+                <android.support.v7.widget.AppCompatRatingBar
+                    android:theme="@style/RatingBar"
+                    android:id="@+id/book_details_hibook_rating"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:progressTint="@color/yellow_fc" />
+
+                <TextView
+                    android:id="@+id/book_details_hibook_eval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="图书600人评论"
+                    android:textColor="@color/black_90"
+                    android:textSize="@dimen/sp_11" />
+            </LinearLayout>
+
+            <dingshi.com.hibook.view.AbsRecyclerView
+                android:layout_marginTop="@dimen/dp_15"
+                android:id="@+id/book_details_case_recycle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/book_details_img" />
+
+            <dingshi.com.hibook.view.AbsRecyclerView
+                android:id="@+id/book_details_person_recycle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/book_details_case_recycle" />
+
+            <TextView
+                android:id="@+id/book_details_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="共读书友"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/book_details_person_recycle" />
+
+            <TextView
+                android:id="@+id/book_details_case_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="了解更多"
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintBottom_toBottomOf="@id/book_details_friend"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/book_details_friend" />
+
+            <dingshi.com.hibook.view.AbsRecyclerView
+                app:layout_goneMarginTop="@dimen/y10"
+                android:id="@+id/book_details_talent_recycle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y5"
+                android:background="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_friend" />
+
+            <dingshi.com.hibook.view.ExpandTextView
+                app:layout_goneMarginTop="@dimen/dp_15"
+                android:id="@+id/book_details_book_summary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#3f3f3f"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_talent_recycle" />
+
+            <ImageView
+                android:id="@+id/book_details_edit_eval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:src="@drawable/eval_edit"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_book_summary" />
+            <TextView
+                app:layout_goneMarginTop="@dimen/dp_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="书友评分"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/book_details_edit_eval"
+               app:layout_constraintTop_toTopOf="@id/book_details_edit_eval"/>
+
+
+
+            <dingshi.com.hibook.view.AbsRecyclerView
+                android:id="@+id/book_details_eval_recycle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_edit_eval" />
+
+            <TextView
+                android:padding="@dimen/dp_5"
+                android:background="@drawable/circle_gray"
+                android:id="@+id/book_details_eval_query"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看全部评分"
+
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_eval_recycle" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="书友交流"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_eval_query" />
+
+            <ImageView
+                android:id="@+id/book_details_edit_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eval_edit"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_eval_query" />
+
+            <dingshi.com.hibook.view.AbsRecyclerView
+                android:id="@+id/book_details_friend_recycle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_edit_friend" />
+
+            <TextView
+                android:padding="@dimen/dp_5"
+                android:background="@drawable/circle_gray"
+                android:id="@+id/book_details_friend_query"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看更多"
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/book_details_friend_recycle" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/book_details_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:text="@string/contact_service"
+            android:textColor="@color/gold_d8"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/book_details_borrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/shap_black_7"
+            android:padding="8dp"
+            android:text="@string/at_once_borrow_book"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/book_details_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/shap_black_7"
+            android:padding="8dp"
+            android:text="@string/share_book"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/book_details_borrow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
+
+

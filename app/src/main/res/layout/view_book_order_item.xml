@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_10">
+
+
+    <ImageView
+        android:id="@+id/item_book_order_photo"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/item_book_order_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        android:text="故宫"
+        android:textColor="@color/black_333"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintLeft_toRightOf="@+id/item_book_order_photo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_book_order_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="作者：二货冯一博\n出版社:中信出版\n出版时间:2016-\n上海交大西区全家便利店书柜"
+        android:textColor="@color/black_999"
+        android:textSize="@dimen/dp_14"
+        app:layout_constraintLeft_toLeftOf="@+id/item_book_order_title"
+        app:layout_constraintTop_toBottomOf="@+id/item_book_order_title" />
+
+
+    <TextView
+        android:id="@+id/item_book_order_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="借书规则规则与说明"
+        android:textColor="@color/blue"
+        app:layout_constraintLeft_toLeftOf="@+id/item_book_order_content"
+        app:layout_constraintTop_toBottomOf="@+id/item_book_order_content" />
+
+
+    <TextView
+        android:id="@+id/item_book_order_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="选择借阅的天数 : "
+        android:textSize="@dimen/dp_13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_book_order_photo"
+
+        />
+
+    <dingshi.com.hibook.view.QuantityView
+        android:id="@+id/item_book_order_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toRightOf="@+id/item_book_order_tip"
+        app:layout_constraintTop_toBottomOf="@+id/item_book_order_rule"
+        app:quan_color="@color/colorAccent"
+        app:quan_max="100"
+        app:quan_min="0"
+        app:quan_width="@dimen/dp_25" />
+
+    <TextView
+        android:id="@+id/item_book_order_tip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="选择书柜取书 : "
+        android:textSize="@dimen/dp_13"
+        app:layout_constraintLeft_toLeftOf="@+id/item_book_order_tip"
+        app:layout_constraintTop_toBottomOf="@+id/item_book_order_tip" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="图书需要在24小时内领取"
+        android:textColor="@color/red"
+        android:textSize="@dimen/dp_12"
+        app:layout_constraintLeft_toRightOf="@+id/item_book_order_tip2"
+        app:layout_constraintTop_toTopOf="@+id/item_book_order_tip2" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/item_book_order_recycle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_book_order_tip2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="每本书前10天租金1元，10天后每天租金0.5元"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_book_order_recycle" />
+</android.support.constraint.ConstraintLayout>

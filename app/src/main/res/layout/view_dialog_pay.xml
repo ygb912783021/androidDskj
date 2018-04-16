@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shap_white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_30"
+        android:text="是否支付29元押金立即借书"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_18" />
+
+    <TextView
+        android:id="@+id/dialog_pay_submit"
+        style="@style/submit_but"
+        android:background="@drawable/shap_gold"
+        android:text="立即支付" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:src="@drawable/dialog_pay_book" />
+
+</LinearLayout>

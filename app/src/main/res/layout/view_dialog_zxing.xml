@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shap_white"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_10">
+
+    <ImageView
+        android:id="@+id/dialog_zixng_photo"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_zixng_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="包子"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintLeft_toRightOf="@id/dialog_zixng_photo"
+        app:layout_constraintTop_toTopOf="@id/dialog_zixng_photo" />
+
+    <TextView
+        android:id="@+id/dialog_zixng_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_8"
+        android:text="总监"
+        android:textColor="@color/black_999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintLeft_toRightOf="@id/dialog_zixng_nick"
+        app:layout_constraintTop_toTopOf="@id/dialog_zixng_photo" />
+
+    <TextView
+        android:id="@+id/dialog_zixng_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上海经纬"
+        android:textColor="@color/black_999"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toLeftOf="@id/dialog_zixng_nick"
+        app:layout_constraintTop_toBottomOf="@id/dialog_zixng_nick" />
+
+
+    <ImageView
+        android:id="@+id/dialog_zixng_img"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_zixng_photo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="扫一扫上面的二维码图案，与我交换名片"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_zixng_img" />
+</android.support.constraint.ConstraintLayout>

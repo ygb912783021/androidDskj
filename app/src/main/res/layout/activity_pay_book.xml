@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp_10"
+    android:background="@color/white"
+    tools:context="dingshi.com.hibook.ui.PayBookActivity">
+
+    <ImageView
+        android:id="@+id/pay_book_img"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_15"
+        android:scaleType="centerCrop"
+        android:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pay_book_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="解忧杂货铺"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toRightOf="@+id/pay_book_img"
+        app:layout_constraintTop_toTopOf="@+id/pay_book_img" />
+
+
+    <TextView
+        android:id="@+id/pay_book_concern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="作者"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/pay_book_author"
+        app:layout_constraintLeft_toLeftOf="@+id/pay_book_book"
+        app:layout_constraintTop_toBottomOf="@+id/pay_book_book"
+
+        />
+
+    <TextView
+        android:id="@+id/pay_book_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="出版社"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/pay_book_concern_time"
+        app:layout_constraintLeft_toLeftOf="@+id/pay_book_concern"
+        app:layout_constraintTop_toBottomOf="@+id/pay_book_concern" />
+
+    <TextView
+        android:id="@+id/pay_book_concern_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:text="出版社时间"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/pay_book_img"
+        app:layout_constraintLeft_toLeftOf="@+id/pay_book_author" />
+
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/pay_book_coupon_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pay_book_img">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pay_coupon"
+            android:drawablePadding="@dimen/dp_10"
+            android:text="@string/coupon"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_15" />
+
+        <TextView
+            android:id="@+id/pay_book_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableRight="@drawable/jump"
+            android:text="@string/coupon_choose" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/pay_book_money_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pay_book_coupon_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pay_yue"
+            android:drawablePadding="@dimen/dp_10"
+            android:text="@string/pay_money"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_15" />
+
+        <ImageView
+            android:id="@+id/pay_book_money_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/pay_choose_normal" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/pay_book_wx_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pay_book_money_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pay_wx"
+            android:drawablePadding="@dimen/dp_10"
+            android:text="@string/pay_weixin"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_15" />
+
+        <ImageView
+            android:id="@+id/pay_book_wx_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/pay_choose_normal" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/pay_book_ali_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pay_book_wx_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/pay_ali"
+            android:drawablePadding="@dimen/dp_10"
+            android:text="@string/pay_ali"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_15" />
+
+        <ImageView
+            android:id="@+id/pay_book_ali_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/pay_choose_focus" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:textSize="@dimen/dp_18"
+        android:layout_margin="@dimen/dp_20"
+        android:id="@+id/pay_book_submit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:background="@drawable/shap_black_7"
+        android:gravity="center"
+        android:text="@string/pay_go"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

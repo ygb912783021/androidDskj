@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/dp_3">
+
+    <ImageView
+        android:id="@+id/item_book_details_child_friend_photo"
+        android:layout_width="@dimen/dp_35"
+        android:layout_height="@dimen/dp_35"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/item_book_details_child_friend_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="包子不胖"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toRightOf="@id/item_book_details_child_friend_photo"
+        app:layout_constraintTop_toTopOf="@id/item_book_details_child_friend_photo" />
+
+
+    <TextView
+        android:id="@+id/item_book_details_child_friend_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="@string/testname"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toLeftOf="@id/item_book_details_child_friend_nick"
+        app:layout_constraintTop_toBottomOf="@id/item_book_details_child_friend_nick" />
+
+    <TextView
+        android:id="@+id/item_book_details_child_friend_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="2017-10-10"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_book_details_child_friend_photo" />
+
+
+</android.support.constraint.ConstraintLayout>

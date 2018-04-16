@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dingshi.com.hibook.ui.SettingActivity">
+
+
+    <TextView
+        android:id="@+id/setting_advice"
+        style="@style/my_text"
+        android:layout_marginTop="@dimen/dp_1"
+        android:drawableRight="@drawable/jump"
+        android:text="@string/setting_advice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/setting_version"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setting_advice">
+
+        <TextView
+            style="@style/my_text"
+            android:layout_marginTop="@dimen/dp_1"
+            android:text="@string/setting_version" />
+
+        <TextView
+            android:id="@+id/setting_version_txt"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/setting_about"
+        style="@style/my_text"
+        android:layout_marginTop="@dimen/dp_1"
+        android:drawableRight="@drawable/jump"
+        android:text="@string/setting_about"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setting_version" />
+
+
+    <TextView
+        android:id="@+id/setting_exit"
+        style="@style/submit_but"
+        android:background="@drawable/circle_gray_7"
+        android:text="@string/exit"
+        android:textColor="@color/black_87"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

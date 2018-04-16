@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5"
+        tools:context="dingshi.com.hibook.ui.BorrowBookActivity">
+
+        <ImageView
+            android:id="@+id/borrow_book_img"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/test_banner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/borrow_book_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="解忧杂货铺"
+            android:textColor="@color/black_3f"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintLeft_toRightOf="@+id/borrow_book_img"
+            app:layout_constraintTop_toTopOf="@+id/borrow_book_img" />
+
+        <TextView
+            android:id="@+id/borrow_book_concern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="作者"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toTopOf="@+id/borrow_book_author"
+            app:layout_constraintLeft_toLeftOf="@+id/borrow_book_book"
+            app:layout_constraintTop_toBottomOf="@+id/borrow_book_book"
+
+            />
+
+        <TextView
+            android:id="@+id/borrow_book_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出版社"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toTopOf="@+id/borrow_book_concern_time"
+            app:layout_constraintLeft_toLeftOf="@+id/borrow_book_concern"
+            app:layout_constraintTop_toBottomOf="@+id/borrow_book_concern" />
+
+        <TextView
+            android:id="@+id/borrow_book_concern_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:text="出版社时间"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="@+id/borrow_book_img"
+            app:layout_constraintLeft_toLeftOf="@+id/borrow_book_author" />
+
+
+        <TextView
+            android:id="@+id/borrow_book_rule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:drawablePadding="@dimen/dp_5"
+            android:drawableRight="@drawable/rule"
+            android:text="@string/borrow_rule"
+            android:textColor="@color/blue_32"
+            android:textSize="@dimen/dp_11"
+            app:layout_constraintLeft_toLeftOf="@+id/borrow_book_book"
+            app:layout_constraintTop_toBottomOf="@+id/borrow_book_img" />
+
+
+        <dingshi.com.hibook.view.QuantityView
+            android:id="@+id/borrow_book_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/borrow_book_rule"
+            app:quan_color="@color/red"
+            app:quan_max="100"
+            app:quan_min="1"
+            app:quan_tip="借阅期限 / 天"
+            app:quan_width="@dimen/dp_25" />
+
+
+        <TextView
+            android:id="@+id/borrow_book_case_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:layout_marginTop="@dimen/dp_10"
+            android:lineSpacingExtra="9sp"
+            android:text="选择书柜取书："
+            android:textColor="#3f3f3f"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/borrow_book_quantity" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/borrow_book_case"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/borrow_book_case_label" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/borrow_book_person"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/borrow_book_case" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/borrow_book_letter_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="备注"
+                android:textColor="#909090"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/borrow_book_letter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:background="@null"
+                android:gravity="center"
+                android:hint="告诉“Ta”你为什么想看这本书"
+                android:maxLength="44"
+                android:singleLine="true"
+                android:textColorHint="@color/gold_d9"
+                android:textSize="@dimen/sp_13" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/circle_gold_10"
+            android:padding="@dimen/dp_10"
+            android:text="藏书人30分钟内未处理申请，系统将自动发送短信通知对方。\n次日14:00之前未处理，申请自动过期。"
+            android:textColor="@color/gold_cb"
+            android:textSize="@dimen/sp_13" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_10"
+        android:lineSpacingExtra="9.1sp"
+        android:text="每本书前10天租金1元，10天后每天租金0.5元；"
+        android:textColor="@color/black_87"
+        android:textSize="@dimen/sp_15" />
+
+
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5">
+
+        <TextView
+
+            android:id="@+id/borrow_book_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:background="@drawable/shap_black_7"
+            android:paddingBottom="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_8"
+            android:text="@string/pay"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/borrow_book_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="合计: 1元"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+
+

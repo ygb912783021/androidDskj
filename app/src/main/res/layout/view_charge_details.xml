@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/item_charge_details_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_1"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_10"
+        android:text="退款余额9元"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/item_charge_details_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_12"
+        android:paddingLeft="@dimen/dp_12"
+        android:text="2017-12-26 18:36"
+        android:textColor="@color/black_999"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toLeftOf="@id/item_charge_details_price"
+        app:layout_constraintTop_toBottomOf="@id/item_charge_details_price" />
+
+
+    <TextView
+        android:id="@+id/item_charge_details_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/dp_12"
+        android:textColor="@color/gold_d9"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="@id/item_charge_details_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_charge_details_price"
+        tools:text="退款成功" />
+
+</android.support.constraint.ConstraintLayout>

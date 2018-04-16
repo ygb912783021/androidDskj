@@ -1,0 +1,46 @@
+ext.versions = [
+        // 本地仓库版本
+//        compileSdkVersion: 26,
+//        buildToolsVersion: "26.0.3",
+//        minSdkVersion    : 18,
+//        targetSdkVersion : 26,
+        compileSdkVersion: 26,
+        buildToolsVersion: "26.0.3",
+        minSdkVersion    : 18,
+        targetSdkVersion : 26,
+        versionCode      : 4,
+        versionName      : "1.2.1",
+        supportVersion   : "25.3.0"
+]
+
+// app 相关信息总配置
+ext.appConfig = [
+        appId            : 'dingshi.com.hibook',
+        betaName         : '@string/app_name',
+        proName          : '@string/app_name',
+//        keyAlias     : 'hibook',
+//        keyPassword  : 'hibook',
+//        storeFile    : 'hibook.jks',
+//        storePassword: 'hibook',
+        GETUI_APP_ID     : "PhmRY1Uy8A9VrK2L2H8Qz3",
+        GETUI_APP_KEY    : "VXJjCzXD0M7UqsPzFbXtT7",
+        GETUI_APP_SECRET : "ZmO60vhutt6NxMauNZJjl8",
+//      EASEMOB_DEBUG    : "1191180110115352#hello-book-dev",
+        EASEMOB_DEBUG    : "1191180110115352#hello-book",
+        EASEMOB_RELEASE  : "1191180110115352#hello-book",
+        LOCALHOST_DEBUG  : "\"http://api.linkbooker.com/\"",
+//      LOCALHOST_DEBUG  : "\"http://testapi.linkbooker.com/\"",
+        LOCALHOST_RELEASE: "\"http://api.linkbooker.com/\""
+
+]
+
+ext.channel = [
+        HIBOOK_TEST_NAME: "test_channel",
+        Baidu           : "Baidu",
+        Xiaomi          : "Xiaomi",
+        Huawei          : "huawei",
+        Vivo            : "vivo",
+        Oppo            : "oppo",
+        Tencent         : "tencent",
+        Server          : "server"
+]

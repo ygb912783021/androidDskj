@@ -1,0 +1,286 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dingshi.com.hibook.ui.fragment.BookMyFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@color/white"
+            app:contentScrim="@color/white"
+            app:expandedTitleMarginBottom="100dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/book_my_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="10dp"
+                android:src="@drawable/my_mail"
+                app:layout_collapseMode="pin" />
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/appbar_height"
+                android:layout_gravity="top"
+                android:visibility="gone"
+                app:layout_collapseMode="pin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="小飞龙"
+                    android:textColor="@color/white" />
+            </android.support.v7.widget.Toolbar>
+
+            <ImageView
+                android:id="@+id/book_my_photo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/my_default_photo" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_f1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/book_my_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/my_text"
+                    android:drawableLeft="@drawable/my_bag"
+                    android:text="@string/my_money_bag" />
+
+                <TextView
+                    android:id="@+id/book_my_money_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:drawableRight="@drawable/jump"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/book_my_card"
+                style="@style/my_text"
+                android:layout_marginTop="@dimen/dp_1"
+                android:drawableLeft="@drawable/my_card"
+                android:drawableRight="@drawable/jump"
+                android:text="@string/my_card" />
+
+            <TextView
+                android:id="@+id/book_my_lib"
+                style="@style/my_text"
+                android:layout_marginTop="@dimen/dp_1"
+                android:drawableLeft="@drawable/my_lib"
+                android:drawableRight="@drawable/jump"
+                android:text="@string/my_lib" />
+
+            <TextView
+                android:id="@+id/book_my_rally"
+                style="@style/my_text"
+                android:layout_marginTop="@dimen/dp_1"
+                android:drawableLeft="@drawable/my_lib"
+                android:drawableRight="@drawable/jump"
+                android:text="@string/my_rally" />
+
+            <RelativeLayout
+                android:id="@+id/book_my_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/my_text"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:drawableLeft="@drawable/my_order"
+                    android:text="@string/my_order" />
+
+                <TextView
+                    android:id="@+id/book_my_order_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:drawableRight="@drawable/jump"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/book_my_borrow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/my_text"
+                    android:drawableLeft="@drawable/my_borrow"
+                    android:text="@string/my_borrow" />
+
+                <TextView
+                    android:id="@+id/book_my_borrow_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView3"
+                    android:layout_alignBottom="@+id/textView3"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:drawableRight="@drawable/jump"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/book_my_book_house"
+                    style="@style/my_text"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:drawableLeft="@drawable/my_house"
+                    android:drawableRight="@drawable/jump"
+                    android:text="@string/my_talent" />
+
+
+                <TextView
+                    android:id="@+id/book_my_house_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/book_my_book_house"
+                    android:layout_alignBottom="@+id/book_my_book_house"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:drawableRight="@drawable/jump"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/book_my_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/my_text"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:drawableLeft="@drawable/my_coupon"
+                    android:text="@string/my_coupon" />
+
+                <TextView
+                    android:id="@+id/book_my_coupon_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:drawableRight="@drawable/jump"
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15" />
+            </RelativeLayout>
+
+
+            <TextView
+
+                android:id="@+id/book_my_invite"
+                style="@style/my_text"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableLeft="@drawable/my_share"
+                android:drawableRight="@drawable/jump"
+                android:text="@string/invite_friend" />
+
+            <TextView
+                android:id="@+id/book_my_address_book"
+                style="@style/my_text"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/my_address_book"
+                android:drawableRight="@drawable/jump"
+                android:text="@string/address_book" />
+
+            <TextView
+                android:id="@+id/book_my_setting"
+                style="@style/my_text"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/my_setting"
+                android:drawableRight="@drawable/jump"
+                android:text="@string/setting" />
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

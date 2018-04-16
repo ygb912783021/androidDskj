@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#aaf1f1f1</color>
+    <color name="colorAccent">#000000</color>
+    <color name="theme">#ffffff</color>
+    <color name="blue">#1296db</color>
+    <color name="blue_32">#3273fe</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="black_333">#333333</color>
+    <color name="black_3f">#3f3f3f</color>
+    <color name="black_90">#909090</color>
+    <color name="black_999">#999999</color>
+    <color name="black_888">#888888</color>
+    <color name="black_87">#878787</color>
+    <color name="black_65">#656565</color>
+    <color name="black_444">#444444</color>
+    <color name="gray_f1">#f1f1f1</color>
+    <color name="gray_e">#EEEEEE</color>
+    <color name="gray_a5">#a5a5a5</color>
+
+    <color name="yellow_fc">#FCD531</color>
+
+    <color name="gold_d8">#D8C795</color>
+    <color name="gold_d9">#d9c892</color>
+    <color name="gold_cb">#cbb784</color>
+    <color name="red">#FD676A</color>
+    <color name="green">#2ABB9C</color>
+
+
+    <color name="hwtxtreader_styleclor1">#d0cdc4</color>
+    <color name="hwtxtreader_styleclor2">#ccebcc</color>
+    <color name="hwtxtreader_styleclor3">#d4c7a5</color>
+    <color name="hwtxtreader_styleclor4">#393330</color>
+    <color name="hwtxtreader_styleclor5">#00141f</color>
+    <color name="hwtxtreader_bottom_menu_textclor">#5e5d5d</color>
+
+    <color name="tingming">#00000000</color>
+</resources>

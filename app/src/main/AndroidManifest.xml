@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="dingshi.com.hibook">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- 支持iBeancon 需要蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo_roud"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_roud"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- <meta-data android:name="UMENG_CHANNEL" android:value="${UMENG_CHANNEL_VALUE}"/> -->
+
+
+        <!-- &lt;!&ndash; 配置APP版本号 &ndash;&gt; -->
+        <!-- <meta-data -->
+        <!-- android:name="BUGLY_APP_VERSION" -->
+        <!-- android:value="1.0.0" /> -->
+        <!-- &lt;!&ndash; 配置APP渠道号 &ndash;&gt; -->
+        <meta-data
+            android:name="BUGLY_APP_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5a179267a40fa30a83000092" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" />
+
+        <!-- bugly -->
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- wechat callback -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- alipay callback -->
+        <activity
+            android:name=".apshare.ShareEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- alipay pay -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!--
+             设置环信应用的appkey
+            debug版: 1191180110115352#hello-book-dev
+            release: 1191180110115352#hello-book
+        -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="${EASEMOB_VALUE}" />
+        <!-- 声明sdk所需的service -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hx.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait" />
+        <!-- 百度地图所需的service -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="wq6HcQwU3KrnPOjTPsQZvpWLwj8vIXK7" />
+
+        <!-- 用户自定义服务继承自GTIntentService,作为SDK与APP桥梁服务,用来接收各种消息和命令回复 -->
+        <service android:name=".push.DemoIntentService" />
+
+        <!-- 配置SDK核心服务 -->
+        <service
+            android:name=".push.DemoPushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice" />
+        <!-- ###########################################################3 -->
+
+        <activity android:name=".ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.LoginActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".ui.Case2BookActivity" />
+        <activity android:name=".ui.MyBorrowActivity" />
+        <activity android:name=".ui.BorrowBookActivity" />
+        <activity android:name=".ui.BookOrderActivity" />
+        <activity android:name=".ui.SearchActivity" />
+        <activity android:name=".ui.UserActivity" />
+        <activity android:name=".ui.MoneyBagActivity" />
+        <activity android:name=".ui.MoneyDetailsActivity" />
+        <activity android:name=".ui.OrderActivity" />
+        <activity android:name=".ui.BookHouseActivity" />
+        <activity android:name=".ui.SettingActivity" />
+        <activity android:name=".ui.CouponActivity" />
+        <activity android:name=".ui.CouponDetailsActivity" />
+        <activity android:name=".ui.OrderDetailsActivity" />
+        <activity android:name=".ui.ZxingActivity" />
+        <activity android:name=".ui.BookDetailsActivity" />
+        <activity android:name=".ui.EvalBookActivity" />
+        <activity android:name=".ui.EvalFriendActivity" />
+        <activity android:name=".ui.PayBookActivity" />
+        <activity android:name=".ui.BookListActivity" />
+        <activity android:name=".ui.CreateBookActivity" />
+        <activity android:name=".ui.card.MyCardActivity" />
+        <activity android:name=".ui.library.LibActivity" />
+        <activity android:name=".ui.card.CreateCardActivity" />
+        <activity android:name=".ui.card.EduActivity" />
+        <activity android:name=".ui.card.JobActivity" />
+        <activity android:name=".ui.card.CardDetailsActivity" />
+        <activity android:name=".ui.card.CardAuthenActivity" />
+        <activity android:name=".ui.library.CreateLibActivity" />
+        <activity android:name=".ui.library.LibDetailsActivity" />
+        <activity android:name=".ui.library.JoinLibActivity" />
+        <activity android:name=".ui.EvalBookListActivity" />
+        <activity android:name=".ui.EvalFriendListActivity" />
+        <activity android:name=".ui.ChargeActivity" />
+        <activity android:name=".ui.BackMoneyActivity" />
+        <activity android:name=".ui.library.LibManagerActivity" />
+        <activity
+            android:name=".ui.library.LibMenuActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:name=".ui.library.LibSettingActivity" />
+        <activity android:name=".ui.RuleActivity" />
+        <activity
+            android:name=".ui.library.LibDiscActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:name=".ui.BackBookActivity" />
+        <activity android:name=".ui.LengthenActivity" />
+        <activity android:name=".ui.ZxingBorrowActivity" />
+        <activity android:name=".ui.WebActivity" />
+        <activity android:name=".ui.BookCaseActivity" />
+        <activity android:name=".ui.BackPersonActivity" />
+        <activity android:name=".ui.OrderBookActivity" />
+        <activity android:name=".ui.OrderPersonActivity" />
+        <activity android:name=".ui.LoadingActivity" />
+        <activity android:name=".ui.ShareBookActivity" />
+        <activity android:name=".ui.OrderShareActivity" />
+        <activity android:name=".ui.RuleShareActivity" />
+        <activity android:name=".ui.InviteActivity" />
+        <activity android:name=".ui.ForegiftActivity" />
+        <activity android:name=".ui.PayForegiftActivity" />
+        <activity android:name=".ui.BootPageActivity" />
+        <activity android:name=".ui.CityActivity" />
+        <activity android:name=".ui.LibZxingActivity" />
+        <activity android:name=".ui.RallyActivity" />
+        <activity android:name=".ui.AboutActivity" />
+        <activity android:name=".ui.RallySearchActivity" />
+        <activity android:name=".ui.RallyDetailsActivity" />
+        <activity android:name=".ui.AddressBookActivity" />
+        <activity android:name=".ui.BookElectronicActivity"/>
+        <activity android:name=".ui.BookElectronicCaseActivity"/>
+        <activity android:name=".ui.BookReadActivity"></activity>
+        <activity android:name=".ui.RefundActivity"></activity>
+    </application>
+
+</manifest>

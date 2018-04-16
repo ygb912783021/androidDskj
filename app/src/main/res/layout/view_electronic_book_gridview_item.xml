@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center"
+    >
+
+    <RelativeLayout
+        android:id="@+id/electronic_gridview_img"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:background="@drawable/books">
+        <CheckBox
+            android:id="@+id/electroic_gridview_checkBox"
+            style="@style/CustomCheckboxTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            />
+        <LinearLayout
+            android:id="@+id/electroic_gridview_duwan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/duwan"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17%"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:layout_below="@+id/electronic_gridview_img"
+        android:id="@+id/electronic_gridview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center"
+        android:textColor="#000"
+        android:layout_centerInParent="true"
+        android:text="文字"
+        />
+
+</RelativeLayout>

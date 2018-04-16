@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="dingshi.com.hibook.ui.card.CreateCardActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/create_card_photo"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_20"
+            android:src="@drawable/my_default_photo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="center"
+            android:text="更换头像,咋也来点书生气质"
+            android:textSize="@dimen/sp_13" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_25"
+            android:text="基本设置"
+
+            android:textColor="@color/black_444"
+            android:textSize="@dimen/sp_14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="*"
+                android:textColor="#ff3737" />
+
+            <TextView
+                style="@style/text_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="真实姓名" />
+
+
+            <EditText
+                android:id="@+id/create_card_nick"
+                style="@style/edit_content"
+                android:gravity="left"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="*"
+                android:textColor="#ff3737" />
+
+            <TextView
+                style="@style/text_label"
+                android:text="手机号" />
+
+            <EditText
+                android:id="@+id/create_card_mobile"
+                style="@style/edit_content"
+                android:gravity="left"
+                android:inputType="number"
+                android:maxLength="11" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="*"
+                android:textColor="#ff3737" />
+
+            <TextView
+                style="@style/text_label"
+                android:text="名片公开" />
+
+            <TextView
+                android:id="@+id/create_card_type"
+                style="@style/edit_content"
+                android:drawableRight="@drawable/jump"
+                android:gravity="left"
+                android:text="未设置" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="*"
+                android:textColor="#ff3737" />
+
+            <TextView
+                style="@style/text_label"
+                android:text="性别" />
+
+            <TextView
+                android:id="@+id/create_card_gender"
+                style="@style/edit_content"
+                android:drawableRight="@drawable/jump"
+                android:gravity="left"
+                android:text="未设置" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="*"
+                android:textColor="#ff3737" />
+
+            <TextView
+                style="@style/text_label"
+                android:text="公司单位" />
+
+            <EditText
+                android:id="@+id/create_card_company"
+                style="@style/edit_content"
+                android:gravity="left"
+                android:hint="咱写点真实的" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="*"
+                android:textColor="#ff3737" />
+
+            <TextView
+                style="@style/text_label"
+                android:text="部门职位" />
+
+            <EditText
+                android:id="@+id/create_card_job"
+                style="@style/edit_content"
+                android:gravity="left"
+                android:hint="这是你在书友心目中的地位" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="*"
+                android:textColor="#ff3737" />
+
+            <TextView
+                style="@style/text_label"
+                android:text="常住城市" />
+
+            <TextView
+                android:id="@+id/create_card_city"
+                style="@style/edit_content"
+                android:drawableRight="@drawable/jump"
+                android:gravity="left"
+                android:hint="未设置" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="*"
+                android:textColor="#ff3737" />
+
+            <TextView
+                style="@style/text_label"
+                android:text="资源优势" />
+
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/create_card_resource"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@null"
+            android:gravity="left|top"
+            android:hint="没有优势资源的人生是不完美的!"
+            android:maxLength="100"
+            android:textColor="@color/black_3f"
+            android:textSize="@dimen/sp_15" />
+
+        <!--android:visibility="gone"-->
+        <LinearLayout
+            android:id="@+id/create_card_more_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="其他信息"
+                android:textColor="@color/black_444"
+                android:textSize="@dimen/sp_14" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/text_label"
+                    android:text="邮箱" />
+
+                <EditText
+                    android:id="@+id/create_card_email"
+                    style="@style/edit_content"
+                    android:gravity="left"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/text_label"
+                    android:text="生日" />
+
+                <TextView
+                    android:id="@+id/create_card_birth"
+                    style="@style/edit_content"
+                    android:drawableRight="@drawable/jump"
+                    android:gravity="left"
+                    android:text="未设置" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/text_label"
+                    android:text="地址" />
+
+                <EditText
+                    android:id="@+id/create_card_address"
+                    style="@style/edit_content"
+                    android:gravity="left" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:gravity="center_vertical"
+                android:text="个人介绍"
+                android:textColor="@color/black_444"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/create_card_intro"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@null"
+                android:gravity="left|top"
+                android:hint="点击编辑个人介绍信息"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                style="@style/text_label"
+                android:text="教育经历" />
+
+
+            <TextView
+                android:id="@+id/create_card_edu_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@drawable/circle_gold"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_5"
+                android:text="点击添加教育经历"
+                android:textColor="@color/gold_d9"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                style="@style/text_label"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="工作经历" />
+
+            <TextView
+                android:id="@+id/create_card_job_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@drawable/circle_gold"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_5"
+                android:text="点击添加工作经历"
+                android:textColor="@color/gold_d9"
+                android:textSize="@dimen/sp_15" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/create_card_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_gold"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_5"
+            android:text="更多信息"
+            android:textColor="@color/gold_d9"
+            android:textSize="@dimen/sp_15" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

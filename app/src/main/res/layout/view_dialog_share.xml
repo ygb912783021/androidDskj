@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shap_white"
+
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_share_wx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/charge_wx"
+        android:drawablePadding="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="微信好友"
+        android:textColor="@color/black_3f" />
+
+    <TextView
+        android:id="@+id/dialog_share_friend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/charge_wx"
+        android:drawablePadding="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="朋友圈"
+        android:textColor="@color/black_3f" />
+</LinearLayout>

@@ -1,0 +1,99 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="dingshi.com.hibook.ui.fragment.LibraryFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:background="@color/theme"
+            android:gravity="center"
+            android:text="图书馆"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_e"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:text="打造全球最大的图书馆"
+            android:textColor="@color/black_65"
+            android:textSize="@dimen/sp_15" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lib_describe"
+            android:textColor="@color/black_65"
+            android:textSize="@dimen/sp_14" />
+
+
+        <TextView
+            android:id="@+id/library_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/elevation_no"
+            android:drawableLeft="@drawable/lib_create"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableRight="@drawable/jump"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:text="创建 [图书馆]"
+            android:textColor="@color/black_3f"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/library_disc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/elevation_no"
+            android:drawableLeft="@drawable/lib_disc"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableRight="@drawable/jump"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:text="发现 [公开图书馆]"
+            android:textColor="@color/black_3f"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/library_res"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/elevation_no"
+            android:drawableLeft="@drawable/lib_rally"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableRight="@drawable/jump"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:text="资源 [官方书友会]"
+            android:textColor="@color/black_3f"
+            android:textSize="@dimen/sp_18" />
+
+        <dingshi.com.hibook.view.AbsRecyclerView
+            android:id="@+id/library_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

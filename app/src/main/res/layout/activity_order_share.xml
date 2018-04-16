@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="dingshi.com.hibook.ui.OrderDetailsActivity">
+
+
+    <TextView
+        android:id="@+id/order_share_id"
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="xx002"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="图书书柜编号"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/order_share_id" />
+
+    <TextView
+        android:id="@+id/order_share_info"
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="图书信息"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_share_id" />
+
+
+    <ImageView
+        android:id="@+id/order_share_img"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_15"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_share_info" />
+
+    <TextView
+        android:id="@+id/order_share_name"
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解忧杂货铺"
+        android:textColor="@color/black_3f"
+        app:layout_constraintBottom_toTopOf="@+id/order_share_author"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/order_share_img" />
+
+
+    <TextView
+        android:id="@+id/order_share_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="作者"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/order_share_concern"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_share_name" />
+
+    <TextView
+        android:id="@+id/order_share_concern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="出版社"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/order_share_concern_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_share_author" />
+
+    <TextView
+        android:id="@+id/order_share_concern_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="出版社时间"
+        android:textColor="@color/black_999"
+        app:layout_constraintBottom_toBottomOf="@+id/order_share_img"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:id="@+id/order_share_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_15"
+        android:drawableLeft="@drawable/address"
+        android:drawablePadding="@dimen/dp_5"
+        android:text="交通大学西区全家便利店"
+        android:textColor="@color/blue_32"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_share_img" />
+
+    <TextView
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地址"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/order_share_address" />
+
+    <TextView
+        android:id="@+id/order_share_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="共享步骤"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_share_address" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:lineSpacingExtra="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="1、到达书柜后，\n2、点击“共享书”按钮，打开书柜门\n3、放书\n4、然后关上书柜门"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintTop_toBottomOf="@id/order_share_tip" />
+
+    <TextView
+        android:id="@+id/order_share_submit"
+        style="@style/submit_but"
+        android:text="共享图书"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</android.support.constraint.ConstraintLayout>

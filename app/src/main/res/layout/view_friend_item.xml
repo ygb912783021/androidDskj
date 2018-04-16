@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_7">
+
+
+    <TextView
+        android:id="@+id/friend_item_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="这本书很不错"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <ImageView
+        android:id="@+id/friend_item_book_cover"
+        android:layout_width="@dimen/dp_55"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginTop="@dimen/dp_10"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="@id/friend_item_content"
+        app:layout_constraintTop_toBottomOf="@id/friend_item_content" />
+
+    <TextView
+        android:id="@+id/friend_item_book_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:text="岛上书店"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toRightOf="@id/friend_item_book_cover"
+        app:layout_constraintTop_toTopOf="@id/friend_item_book_cover" />
+
+    <TextView
+        android:id="@+id/friend_item_book_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="冬夜乌龟"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toLeftOf="@id/friend_item_book_name"
+        app:layout_constraintTop_toBottomOf="@id/friend_item_book_name" />
+
+
+    <android.support.v7.widget.AppCompatRatingBar
+        android:id="@+id/friend_item_book_rating"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:numStars="5"
+        android:rating="3"
+        android:theme="@style/RatingBar"
+        app:layout_constraintLeft_toLeftOf="@id/friend_item_book_name"
+        app:layout_constraintTop_toBottomOf="@id/friend_item_book_author" />
+
+
+    <TextView
+        android:id="@+id/friend_item_book_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10.0"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toRightOf="@id/friend_item_book_rating"
+        app:layout_constraintTop_toTopOf="@id/friend_item_book_rating" />
+
+    <LinearLayout
+        android:id="@+id/friend_item_book_msg_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/friend_item_book_cover">
+
+        <ImageView
+            android:id="@+id/friend_item_zan_img"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:src="@drawable/eval" />
+
+        <TextView
+            android:id="@+id/friend_item_zan_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="10"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_15" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/friend_item_book_praise_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="@id/friend_item_book_msg_layout"
+        app:layout_constraintTop_toTopOf="@id/friend_item_book_msg_layout">
+
+        <ImageView
+            android:id="@+id/friend_item_eval_img"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:src="@drawable/praise_normal" />
+
+        <TextView
+            android:id="@+id/friend_item_eval_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="10"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_15" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/friend_item_book_msg_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="2018-12-26  00:00:01" />
+
+</android.support.constraint.ConstraintLayout>

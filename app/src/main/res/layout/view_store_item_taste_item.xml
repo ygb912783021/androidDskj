@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:id="@+id/item_taste_img"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginTop="@dimen/dp_10"
+        android:scaleType="centerCrop"
+        android:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/item_taste_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:lineSpacingExtra="1sp"
+        android:text="解忧杂货铺"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toTopOf="@+id/item_taste_author"
+        app:layout_constraintLeft_toRightOf="@id/item_taste_img"
+        app:layout_constraintTop_toTopOf="@+id/item_taste_img" />
+
+
+    <TextView
+        android:id="@+id/item_taste_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:text="作者"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintBottom_toBottomOf="@id/item_taste_img"
+        app:layout_constraintLeft_toLeftOf="@id/item_taste_book"
+        app:layout_constraintTop_toBottomOf="@id/item_taste_book" />
+
+
+</android.support.constraint.ConstraintLayout>

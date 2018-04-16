@@ -1,0 +1,24 @@
+<dingshi.com.hibook.view.LoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/back_book_loading"
+    android:layout_height="match_parent"
+    tools:context="dingshi.com.hibook.ui.fragment.BackBookFragment">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/back_book_smart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/back_book_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</dingshi.com.hibook.view.LoadingLayout>
+

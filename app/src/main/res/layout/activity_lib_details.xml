@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dingshi.com.hibook.ui.library.LibDetailsActivity">
+
+    <dingshi.com.hibook.view.SwitchViewPager
+        android:id="@+id/lib_details_tab"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:fillViewport="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:text_size_switch="@dimen/sp_4" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/lib_details_vp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lib_details_tab" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="dingshi.com.hibook.ui.OrderDetailsActivity">
+
+
+    <TextView
+        android:id="@+id/order_person_order"
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="dasdasd"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+
+    <TextView
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单号"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/order_person_order" />
+
+
+    <TextView
+        android:id="@+id/order_person_id"
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="xx002"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_person_order" />
+
+
+    <TextView
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="图书书柜编号"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/order_person_id" />
+
+    <TextView
+        android:id="@+id/order_person_info"
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="图书信息"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_person_id"
+        tools:layout_editor_absoluteY="78dp" />
+
+
+    <ImageView
+        android:id="@+id/order_person_img"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_person_info" />
+
+    <TextView
+        android:id="@+id/order_person_book"
+        style="@style/my_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解忧杂货铺"
+        android:textColor="@color/black_3f"
+        app:layout_constraintBottom_toTopOf="@+id/order_person_concern"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/order_person_img" />
+
+
+    <TextView
+        android:id="@+id/order_person_concern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="作者"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/order_person_author"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_person_book" />
+
+    <TextView
+        android:id="@+id/order_person_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="出版社"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/order_person_concern_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_person_concern" />
+
+    <TextView
+        android:id="@+id/order_person_concern_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="出版社时间"
+        android:textColor="@color/black_999"
+        app:layout_constraintBottom_toBottomOf="@+id/order_person_img"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/order_person_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:lineSpacingExtra="9sp"
+        android:text="图书拥有者"
+        android:textColor="#909090"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_person_img" />
+
+
+    <ImageView
+        android:id="@+id/order_person_avatar"
+        android:layout_width="@dimen/dp_75"
+        android:layout_height="@dimen/dp_75"
+        android:layout_marginTop="@dimen/dp_10"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="@id/order_person_img"
+        app:layout_constraintTop_toBottomOf="@id/order_person_tip" />
+
+    <TextView
+        android:id="@+id/order_person_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:lineSpacingExtra="6sp"
+        android:text="包子"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toTopOf="@+id/order_person_content"
+        app:layout_constraintLeft_toRightOf="@id/order_person_avatar"
+        app:layout_constraintTop_toTopOf="@id/order_person_avatar" />
+
+    <TextView
+        android:id="@+id/order_person_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="9sp"
+        android:text="读书19本 | 藏书100本"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toBottomOf="@id/order_person_avatar"
+        app:layout_constraintLeft_toLeftOf="@id/order_person_nick"
+        app:layout_constraintTop_toBottomOf="@id/order_person_nick" />
+
+    <TextView
+        android:id="@+id/order_person_letter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:text="备注"
+        android:textColor="#909090"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_person_avatar" />
+
+    <TextView
+        android:id="@+id/order_person_letter2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:lineSpacingExtra="11sp"
+        android:text="您已经给藏书人发送消息，正在等待回复"
+        android:textColor="@color/gold_cb"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@id/order_person_letter"
+        app:layout_constraintTop_toTopOf="@id/order_person_letter" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:lineSpacingExtra="9sp"
+        android:text="藏书人30分钟内未处理申请，系统将自动发送短信通知到对方的手机。"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_person_letter" />
+
+    <TextView
+        android:id="@+id/order_person_submit"
+        style="@style/submit_but"
+        android:text="等不及了，立即私信"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</android.support.constraint.ConstraintLayout>

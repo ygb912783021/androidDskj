@@ -1,0 +1,6 @@
+<root>
+    <item
+        name='android.support.v4.app.FragmentManager java.util.List&lt;android.support.v4.app.Fragment&gt; getFragments()'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

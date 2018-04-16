@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dingshi.com.hibook.ui.PayForegiftActivity">
+
+
+    <ImageView
+        android:id="@+id/pay_foregift_tab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_40"
+        android:src="@drawable/foregift_finish"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/pay_foregift_tab2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/pay_foregift_tab2"
+        android:layout_width="@dimen/dp_55"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/gold_d8"
+        app:layout_constraintBottom_toBottomOf="@id/pay_foregift_tab1"
+        app:layout_constraintLeft_toRightOf="@id/pay_foregift_tab1"
+        app:layout_constraintRight_toLeftOf="@+id/pay_foregift_tab3"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_tab1" />
+
+
+    <ImageView
+        android:id="@+id/pay_foregift_tab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foregift_finish"
+        app:layout_constraintLeft_toRightOf="@id/pay_foregift_tab2"
+        app:layout_constraintRight_toLeftOf="@+id/pay_foregift_tab4"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_tab1" />
+
+    <View
+        android:id="@+id/pay_foregift_tab4"
+        android:layout_width="@dimen/dp_55"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/gold_d8"
+        app:layout_constraintBottom_toBottomOf="@id/pay_foregift_tab1"
+        app:layout_constraintLeft_toRightOf="@id/pay_foregift_tab3"
+        app:layout_constraintRight_toLeftOf="@+id/pay_foregift_tab5"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_tab1" />
+
+    <ImageView
+        android:id="@+id/pay_foregift_tab5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foregift_finish"
+        app:layout_constraintLeft_toRightOf="@id/pay_foregift_tab4"
+        app:layout_constraintRight_toLeftOf="@+id/pay_foregift_tab6"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_tab1" />
+
+
+    <View
+        android:id="@+id/pay_foregift_tab6"
+        android:layout_width="@dimen/dp_27"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/gold_d8"
+        app:layout_constraintBottom_toBottomOf="@id/pay_foregift_tab1"
+        app:layout_constraintLeft_toRightOf="@id/pay_foregift_tab5"
+        app:layout_constraintRight_toLeftOf="@+id/pay_foregift_tab7"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_tab1" />
+
+    <View
+        android:id="@+id/pay_foregift_tab7"
+        android:layout_width="@dimen/dp_27"
+        android:layout_height="@dimen/dp_1"
+        android:background="#eeeeee"
+        app:layout_constraintBottom_toBottomOf="@id/pay_foregift_tab1"
+        app:layout_constraintLeft_toRightOf="@id/pay_foregift_tab6"
+        app:layout_constraintRight_toLeftOf="@+id/pay_foregift_tab8"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_tab1" />
+
+    <ImageView
+        android:id="@+id/pay_foregift_tab8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foregift_unfinish"
+        app:layout_constraintLeft_toRightOf="@id/pay_foregift_tab7"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_tab1" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="手机验证"
+        android:textColor="#d9c892"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/pay_foregift_tab1"
+        app:layout_constraintRight_toRightOf="@id/pay_foregift_tab1"
+        app:layout_constraintTop_toBottomOf="@id/pay_foregift_tab1" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="实名认证"
+        android:textColor="#d9c892"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/pay_foregift_tab3"
+        app:layout_constraintRight_toRightOf="@id/pay_foregift_tab3"
+        app:layout_constraintTop_toBottomOf="@id/pay_foregift_tab3" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="充值押金"
+        android:textColor="#d9c892"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/pay_foregift_tab5"
+        app:layout_constraintRight_toRightOf="@id/pay_foregift_tab5"
+        app:layout_constraintTop_toBottomOf="@id/pay_foregift_tab5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="注册成功"
+        android:textColor="#eeeeee"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@id/pay_foregift_tab8"
+        app:layout_constraintRight_toRightOf="@id/pay_foregift_tab8"
+        app:layout_constraintTop_toBottomOf="@id/pay_foregift_tab8" />
+
+    <TextView
+        android:id="@+id/pay_foregift_submit"
+        style="@style/submit_but"
+        android:text="去充值"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:id="@+id/pay_foregift_ali_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:drawableTop="@drawable/charge_ali"
+        android:gravity="center"
+        android:text="支付宝支付"
+        android:textColor="@color/black_444"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toTopOf="@id/pay_foregift_submit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/pay_foregift_wx_layout" />
+
+    <TextView
+        android:id="@+id/pay_foregift_wx_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:drawableTop="@drawable/charge_wx"
+        android:gravity="center"
+        android:text="微信支付"
+        android:textColor="@color/black_444"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toRightOf="@id/pay_foregift_ali_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_ali_layout" />
+
+
+    <ImageView
+        android:id="@+id/pay_foregift_ali_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/charge_choose"
+        app:layout_constraintRight_toRightOf="@id/pay_foregift_ali_layout"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_ali_layout" />
+
+
+    <ImageView
+        android:id="@+id/pay_foregift_wx_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/charge_choose"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="@id/pay_foregift_wx_layout"
+        app:layout_constraintTop_toTopOf="@id/pay_foregift_wx_layout" />
+
+
+    <TextView
+        android:id="@+id/pay_foregift_pay_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:text="选择支付方式"
+        android:textColor="#3f3f3f"
+        app:layout_constraintBottom_toTopOf="@id/pay_foregift_wx_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_100"
+        android:text="￥29  押金(可原路退回)"
+        android:textColor="#3f3f3f"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pay_foregift_tab1" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/foregift_bg"
+    tools:context="dingshi.com.hibook.ui.ForegiftActivity">
+
+    <ImageView
+        android:id="@+id/foregift_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_30"
+        android:src="@drawable/ic_arrow_back_white_24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/foregift_label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您的权益"
+        android:textColor="@color/white"
+        android:textSize="75sp"
+        app:layout_constraintLeft_toLeftOf="@id/foregift_back"
+        app:layout_constraintTop_toBottomOf="@id/foregift_back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:lineSpacingExtra="16sp"
+        android:text="免费借书\n可获得收益\n共享交友"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="@id/foregift_back"
+        app:layout_constraintTop_toBottomOf="@id/foregift_label1" />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_100"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/foregift_quit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/circle_gray_7"
+            android:gravity="center"
+            android:text="退回押金"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/money_bag_charge" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

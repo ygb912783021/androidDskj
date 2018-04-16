@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_5"
+    tools:context="dingshi.com.hibook.ui.BackBookActivity">
+
+    <ImageView
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:id="@+id/back_book_img"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginTop="@dimen/dp_15"
+        android:scaleType="centerCrop"
+        app:layout_constraintRight_toLeftOf="@+id/back_book_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/back_book_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/back_book_img"
+        app:layout_constraintTop_toTopOf="@+id/back_book_img"
+        tools:text="解忧杂货铺" />
+
+
+    <TextView
+        android:id="@+id/back_book_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/back_book_concern"
+        app:layout_constraintLeft_toLeftOf="@+id/back_book_name"
+        app:layout_constraintTop_toBottomOf="@+id/back_book_name"
+        tools:text="作者"
+
+        />
+
+    <TextView
+        android:id="@+id/back_book_concern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/back_book_concern_time"
+        app:layout_constraintLeft_toLeftOf="@+id/back_book_author"
+        app:layout_constraintTop_toBottomOf="@+id/back_book_author"
+        tools:text="出版社" />
+
+    <TextView
+        android:id="@+id/back_book_concern_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/back_book_img"
+        app:layout_constraintLeft_toLeftOf="@+id/back_book_concern"
+        tools:text="出版社时间" />
+
+
+    <TextView
+        android:id="@+id/back_book_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableRight="@drawable/rule"
+        android:text="@string/borrow_rule"
+        android:textColor="@color/blue_32"
+        android:textSize="@dimen/dp_11"
+        app:layout_constraintLeft_toLeftOf="@+id/back_book_name"
+        app:layout_constraintTop_toBottomOf="@id/back_book_img" />
+
+
+    <TextView
+        android:id="@+id/back_book_case_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:lineSpacingExtra="9sp"
+        android:text="选择书柜取书："
+        android:textColor="#3f3f3f"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/back_book_rule" />
+
+
+    <TextView
+        android:id="@+id/back_book_pay"
+        style="@style/submit_but"
+        android:background="@drawable/shap_gray_7"
+        android:clickable="false"
+        android:text="提交书单"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:gravity="center"
+        android:lineSpacingExtra="5sp"
+        android:text="共享图书，每次被借阅前10天，可获得0.5元，\n10天后每天可获得0.3元"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toTopOf="@+id/back_book_pay"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/back_book_case"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_book_case_label" />
+
+</android.support.constraint.ConstraintLayout>
+

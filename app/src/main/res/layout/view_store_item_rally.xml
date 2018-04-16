@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_10">
+    <TextView
+        android:id="@+id/view_rally_electronicshelf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableTop="@drawable/home_rally_city"
+        android:gravity="center"
+        android:text="电子书"
+        android:textColor="@color/black_999"
+        android:textSize="@dimen/sp_13" />
+
+    <TextView
+        android:id="@+id/view_rally_university"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableTop="@drawable/home_rally_city"
+        android:gravity="center"
+        android:text="大学书友会"
+        android:textColor="@color/black_999"
+        android:textSize="@dimen/sp_13" />
+
+    <TextView
+        android:id="@+id/view_rally_city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableTop="@drawable/home_rally_university"
+        android:gravity="center"
+        android:text="同城书友会"
+        android:textColor="@color/black_999"
+        android:textSize="@dimen/sp_13" />
+
+    <TextView
+        android:id="@+id/view_rally_friend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableTop="@drawable/home_rally_friend"
+        android:gravity="center"
+        android:text="老乡书友会"
+        android:textColor="@color/black_999"
+        android:textSize="@dimen/sp_13" />
+
+</LinearLayout>

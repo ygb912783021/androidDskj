@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="dingshi.com.hibook.ui.BootPageActivity">
+
+
+    <com.youth.banner.Banner
+        android:id="@+id/boot_page_banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:indicator_height="0dp"
+        app:indicator_width="0dp"
+        app:image_scale_type="center_inside"
+        app:is_auto_play="false" />
+
+    <TextView
+        android:id="@+id/boot_page_register"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/boot_page_register"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="@color/theme"
+        android:textSize="@dimen/sp_15" />
+
+    <TextView
+        android:id="@+id/boot_page_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="疯狂图书，找到1000个知心朋友！"
+        android:textColor="@color/black_444"
+        android:textSize="@dimen/sp_15" />
+</LinearLayout>

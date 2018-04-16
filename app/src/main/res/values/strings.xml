@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">疯狂图书</string>
+    <string name="loading">正在加载中...</string>
+    <string name="load_fail">加载失败,当前无网络</string>
+
+    <string name="tab1">书城</string>
+    <string name="tab2">图书馆</string>
+    <string name="tab3">扫码借书</string>
+    <string name="tab4">消息</string>
+    <string name="tab5">我的</string>
+    <string name="store_case">附近书柜</string>
+    <string name="more">查看更多</string>
+    <string name="talent">书房达人</string>
+
+    <string name="testname">dasdasdasdasdasdadasddasddasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdaadasdasdasdasdasdadadsadasdasdads</string>
+    <string name="my_book_list">我的书单</string>
+    <string name="edit">编辑</string>
+    <string name="my_money_bag">我的钱包</string>
+    <string name="my_order">我的订单</string>
+    <string name="my_borrow">我的借阅</string>
+    <string name="my_talent">我的书房</string>
+    <string name="my_coupon">我的优惠券</string>
+    <string name="my_score">我的积分</string>
+    <string name="invite_friend">邀请好友</string>
+    <string name="setting">设置</string>
+    <string name="search">请输入书名等关键字</string>
+
+    <string name="cancel">取消</string>
+    <string name="nick">昵称</string>
+    <string name="gender">性别</string>
+    <string name="born">生日</string>
+    <string name="phone">手机号</string>
+    <string name="register">注册时间</string>
+    <string name="last_money">账户余额</string>
+    <string name="details">明细</string>
+    <string name="money_details">余额明细</string>
+
+    <string name="book_house">书房</string>
+    <string name="exit">退出</string>
+    <string name="man">男</string>
+    <string name="women">女</string>
+    <string name="user_tip">使用须知</string>
+    <string name="user_content">1、本优惠券由共享图书APP发放，仅限共享图书平台用户使用 \n\n2、如使用优惠券购买服务时发生了退服务行为，优惠券不予退还。\n\n3、有任何问题，可咨询共享图书客服。\n\n4、使用该优惠券，必须单笔消费大于30元。</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order_details">订单详情</string>
+    <string name="eval_book">打分星评</string>
+    <string name="eval_book_hint">亲，您的评价可以帮助到别人哦...</string>
+    <string name="eval_book_submit">发表评价</string>
+    <string name="at_once_borrow_book">马上借书</string>
+    <string name="add_menu">加入书单</string>
+    <string name="contact_service">联系客服</string>
+    <string name="borrow_rule">借书规则与说明</string>
+    <string name="pay">立即支付</string>
+    <string name="mobile">请输入您的手机号码</string>
+    <string name="password">请输入您的密码</string>
+    <string name="coupon">优惠券</string>
+    <string name="coupon_choose">选择优惠券</string>
+    <string name="pay_money">余额支付</string>
+    <string name="pay_weixin">微信支付</string>
+    <string name="pay_ali">支付宝支付</string>
+    <string name="pay_go">去支付</string>
+    <string name="centre_book">最受关注的图书</string>
+    <string name="my_card">我的名片</string>
+    <string name="my_lib">我的图书馆</string>
+    <string name="card_authen">PS：名片、工牌、在职证明等，任一职业身份证明材料即可</string>
+    <string name="card_authen_notice">1、身份证姓名必须和名片上的姓名完全一致;\n2、上传职业证明(名片、工卡、在职证明)必须能清晰看见公司名称、个人职位、电话号码;\n3、职业证明上的公司名称和职位，必须和微信名片上的公司名称和职位完全一致</string>
+    <string name="card_authen_rule">◆公司名称【中国某某保险(集团)股份有限公司】不能简写为【某某保险】 \n◆公司名称【北京耐克食品有限公司】不能简写为 【耐克】或【北京耐克】 \n◆个人职位【公关部总监】不能简写为【总监】 \n◆身份证姓名【诸葛孔明】微信名片不能写【诸葛亮</string>
+    <string name="lib_intro">      目录描述：上海交通大学图书馆，是上海市市委联合交通大学共同打造的移动互联网的网络图书目录。为了方便学生以及教师，更多的了解当下最新的图书信息，以及更好的为教学提供更多的数据。</string>
+    <string name="lib_describe">简单和微信好友一起传播，快速收集图书目录\n方便组织活动，群发消息，了解群友近况</string>
+    <string name="setting_advice">建议</string>
+    <string name="setting_version">当前版本</string>
+    <string name="setting_about">关于我们</string>
+    <string name="captcha">请输入验证码</string>
+    <string name="borrow_rule_details">1.到达书柜后；\n2.打开app扫描书柜二维码取书；\n3.然后关好书柜门；</string>
+    <string name="share_book">共享图书</string>
+    <string name="share_rule">图书审核通过后，共享者将获赠阅读币(1个阅读币=1元)，可用于抵扣图书租金；图书加入共享后，本人已获赠阅读币，用于借阅其他图书，共享者开始收取共享佣金。图书要求8成新以上，无明显破损、污渍。\n\n共享10本书，可以免押金\n\n无共享图书，支付押金29元可进行借书</string>
+    <string name="book_price_rule">每本书前10天租金1元，10天后每天租金0.5元</string>
+    <string name="address_book">通讯录</string>
+    <string name="my_rally">我的书友会</string>
+</resources>

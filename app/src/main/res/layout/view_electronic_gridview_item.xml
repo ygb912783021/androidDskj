@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    >
+
+    <ImageView
+        android:id="@+id/electronic_gridview_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:src="@drawable/books" />
+    <TextView
+        android:id="@+id/electronic_gridview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center"
+        android:textColor="#000"
+        android:text="文字"
+        />
+
+</LinearLayout>

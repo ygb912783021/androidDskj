@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shap_white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/electroi_collection_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_30"
+        android:text="收藏到图书列表"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_18" />
+
+    <ListView
+        android:id="@+id/electroi_list_collection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        ></ListView>
+
+</LinearLayout>

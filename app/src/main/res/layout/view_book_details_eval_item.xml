@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:padding="@dimen/dp_3">
+
+    <ImageView
+        android:id="@+id/item_book_details_eval_avatar"
+        android:layout_width="@dimen/dp_35"
+        android:layout_height="@dimen/dp_35"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/test_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/item_book_details_eval_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="包子不胖"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toRightOf="@id/item_book_details_eval_avatar"
+        app:layout_constraintTop_toTopOf="@id/item_book_details_eval_avatar" />
+
+    <android.support.v7.widget.AppCompatRatingBar
+        android:id="@+id/item_book_details_eval_rating"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:theme="@style/RatingBar"
+        app:layout_constraintLeft_toLeftOf="@id/item_book_details_eval_nick"
+        app:layout_constraintTop_toBottomOf="@id/item_book_details_eval_nick" />
+
+    <TextView
+        android:id="@+id/item_book_details_eval_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10.0"
+        android:textColor="@color/black_90"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toRightOf="@id/item_book_details_eval_rating"
+        app:layout_constraintTop_toTopOf="@id/item_book_details_eval_rating" />
+
+
+    <TextView
+        android:id="@+id/item_book_details_eval_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textColor="@color/black_3f"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintLeft_toLeftOf="@id/item_book_details_eval_nick"
+        app:layout_constraintTop_toBottomOf="@id/item_book_details_eval_rating"
+        tools:text="@string/testname" />
+
+
+    <LinearLayout
+
+        android:id="@+id/item_book_details_eval_praise"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|start"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:id="@+id/item_book_details_eval_praise_img"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:src="@drawable/praise_normal" />
+
+        <TextView
+            android:id="@+id/item_book_details_eval_praise_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="17"
+            android:textColor="@color/black_90"
+            android:textSize="@dimen/sp_13" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

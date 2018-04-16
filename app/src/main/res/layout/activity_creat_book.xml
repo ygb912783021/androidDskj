@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="dingshi.com.hibook.ui.CreateBookActivity">
+
+
+    <LinearLayout
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="ISBN" />
+
+            <EditText
+                android:id="@+id/create_book_isbn"
+                style="@style/edit_content"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:inputType="number"
+                android:maxLength="13"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="书名" />
+
+            <EditText
+                android:id="@+id/create_book_book"
+                style="@style/edit_content"
+                android:layout_alignBaseline="@+id/textView2"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_alignParentStart="true"
+                android:gravity="right"
+                android:maxLength="20" />
+        </RelativeLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="封面" />
+
+            <ImageView
+                android:id="@+id/create_book_cover"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/add_book" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="作者" />
+
+            <EditText
+                android:id="@+id/create_book_author"
+                style="@style/edit_content"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:maxLength="20"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="译者" />
+
+            <EditText
+                android:id="@+id/create_book_translator"
+                style="@style/edit_content"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:maxLength="20" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="出版社" />
+
+            <EditText
+                android:id="@+id/create_book_concern"
+                style="@style/edit_content"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:maxLength="20" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="出版时间" />
+
+            <TextView
+                android:id="@+id/create_book_concern_time"
+                style="@style/edit_content"
+                android:layout_centerVertical="true"
+                android:drawablePadding="@dimen/dp_5"
+                android:drawableRight="@drawable/jump"
+                android:gravity="right"
+                android:maxLength="20"
+                android:text="选择" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="页数" />
+
+            <EditText
+                android:id="@+id/create_book_page"
+                style="@style/edit_content"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:inputType="number"
+                android:maxLength="20" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="定价" />
+
+            <EditText
+                android:id="@+id/create_book_price"
+                style="@style/edit_content"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:maxLength="20" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_label"
+                android:layout_centerVertical="true"
+                android:text="内容简介" />
+
+            <EditText
+                android:id="@+id/create_book_content"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@null"
+                android:gravity="top|left"
+                android:hint="请填写内容简介"
+                android:padding="@dimen/dp_10"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/dp_15" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

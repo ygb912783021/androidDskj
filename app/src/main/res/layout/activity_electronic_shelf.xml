@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最新图书领取"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1月第一期"
+            />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/book_electroic_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="3"
+        android:background="@color/white"
+        android:numColumns="3"
+        android:stretchMode="columnWidth">
+
+
+    </GridView>
+    <TextView
+        android:id="@+id/electroic_gridview_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="免费领取"
+        android:textSize="17dp"
+        android:textColor="@color/white"
+        android:layout_margin="60dp"
+        android:gravity="center"
+        android:background="@drawable/shap_black_7"
+        />
+</LinearLayout>
