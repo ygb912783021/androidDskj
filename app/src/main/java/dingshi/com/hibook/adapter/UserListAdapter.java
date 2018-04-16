@@ -33,7 +33,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
 
     @Override
     public int getItemCount() {
-
         return 10;
     }
 
