@@ -16,8 +16,6 @@ public class StoreMultipleItem<T> implements MultiItemEntity {
      * 新闻
      */
     public static final int BOOK_NEWS = 2;
-
-
     /**
      * 附近书柜
      */
@@ -46,6 +44,24 @@ public class StoreMultipleItem<T> implements MultiItemEntity {
      * 书友会
      */
     public static final int BOOK_RALLY = 9;
+    /**
+     * 新书售卖
+     */
+    public static final int BOOK_SALE1 = 10;
+    /**
+     * 二手书售卖
+     */
+    public static final int BOOK_SALE2 = 11;
+
+    /**
+     * 新用户
+     */
+    public static final int BOOK_NEWUSERS = 12;
+
+    /**
+     * 主题推荐
+     */
+    public static final int BOOK_THEME = 13;
 
     private int itemType;
 

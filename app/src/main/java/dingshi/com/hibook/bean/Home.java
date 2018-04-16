@@ -32,6 +32,25 @@ public class Home extends Result {
         private List<ConcernBooksBean> concern_books;
         private List<SellWellBooksBean> sell_well_books;
         private List<RecommendBooksBean> recommend_books;
+        private List<SaleNewBooksBean> sale_newbooks;
+
+        public List<SaleNewBooksBean> getSale_newbooks() {
+            return sale_newbooks;
+        }
+
+        public void setSale_newbooks(List<SaleNewBooksBean> sale_newbooks) {
+            this.sale_newbooks = sale_newbooks;
+        }
+
+        public List<SaleOldBooksBean> getSale_oldbooks() {
+            return sale_oldbooks;
+        }
+
+        public void setSale_oldbooks(List<SaleOldBooksBean> sale_oldbooks) {
+            this.sale_oldbooks = sale_oldbooks;
+        }
+
+        private List<SaleOldBooksBean> sale_oldbooks;
 
         public List<CarouselBean> getCarousel() {
             return carousel;
@@ -248,8 +267,6 @@ public class Home extends Result {
             }
 
 
-
-
         }
 
         public static class ConcernBooksBean {
@@ -429,6 +446,118 @@ public class Home extends Result {
 
             public void setPublish_time(String publish_time) {
                 this.publish_time = publish_time;
+            }
+
+            public String getCover() {
+                return cover;
+            }
+
+            public void setCover(String cover) {
+                this.cover = cover;
+            }
+        }
+
+        public static class SaleNewBooksBean {
+            /**
+             * isbn : 9787544769839
+             * isbn10 : 7544769836
+             * name : 早上九点叫醒我
+             * grade : 0
+             * cover : https://img1.doubanio.com/mpic/s29607939.jpg
+             */
+
+            private String isbn;
+            private String isbn10;
+            private String name;
+            private int grade;
+            private String cover;
+
+            public String getIsbn() {
+                return isbn;
+            }
+
+            public void setIsbn(String isbn) {
+                this.isbn = isbn;
+            }
+
+            public String getIsbn10() {
+                return isbn10;
+            }
+
+            public void setIsbn10(String isbn10) {
+                this.isbn10 = isbn10;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public int getGrade() {
+                return grade;
+            }
+
+            public void setGrade(int grade) {
+                this.grade = grade;
+            }
+
+            public String getCover() {
+                return cover;
+            }
+
+            public void setCover(String cover) {
+                this.cover = cover;
+            }
+        }
+
+        public static class SaleOldBooksBean {
+            /**
+             * isbn : 9787544769839
+             * isbn10 : 7544769836
+             * name : 早上九点叫醒我
+             * grade : 0
+             * cover : https://img1.doubanio.com/mpic/s29607939.jpg
+             */
+
+            private String isbn;
+            private String isbn10;
+            private String name;
+            private int grade;
+            private String cover;
+
+            public String getIsbn() {
+                return isbn;
+            }
+
+            public void setIsbn(String isbn) {
+                this.isbn = isbn;
+            }
+
+            public String getIsbn10() {
+                return isbn10;
+            }
+
+            public void setIsbn10(String isbn10) {
+                this.isbn10 = isbn10;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public int getGrade() {
+                return grade;
+            }
+
+            public void setGrade(int grade) {
+                this.grade = grade;
             }
 
             public String getCover() {

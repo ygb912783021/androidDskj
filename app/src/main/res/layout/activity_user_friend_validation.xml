@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dp_20"
+    android:paddingLeft="@dimen/dp_12"
+    android:paddingRight="@dimen/dp_12">
+    <android.support.v7.widget.RecyclerView
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/dp_12"
+        android:id="@+id/user_list_friend_validation_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

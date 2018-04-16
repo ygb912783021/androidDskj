@@ -123,15 +123,19 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
         }
         if (bean.getHeadline().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_NEWS, bean.getHeadline()));
+            //list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_NEWUSERS, bean.getHeadline()));
         }
 
         list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_RALLY, null));
+
+
 
         if (bean.getNearby_cases().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_CASE, bean.getNearby_cases()));
         }
         if (bean.getMid_banner().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_ADVERTISE, bean.getMid_banner()));
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_THEME, bean.getCarousel()));
         }
         if (bean.getConcern_books().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_CENTRE, bean.getConcern_books()));
@@ -139,6 +143,8 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
 
         if (bean.getSell_well_books().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SELLING, bean.getSell_well_books()));
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SALE1,  bean.getSell_well_books()));
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SALE2,  bean.getSell_well_books()));
         }
 
         if (bean.getRecommend_books().size() > 0) {

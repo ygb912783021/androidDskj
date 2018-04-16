@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/newuser_item_flg"-->
+        <!--android:layout_width="10dp"-->
+        <!--android:layout_height="10dp"-->
+        <!--android:layout_marginLeft="@dimen/dp_10"-->
+        <!--android:background="@color/black_3f"/>-->
+
+    <TextView
+    android:id="@+id/newuser_item_text1"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:drawableLeft="@drawable/add_book"
+    android:text="我是新来的"/>
+    <TextView
+        android:id="@+id/newuser_item_text2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:drawableLeft="@drawable/add_book"
+        android:text="我是新来的"/>
+    <TextView
+        android:id="@+id/newuser_item_text3"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:drawableLeft="@drawable/add_book"
+        android:text="我是新来的"/>
+
+</LinearLayout>

@@ -227,6 +227,13 @@
         <activity android:name=".ui.BookElectronicCaseActivity"/>
         <activity android:name=".ui.BookReadActivity"></activity>
         <activity android:name=".ui.RefundActivity"></activity>
+        <activity android:name=".ui.AddressManagerActivity"></activity>
+        <activity android:name=".ui.AddNewADddressActivity"></activity>
+        <activity android:name=".ui.ConfirmOrderActivity"></activity>
+        <activity android:name=".ui.FriendvalidationActivity"></activity>
+        <activity android:name=".ui.UserListActivity"></activity>
+
+
     </application>
 
 </manifest>

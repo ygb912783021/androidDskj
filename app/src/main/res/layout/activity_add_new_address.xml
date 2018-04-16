@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/add_newadd_consignee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/add_newadd_consigneeedit"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="54dp"
+        android:text="收货人：" />
+
+    <EditText
+        android:id="@+id/add_newadd_consigneeedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="147dp"
+        android:text="张三" />
+
+    <TextView
+        android:id="@+id/add_newadd_tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/add_newadd_consignee"
+        android:layout_marginTop="74dp"
+        android:text="联系电话："  />
+
+    <EditText
+        android:id="@+id/add_newadd_teledit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/add_newadd_tel"
+        android:layout_centerHorizontal="true"
+        android:text="13678965437" />
+
+    <TextView
+        android:id="@+id/add_newadd_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/add_newadd_consignee"
+        android:layout_marginTop="147dp"
+        android:text="所在地区" />
+
+    <TextView
+        android:id="@+id/add_newadd_choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/add_newadd_check"
+        android:layout_alignTop="@+id/add_newadd_place"
+        android:text="请选择" />
+
+    <TextView
+        android:id="@+id/add_newadd_defaultadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/add_newadd_consignee"
+        android:layout_marginTop="207dp"
+        android:text="设为默认地址" />
+
+    <ImageView
+        android:id="@+id/add_newadd_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="59dp"
+        android:layout_marginTop="188dp"
+        android:src="@drawable/ic_launcher" />
+
+</RelativeLayout>
