@@ -514,6 +514,8 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             public void onClick(View v) {
                 jumpRally(1);
             }
+
+
         });
         helper.getView(R.id.view_rally_friend).setOnClickListener(new View.OnClickListener() {
             @Override
