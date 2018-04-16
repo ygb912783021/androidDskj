@@ -202,6 +202,15 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             txShareBook.setVisibility(View.GONE);
             txBorrow.setVisibility(View.VISIBLE);
         }
+        //判断是不是新书  是就修改按钮  立即购买
+        if(getIntent().getIntExtra("newbook", -1)!=-1){
+            txShareBook.setText("加入购物车");
+            txBorrow.setText("立即购买");
+            txShareBook.setClickable(true);
+            txBorrow.setClickable(true);
+            txShareBook.setVisibility(View.VISIBLE);
+            txBorrow.setVisibility(View.VISIBLE);
+        }
     }
 
 
@@ -401,7 +410,15 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                 startActivityForResult(intent, EvalFriendActivity.EVAL_FRIEND_REQUEST);
                 break;
             case R.id.book_details_borrow:
+                if(getIntent().getIntExtra("newbook", -1)!=-1){
+                    intent.setClass(this, ConfirmOrderActivity.class);
+//                    intent.setClass(this, ShopCarActivity.class);
+//                    intent.setClass(this, ReceiviaddressActivity.class);
+                    startActivity(intent);}
+
+                else {
                 jumpActivity();
+                }
                 break;
             case R.id.book_details_contact:
                 KefuUtils.jump(getApplication());
@@ -415,7 +432,11 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                 startActivity(intent);
                 break;
             case R.id.book_details_share:
-                switch (getIntent().getIntExtra("type", 0)) {
+                if(getIntent().getIntExtra("newbook", -1)!=-1){
+
+                }
+                else {
+                    switch (getIntent().getIntExtra("type", 0)) {
                     case 1:
                         recoverBook();
                         break;
@@ -425,7 +446,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                         shareBook();
                         break;
                     default:
-                }
+                }}
                 break;
             default:
         }
