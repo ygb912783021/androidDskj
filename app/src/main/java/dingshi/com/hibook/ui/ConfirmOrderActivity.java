@@ -29,6 +29,7 @@ public class ConfirmOrderActivity extends BaseActivity {
             public void convertView(BaseViewHolder helper, Object item) {
 
             }
+
         });
     }
 
