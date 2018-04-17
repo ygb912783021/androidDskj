@@ -12,6 +12,7 @@
         android:orientation="horizontal"
         >
         <RelativeLayout
+            android:id="@+id/tiaozhuan"
             android:layout_width="0dp"
             android:layout_weight="5"
             android:layout_height="wrap_content">
