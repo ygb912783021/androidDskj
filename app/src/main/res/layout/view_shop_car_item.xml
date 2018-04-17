@@ -6,8 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/circle_gold_10"
     android:orientation="vertical"
-    android:layout_marginLeft="@dimen/dp_10"
-    android:padding="@dimen/dp_3">
+    android:layout_margin="@dimen/dp_10">
 
 
     <CheckBox
@@ -23,13 +22,14 @@
 
     <ImageView
         android:id="@+id/shop_car_item_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+
         app:layout_constraintStart_toEndOf="@+id/shop_car_item_checkbox2"
         app:layout_constraintTop_toBottomOf="@+id/shop_car_item_checkbox1"
-        android:src="@drawable/ic_default_image"/>
+        android:src="@drawable/test_banner"/>
 
     <TextView
         android:id="@+id/shop_car_item_name"

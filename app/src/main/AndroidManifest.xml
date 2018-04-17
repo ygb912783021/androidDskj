@@ -234,6 +234,7 @@
         <activity android:name=".ui.UserListActivity"></activity>
         <activity android:name=".ui.BookSaleActivity"></activity>
         <activity android:name=".ui.ReceiviaddressActivity"/>
+        <activity android:name=".ui.EBookDetailsActivity"></activity>
 
 
     </application>

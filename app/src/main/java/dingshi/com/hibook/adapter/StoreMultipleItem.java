@@ -29,7 +29,7 @@ public class StoreMultipleItem<T> implements MultiItemEntity {
      */
     public static final int BOOK_CENTRE = 5;
     /**
-     * 畅销图书榜
+     * 畅销图书榜（电子书售卖）
      */
     public static final int BOOK_SELLING = 6;
     /**
