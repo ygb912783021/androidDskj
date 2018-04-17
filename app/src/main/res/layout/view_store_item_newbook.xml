@@ -39,6 +39,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/item_newbook_recycle2"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_12" />
 </LinearLayout>

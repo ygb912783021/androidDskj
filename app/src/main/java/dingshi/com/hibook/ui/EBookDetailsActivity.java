@@ -35,7 +35,6 @@ import dingshi.com.hibook.bean.CommentInfo;
 import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.present.BookDetailsPresent;
 import dingshi.com.hibook.utils.GlideUtils;
-import dingshi.com.hibook.utils.KefuUtils;
 import dingshi.com.hibook.view.AbsRecyclerView;
 import dingshi.com.hibook.view.ExpandTextView;
 import dingshi.com.hibook.view.FuckDialog;
@@ -113,7 +112,6 @@ public class EBookDetailsActivity extends BaseActivity implements IBookDetailsVi
     AbsRecyclerView evalRecycle;
     @BindView(R.id.book_details_friend_recycle)
     AbsRecyclerView friendRecycle;
-
     /**
      * 共享图书
      */
@@ -427,23 +425,11 @@ public class EBookDetailsActivity extends BaseActivity implements IBookDetailsVi
                 startActivityForResult(intent, EvalFriendActivity.EVAL_FRIEND_REQUEST);
                 break;
             case R.id.book_details_borrow:
-//                if(getIntent().getIntExtra("bookstoretype", -1)==1){
-//                    intent.setClass(this, ConfirmOrderActivity.class);
-////                    intent.setClass(this, ShopCarActivity.class);
-////                    intent.setClass(this, ReceiviaddressActivity.class);
-//                    startActivity(intent);}
-//
-//                else {
-//                    jumpActivity();
-//                }
-                FuckDialog bottomDialog = new FuckDialog(EBookDetailsActivity.this  );
-                View view =  LayoutInflater.from(EBookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
-                bottomDialog.addView(view);
-                bottomDialog.show();
+//               fuckDialog= new FuckDialog(EBookDetailsActivity.this  );
+//                View view =  LayoutInflater.from(EBookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
+//                fuckDialog.addView(view);
+//                fuckDialog.show();
                 break;
-//            case R.id.book_details_contact:
-//                KefuUtils.jump(getApplication());
-//                break;
             case R.id.book_details_eval_query:
                 intent.setClass(this, EvalBookListActivity.class);
                 startActivity(intent);
@@ -458,10 +444,10 @@ public class EBookDetailsActivity extends BaseActivity implements IBookDetailsVi
                 }
                 if (getIntent().getIntExtra("bookstoretype", -1)==2){
                     //旧书
-//                    FuckDialog bottomDialog = new FuckDialog(EBookDetailsActivity.this  );
-//                    View view =  LayoutInflater.from(EBookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
-//                    bottomDialog.addView(view);
-//                    bottomDialog.show();
+                    FuckDialog bottomDialog = new FuckDialog(EBookDetailsActivity.this  );
+                    View view =  LayoutInflater.from(EBookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
+                    bottomDialog.addView(view);
+                    bottomDialog.show();
                 }
                 else {
                     switch (getIntent().getIntExtra("type", 0)) {
