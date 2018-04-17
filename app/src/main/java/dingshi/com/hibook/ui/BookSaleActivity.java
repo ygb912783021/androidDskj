@@ -24,15 +24,16 @@ public class BookSaleActivity extends BaseActivity {
     ViewPager sale_viewpager;
     String[] title = new String[]{"新书售卖", "二手书售卖", "电子书售卖"};
     List<Fragment> list = new ArrayList<>();
+    int[] payStatus = new int[]{0, 2, 1};
     @Override
     protected void initView(Bundle savedInstanceState) {
-        Constant.isEditDelete=false;
+//        Constant.isEditDelete=false;
 //        EventBusHelper.register(this);
         requestActionBarStyle(true, "图书售卖", "");
         sale_switch.bindViewPager(sale_viewpager,title);
         for (int i = 0; i < title.length; i++) {
             Bundle bundle = new Bundle();
-//            bundle.putInt("payment_status", payStatus[i]);
+            bundle.putInt("payment_status", payStatus[i]);
             Fragment bbf = new BookSaleFragment();
             bbf.setArguments(bundle);
             list.add(bbf);

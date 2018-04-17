@@ -49,6 +49,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
                 mContext.startActivity(intent);
             }
         });
+
         return holder;
     }
 
@@ -63,7 +64,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
 
         ImageView userPhoto;
         TextView userName;
-        Button userAdd;
+        TextView userAdd;
 
         public MyViewHolder(View view) {
             super(view);

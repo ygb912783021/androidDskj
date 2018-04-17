@@ -6,6 +6,7 @@
     tools:context="dingshi.com.hibook.ui.fragment.BookStoreFragment">
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_below="@+id/book_sale_toolbar"
         android:id="@+id/fragment_sale_smartrefresh"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"

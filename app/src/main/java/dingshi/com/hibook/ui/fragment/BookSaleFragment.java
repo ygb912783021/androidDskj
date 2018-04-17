@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
@@ -24,9 +26,11 @@ import dingshi.com.hibook.adapter.StoreMultiAdapter;
 import dingshi.com.hibook.adapter.StoreMultipleItem;
 import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.bean.Home;
+import dingshi.com.hibook.bean.Order;
 import dingshi.com.hibook.present.BookStorePresent;
 import dingshi.com.hibook.ui.BookHouseActivity;
 import dingshi.com.hibook.ui.MyBorrowActivity;
+import dingshi.com.hibook.ui.OrderDetailsActivity;
 import dingshi.com.hibook.ui.SearchActivity;
 
 /**
@@ -48,6 +52,12 @@ public class BookSaleFragment extends BaseFragment implements IRequestView<Home>
     List<StoreMultipleItem> list = new ArrayList<>();
 
     BookStorePresent present = new BookStorePresent(this, this);
+    /**
+     * 0.所有，1.已支付，2.未支付
+     */
+    int payment_status = 0;
+
+    int page = 1;
 
     @Override
     public int getLayoutId() {
@@ -56,7 +66,7 @@ public class BookSaleFragment extends BaseFragment implements IRequestView<Home>
 
     @Override
     public void initView() {
-
+        payment_status = getArguments().getInt("payment_status");
         present.onLoad();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
         multiItemAdapter = new SaleMultiAdapter(mActivity, list);
@@ -73,13 +83,13 @@ public class BookSaleFragment extends BaseFragment implements IRequestView<Home>
          * 滑动监听
          * 滑动的距离超过第一个item就设置不透明
          * */
-//        toolbar.getBackground().mutate().setAlpha(0);
+//        toolbar.getBackground().mutate().setAlpha(10);
 //        mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
 //            @Override
 //            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
 //                LinearLayoutManager manager = (LinearLayoutManager) recyclerView.getLayoutManager();
 //                if (manager.findFirstVisibleItemPosition() > 0) {
-//                    toolbar.getBackground().mutate().setAlpha(255);
+//                    toolbar.getBackground().mutate().setAlpha(5);
 //                    imgBackBook.setImageResource(R.drawable.back_book_release);
 //                } else {
 //                    toolbar.getBackground().mutate().setAlpha(0);
