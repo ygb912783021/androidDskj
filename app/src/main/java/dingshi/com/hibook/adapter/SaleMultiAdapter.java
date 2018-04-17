@@ -324,6 +324,8 @@ public class SaleMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIte
                 context.startActivity(intent);
             }
         });
+
+
     }
 
     /**

@@ -29,6 +29,7 @@ import dingshi.com.hibook.ui.BookElectronicActivity;
 import dingshi.com.hibook.ui.BookListActivity;
 import dingshi.com.hibook.ui.BookSaleActivity;
 import dingshi.com.hibook.ui.Case2BookActivity;
+import dingshi.com.hibook.ui.EBookDetailsActivity;
 import dingshi.com.hibook.ui.RallyActivity;
 import dingshi.com.hibook.ui.UserListActivity;
 import dingshi.com.hibook.ui.WebActivity;
@@ -389,7 +390,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             }
         });
 
-
+        RecyclerView recyclerView2 = helper.getView(R.id.item_newbook_recycle2);
         RecyclerView recyclerView = helper.getView(R.id.item_newbook_recycle);
         FuckYouAdapter adapter = new FuckYouAdapter<>(R.layout.view_store_item_centre_item, data);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
@@ -413,6 +414,28 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
                 context.startActivity(intent);
             }
         });
+        FuckYouAdapter adapter2 = new FuckYouAdapter<>(R.layout.view_store_item_centre_item, data);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView2.setAdapter(adapter2);
+        adapter2.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
+            @Override
+            public void convertView(BaseViewHolder helper, Object item) {
+                Home.JsonDataBean.SellWellBooksBean bean = (Home.JsonDataBean.SellWellBooksBean) item;
+                ImageView photo = helper.getView(R.id.item_centre_photo);
+                GlideUtils.load(context, bean.getCover(), photo);
+                helper.setText(R.id.item_centre_book, bean.getName());
+            }
+        });
+
+        adapter2.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(context, BookDetailsActivity.class);
+                intent.putExtra("isbn", data.get(position).getIsbn());
+                intent.putExtra("newbook",1);
+                context.startActivity(intent);
+            }
+        });
     }
 
     /**
@@ -428,6 +451,8 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
                 Intent intent = new Intent(context, BookListActivity.class);
                 intent.putExtra("map", map);
                 context.startActivity(intent);
+
+
             }
         });
 
@@ -449,7 +474,8 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Intent intent = new Intent(context, BookDetailsActivity.class);
+//                Intent intent = new Intent(context, BookDetailsActivity.class);
+                Intent intent = new Intent(context, EBookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
                 intent.putExtra("bookstoretype",2);
                 context.startActivity(intent);

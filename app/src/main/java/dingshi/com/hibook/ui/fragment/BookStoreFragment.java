@@ -117,36 +117,40 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
         list.clear();
         smartRefreshLayout.finishRefresh();
         Home.JsonDataBean bean = home.getJsonData();
-
+        //轮播图
         if (bean.getCarousel().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_BANNER, bean.getCarousel()));
         }
+        //新的用户显示
         if (bean.getHeadline().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_NEWS, bean.getHeadline()));
             //list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_NEWUSERS, bean.getHeadline()));
         }
-
+        //电子书，书友会
         list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_RALLY, null));
-
-
-
-        if (bean.getNearby_cases().size() > 0) {
-            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_CASE, bean.getNearby_cases()));
-        }
-        if (bean.getMid_banner().size() > 0) {
-            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_ADVERTISE, bean.getMid_banner()));
-            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_THEME, bean.getCarousel()));
-        }
+        //最受关注的图书
         if (bean.getConcern_books().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_CENTRE, bean.getConcern_books()));
         }
+        //附近书柜
+        if (bean.getNearby_cases().size() > 0) {
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_CASE, bean.getNearby_cases()));
+        }
+        //广告位
+        if (bean.getMid_banner().size() > 0) {
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_ADVERTISE, bean.getMid_banner()));
 
+        }
+        //图书售卖 新书，二手书，电子书。
         if (bean.getSell_well_books().size() > 0) {
-            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SELLING, bean.getSell_well_books()));
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SALE1,  bean.getSell_well_books()));
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SALE2,  bean.getSell_well_books()));
-        }
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SELLING, bean.getSell_well_books()));
 
+        }
+        if (bean.getCarousel().size() > 0){
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_THEME, bean.getCarousel()));
+        }
         if (bean.getRecommend_books().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_TASTE, bean.getRecommend_books()));
         }

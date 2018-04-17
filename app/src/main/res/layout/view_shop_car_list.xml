@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/circle_gold_10"
     android:orientation="vertical"
-    android:layout_marginLeft="@dimen/dp_10"
-    android:padding="@dimen/dp_8">
+    android:layout_margin="@dimen/dp_10"
+    >
 
 
     <TextView
@@ -22,13 +21,14 @@
 
     <ImageView
         android:id="@+id/shop_car_list_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/dp_85"
+        android:layout_height="@dimen/dp_120"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shop_car_list_title"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/test_banner"/>
 
     <TextView
         android:id="@+id/shop_car_list_name"

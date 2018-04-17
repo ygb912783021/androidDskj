@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="畅销图书榜"
+            android:text="电子书售卖"
             android:textColor="@color/black_3f"
             android:textSize="@dimen/sp_18" />
 
