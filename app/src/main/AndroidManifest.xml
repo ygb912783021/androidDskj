@@ -233,6 +233,7 @@
         <activity android:name=".ui.FriendvalidationActivity"></activity>
         <activity android:name=".ui.UserListActivity"></activity>
         <activity android:name=".ui.BookSaleActivity"></activity>
+        <activity android:name=".ui.ReceiviaddressActivity"/>
 
 
     </application>
