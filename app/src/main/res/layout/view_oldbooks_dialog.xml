@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shap_white">
+
+    <TextView
+        android:id="@+id/view_oldbook_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="添加图书信息" />
+
+    <TextView
+        android:id="@+id/view_oldbook_original_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/view_oldbook_present_price"
+        android:layout_marginTop="47dp"
+        android:text="原价" />
+
+
+    <TextView
+        android:id="@+id/view_oldbook_present_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="94dp"
+        android:text="现价" />
+
+    <EditText
+        android:id="@+id/view_oldbook_original_price_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:background="@null"
+        android:hint="￥请输入原价" />
+
+
+    <EditText
+        android:id="@+id/view_oldbook_present_price_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        android:background="@null"
+        android:hint="￥请输入现价" />
+
+    <TextView
+        android:id="@+id/view_oldbook_logistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="127dp"
+        android:drawableLeft="@drawable/ic_launcher"
+        android:text="是否包邮" />
+
+    <TextView
+        android:id="@+id/view_oldbook_shelves"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="184dp"
+        android:background="@color/bottom_bg"
+        android:text="确定上架" />
+
+
+</RelativeLayout>
