@@ -203,7 +203,8 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             txBorrow.setVisibility(View.VISIBLE);
         }
         //判断是不是新书  是就修改按钮  立即购买
-        if(getIntent().getIntExtra("newbook", -1)!=-1){
+
+        if(getIntent().getIntExtra("bookstoretype", -1)==1){
             txShareBook.setText("加入购物车");
             txBorrow.setText("立即购买");
             txShareBook.setClickable(true);
@@ -211,6 +212,15 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             txShareBook.setVisibility(View.VISIBLE);
             txBorrow.setVisibility(View.VISIBLE);
         }
+        if(getIntent().getIntExtra("bookstoretype", -1)==2){
+            txShareBook.setText("加入购物车");
+            txBorrow.setText("立即购买");
+            txShareBook.setClickable(true);
+            txBorrow.setClickable(true);
+            txShareBook.setVisibility(View.VISIBLE);
+            txBorrow.setVisibility(View.VISIBLE);
+        }
+
     }
 
 

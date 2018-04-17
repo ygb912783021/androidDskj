@@ -55,7 +55,7 @@ public class BottomDialog {
 
     /**
      * 设置布局的比例
-     *
+     *‘
      * @param view
      * @param scale 0到1   0.3
      * @return

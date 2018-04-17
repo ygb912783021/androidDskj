@@ -408,7 +408,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(context, BookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
-                intent.putExtra("newbook",1);
+                intent.putExtra("bookstoretype",1);
                 context.startActivity(intent);
             }
         });
@@ -450,6 +450,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(context, BookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
+                intent.putExtra("bookstoretype",2);
                 context.startActivity(intent);
             }
         });
