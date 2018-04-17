@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatRatingBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -40,6 +41,7 @@ import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.utils.KefuUtils;
 import dingshi.com.hibook.view.AbsRecyclerView;
 import dingshi.com.hibook.view.ExpandTextView;
+import dingshi.com.hibook.view.FuckDialog;
 import retrofit2.http.Part;
 
 import static dingshi.com.hibook.R.id.default_activity_button;
@@ -212,11 +214,12 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             txShareBook.setVisibility(View.VISIBLE);
             txBorrow.setVisibility(View.VISIBLE);
         }
+
         if(getIntent().getIntExtra("bookstoretype", -1)==2){
-            txShareBook.setText("加入购物车");
-            txBorrow.setText("立即购买");
+            txShareBook.setText("卖了换钱");
+            txBorrow.setText("已共享");
             txShareBook.setClickable(true);
-            txBorrow.setClickable(true);
+            txBorrow.setClickable(false);
             txShareBook.setVisibility(View.VISIBLE);
             txBorrow.setVisibility(View.VISIBLE);
         }
@@ -420,7 +423,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                 startActivityForResult(intent, EvalFriendActivity.EVAL_FRIEND_REQUEST);
                 break;
             case R.id.book_details_borrow:
-                if(getIntent().getIntExtra("newbook", -1)!=-1){
+                if(getIntent().getIntExtra("bookstoretype", -1)==1){
                     intent.setClass(this, ConfirmOrderActivity.class);
 //                    intent.setClass(this, ShopCarActivity.class);
 //                    intent.setClass(this, ReceiviaddressActivity.class);
@@ -442,8 +445,15 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                 startActivity(intent);
                 break;
             case R.id.book_details_share:
-                if(getIntent().getIntExtra("newbook", -1)!=-1){
-
+                if(getIntent().getIntExtra("bookstoretype", -1)==1){
+                    //新书
+                }
+                if (getIntent().getIntExtra("bookstoretype", -1)==2){
+                    //旧书
+                    FuckDialog bottomDialog = new FuckDialog(BookDetailsActivity.this  );
+                    View view =  LayoutInflater.from(BookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
+                    bottomDialog.addView(view);
+                    bottomDialog.show();
                 }
                 else {
                     switch (getIntent().getIntExtra("type", 0)) {

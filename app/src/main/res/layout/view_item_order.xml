@@ -105,6 +105,22 @@
             android:textColor="@color/gold_d8"
             android:textSize="@dimen/sp_13" />
 
+        <TextView
+            android:id="@+id/item_order_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/item_order_submit"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/circle_gold"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5"
+            android:text="查看物流"
+            android:textColor="@color/gold_d8"
+            android:textSize="@dimen/sp_13" />
+
     </RelativeLayout>
 </LinearLayout>
 
