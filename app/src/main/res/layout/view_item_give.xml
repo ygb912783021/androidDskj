@@ -30,6 +30,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:text="解忧杂货铺"
+                android:textColor="#5b5a5a"
                 android:layout_margin="10dp"
                 android:textSize="17dp"
                 android:gravity="center_vertical"
@@ -38,6 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:textColor="#5b5a5a"
                 android:text="解忧杂货铺"
                 android:gravity="center_vertical"
                 android:layout_marginBottom="10dp"
@@ -48,6 +50,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="解忧杂货铺"
+                android:textColor="#5b5a5a"
                 android:gravity="center_vertical"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
@@ -56,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:textColor="#5b5a5a"
                 android:text="解忧杂货铺"
                 android:gravity="center_vertical"
                 android:layout_marginBottom="10dp"
@@ -69,6 +73,7 @@
         android:layout_margin="10dp"
         android:background="@null"
         android:hint="赠人图书，手有余香"
+        android:textColor="#5b5a5a"
         android:imeOptions="actionDone"
         android:inputType="textMultiLine"
         />
@@ -76,6 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="赠送规则"
+        android:textColor="#5b5a5a"
         android:gravity="center"
         android:layout_margin="10dp"
         />
@@ -83,6 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="赠人图书，手有余香"
+        android:textColor="#5b5a5a"
         android:gravity="center"
         />
     <LinearLayout

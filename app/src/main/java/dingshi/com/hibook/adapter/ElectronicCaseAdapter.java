@@ -9,6 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.hw.txtreaderlib.ui.HwTxtPlayActivity;
 
 import java.util.ArrayList;
 
@@ -46,6 +49,7 @@ public class ElectronicCaseAdapter extends BaseAdapter {
         CheckBox checkBox = view.findViewById(R.id.electroic_gridview_checkBox);
         RelativeLayout electronic_gridview_img = view.findViewById(R.id.electronic_gridview_img);
         LinearLayout electroic_gridview_duwan = view.findViewById(R.id.electroic_gridview_duwan);
+        TextView electronic_gridview_text = view.findViewById(R.id.electronic_gridview_text);
         if (state){
             checkBox.setVisibility(View.VISIBLE);
         }else {
@@ -55,6 +59,7 @@ public class ElectronicCaseAdapter extends BaseAdapter {
             electroic_gridview_duwan.setVisibility(View.GONE);
             checkBox.setVisibility(View.GONE);
             electronic_gridview_img.setBackgroundResource(R.drawable.addbook);
+            electronic_gridview_text.setText("");
         }
 
         electronic_gridview_img.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +70,8 @@ public class ElectronicCaseAdapter extends BaseAdapter {
                 }else {
                     if ((arrayList.size()-1) > i){
                     context.startActivity(new Intent(context, BookReadActivity.class));
+//                        HwTxtPlayActivity.loadTxtFile(context,"/storage/emulated/0/最强新手剑.txt");
+//                        context.startActivity(new Intent(context,M) );
                     }
                 }
             }

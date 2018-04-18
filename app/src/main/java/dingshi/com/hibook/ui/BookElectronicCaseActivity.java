@@ -98,11 +98,13 @@ public class BookElectronicCaseActivity extends BaseActivity{
             editState = false;
             electronicCaseAdapter.setState();
             electronicCaseAdapter.notifyDataSetChanged();
+            requestActionBarStyle(true, "电子书柜", "取消");
         }else {
             electroi_book_bottom.setVisibility(View.GONE);
             editState = true;
             electronicCaseAdapter.setState();
             electronicCaseAdapter.notifyDataSetChanged();
+            requestActionBarStyle(true, "电子书柜", "编辑");
         }
 
     }
