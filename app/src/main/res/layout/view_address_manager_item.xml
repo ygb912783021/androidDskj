@@ -1,77 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/dp_10">
 
-    <TextView
-        android:id="@+id/address_manager_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="张三"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/view_receive_address_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_17"
+                android:text="钻石王老五" />
 
-    <TextView
-        android:id="@+id/address_manager_tel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="13800000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/address_manager_name" />
+            <TextView
+                android:id="@+id/view_receive_address_tel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="18888888888" />
 
-    <TextView
-        android:id="@+id/address_manager_defaultadd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="(默认地址)"
-        app:layout_constraintStart_toStartOf="@+id/address_manager_name"
-        app:layout_constraintTop_toBottomOf="@+id/address_manager_name" />
+        </RelativeLayout>
 
-    <TextView
-        android:id="@+id/address_manager_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="北京三里屯10097号"
-        app:layout_constraintStart_toEndOf="@+id/address_manager_defaultadd"
-        app:layout_constraintTop_toBottomOf="@+id/address_manager_name" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@color/white"
+            android:layout_marginBottom="@dimen/dp_1">
+            <TextView
+                android:id="@+id/view_address_manager_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gold_d8"
+                android:text="(默认地址)" />
 
-    <TextView
-        android:id="@+id/address_manager_defaultbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:drawableLeft="@drawable/ic_launcher"
-        android:text="默认地址"
-        app:layout_constraintStart_toStartOf="@+id/address_manager_name"
-        app:layout_constraintTop_toBottomOf="@+id/address_manager_defaultadd" />
+            <TextView
+                android:id="@+id/view_address_manager_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/view_receive_address_default"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="北京市三里屯10086号" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/address_manager_defaultbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="默认地址"
+                android:textColor="@color/gold_d9"
+                android:drawablePadding="@dimen/dp_10"
+                android:textSize="@dimen/sp_17"
+                android:drawableLeft="@drawable/charge_choose"/>
 
-    <TextView
-        android:id="@+id/address_manager_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:drawableLeft="@drawable/ic_launcher"
-        android:text="编辑"
-        app:layout_constraintEnd_toEndOf="@+id/address_manager_delete"
-        app:layout_constraintHorizontal_bias="0.561"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/address_manager_defaultbtn" />
+            <TextView
+                android:id="@+id/address_manager_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/lib_edit"
+                android:drawablePadding="@dimen/dp_10"
+                android:textColor="@color/gold_d9"
+                android:layout_toLeftOf="@+id/address_manager_delete"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textSize="@dimen/sp_17"
+                android:text="编辑" />
 
-    <TextView
-        android:id="@+id/address_manager_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:drawableLeft="@drawable/ic_launcher"
-        android:text="删除"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/address_manager_defaultbtn" />
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/address_manager_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/delete"
+                android:drawablePadding="@dimen/dp_10"
+                android:textColor="@color/gold_d9"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/sp_17"
+                android:text="删除" />
+        </RelativeLayout>
+
+</LinearLayout>

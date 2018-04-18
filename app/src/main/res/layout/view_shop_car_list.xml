@@ -1,138 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/circle_gold_10"
-    android:orientation="vertical"
-    android:layout_margin="@dimen/dp_10"
-    >
+    android:background="@color/white"
+    android:layout_margin="@dimen/dp_5"
+    android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/shop_car_list_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="我的店铺"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/shop_car_list_photo"
-        android:layout_width="@dimen/dp_85"
-        android:layout_height="@dimen/dp_120"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shop_car_list_title"
-        android:src="@drawable/test_banner"/>
-
-    <TextView
-        android:id="@+id/shop_car_list_name"
-        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_8">
+        <TextView
+            android:id="@+id/shop_car_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:text="我的店铺"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="44dp"
-        android:text="书名"
-        app:layout_constraintStart_toEndOf="@+id/shop_car_list_photo"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="@dimen/dp_5">
+        <ImageView
+            android:id="@+id/shop_car_list_photo"
+            android:layout_width="@dimen/dp_85"
+            android:layout_height="@dimen/dp_120"
+            android:layout_margin="@dimen/dp_10"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_banner"/>
 
-    <TextView
-        android:id="@+id/shop_car_list_author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:text="作者"
-        app:layout_constraintStart_toEndOf="@+id/shop_car_list_photo"
-        app:layout_constraintTop_toBottomOf="@+id/shop_car_list_name" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:id="@+id/shop_car_list_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_5"
+                android:text="书名" />
 
-    <TextView
-        android:id="@+id/shop_car_list_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:text="单价"
-        app:layout_constraintStart_toEndOf="@+id/shop_car_list_photo"
-        app:layout_constraintTop_toBottomOf="@+id/shop_car_list_author" />
+            <TextView
+                android:id="@+id/shop_car_list_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_5"
+                android:text="作者" />
 
-    <TextView
-        android:id="@+id/shop_car_list_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:text="x1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shop_car_list_author" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/shop_car_list_buynum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
-        android:text="购买数量"
-        app:layout_constraintStart_toStartOf="@+id/shop_car_list_title"
-        app:layout_constraintTop_toBottomOf="@+id/shop_car_list_photo" />
+                <TextView
+                    android:id="@+id/shop_car_list_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:text="单价" />
 
-    <dingshi.com.hibook.view.QuantityView
-        android:id="@+id/shop_car_list_quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/shop_car_list_express"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shop_car_list_photo"
-        app:quan_color="@color/red"
-        app:quan_max="100"
-        app:quan_min="1"
-        app:quan_width="@dimen/dp_25" />
-    <!--app:quan_tip="借阅期限 / 天"-->
-    <TextView
-        android:id="@+id/shop_car_list_way"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:text="配送方式"
-        app:layout_constraintStart_toStartOf="@+id/shop_car_list_title"
-        app:layout_constraintTop_toBottomOf="@+id/shop_car_list_buynum" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:layout_weight="1" />
 
-    <TextView
-        android:id="@+id/shop_car_list_msg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:text="买家留言"
-        app:layout_constraintStart_toStartOf="@+id/shop_car_list_title"
-        app:layout_constraintTop_toBottomOf="@+id/shop_car_list_way" />
+                <TextView
+                    android:id="@+id/shop_car_list_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:text="x1" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/shop_car_list_express"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="快递免邮/邮费：10元"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/shop_car_list_way" />
 
-    <EditText
-        android:id="@+id/shop_car_list_buymsg"
-        android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:layout_marginEnd="16dp"
-        android:background="@null"
-        android:hint="选填，填写内容已和卖家协商确认"
-        android:text=""
-        android:textSize="@dimen/sp_14"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/shop_car_list_msg"
-        app:layout_constraintVertical_bias="0.0" />
-</android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5">
+        <TextView
+            android:id="@+id/shop_car_list_buynum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="购买数量" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <dingshi.com.hibook.view.QuantityView
+            android:id="@+id/shop_car_list_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:quan_color="@color/red"
+            app:quan_max="100"
+            app:quan_min="1"
+            app:quan_tip=""
+            app:quan_width="@dimen/dp_25"/>
+        <!--app:quan_width="@dimen/dp_25"-->
+        <!--app:quan_tip="借阅期限 / 天"-->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5">
+        <TextView
+            android:id="@+id/shop_car_list_way"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="配送方式" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/shop_car_list_express"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_999"
+            android:text="快递免邮/邮费：10元" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        >
+        <TextView
+            android:id="@+id/shop_car_list_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="买家留言:" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+        <EditText
+            android:id="@+id/shop_car_list_buymsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="选填，填写内容已和卖家协商确认"
+            android:text=""
+            android:ellipsize="end"
+            android:textSize="@dimen/sp_14"
+            />
+    </LinearLayout>
+</LinearLayout>

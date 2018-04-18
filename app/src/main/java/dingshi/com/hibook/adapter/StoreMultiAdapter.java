@@ -31,6 +31,7 @@ import dingshi.com.hibook.ui.BookSaleActivity;
 import dingshi.com.hibook.ui.Case2BookActivity;
 import dingshi.com.hibook.ui.EBookDetailsActivity;
 import dingshi.com.hibook.ui.RallyActivity;
+import dingshi.com.hibook.ui.ReceiviaddressActivity;
 import dingshi.com.hibook.ui.UserListActivity;
 import dingshi.com.hibook.ui.WebActivity;
 import dingshi.com.hibook.utils.BannerImageLoader;
@@ -408,7 +409,8 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Intent intent = new Intent(context, BookDetailsActivity.class);
+//                Intent intent = new Intent(context, BookDetailsActivity.class);
+                Intent intent = new Intent(context, ReceiviaddressActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
                 intent.putExtra("bookstoretype",1);
                 context.startActivity(intent);
@@ -432,7 +434,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(context, BookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
-                intent.putExtra("newbook",1);
+                intent.putExtra("bookstoretype",1);
                 context.startActivity(intent);
             }
         });

@@ -5,7 +5,7 @@ android {
         release {
             keyAlias 'hibook'
             keyPassword 'hibook'
-            storeFile file('D:/project backup/2/hibook/app/hibook.jks')
+            storeFile file('E:/WorkSpace/androidDskj/app/hibook.jks')
             storePassword 'hibook'
         }
     }

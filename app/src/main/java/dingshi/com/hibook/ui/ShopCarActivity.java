@@ -30,6 +30,12 @@ public class ShopCarActivity extends BaseActivity{
     TextView goPay;
     private double totalePriceText=0;
     private boolean isAllChecked=false;
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_shopcar;
+    }
+
     @Override
     protected void initView(Bundle savedInstanceState) {
         requestActionBarStyle(true,"购物车");
@@ -84,8 +90,5 @@ public class ShopCarActivity extends BaseActivity{
         });
     }
 
-    @Override
-    public int getLayoutId() {
-        return R.layout.activity_shopcar;
-    }
+
 }
