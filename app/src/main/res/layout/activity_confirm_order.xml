@@ -87,31 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
-                <TextView
-                    android:id="@+id/confirm_order_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="共1件商品 "
-                    />
 
-                <TextView
-                    android:id="@+id/confirm_order_totalprice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="小计: 100元"
-                    />
-            </LinearLayout>
             <RelativeLayout
                 android:id="@+id/pay_book_coupon_layout"
                 android:layout_width="match_parent"

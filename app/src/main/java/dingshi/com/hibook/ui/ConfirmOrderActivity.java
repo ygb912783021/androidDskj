@@ -35,7 +35,16 @@ public class ConfirmOrderActivity extends BaseActivity {
         fuckYouAdapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
             @Override
             public void convertView(BaseViewHolder helper, Object item) {
+                RecyclerView itemRecyclerView=helper.getView(R.id.shop_car_list_recycleview);
+                itemRecyclerView.setLayoutManager(new LinearLayoutManager(ConfirmOrderActivity.this, LinearLayoutManager.VERTICAL, false));
+                FuckYouAdapter itemadapter=new FuckYouAdapter(R.layout.view_shop_car_list_item, Arrays.asList("",""));
+                itemRecyclerView.setAdapter(itemadapter);
+                itemadapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
+                    @Override
+                    public void convertView(BaseViewHolder helper, Object item) {
 
+                    }
+                });
             }
 
         });

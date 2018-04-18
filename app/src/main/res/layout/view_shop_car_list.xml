@@ -15,141 +15,40 @@
             android:id="@+id/shop_car_list_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_17"
             android:layout_margin="@dimen/dp_5"
             android:text="我的店铺"
             />
     </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shop_car_list_recycleview"
+        android:layout_width="match_parent"
+        android:background="@color/gray_a5"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_5">
-        <ImageView
-            android:id="@+id/shop_car_list_photo"
-            android:layout_width="@dimen/dp_85"
-            android:layout_height="@dimen/dp_120"
-            android:layout_margin="@dimen/dp_10"
-            android:scaleType="centerCrop"
-            android:src="@drawable/test_banner"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="@dimen/dp_10"
-            android:layout_gravity="center_vertical">
-            <TextView
-                android:id="@+id/shop_car_list_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_5"
-                android:text="书名" />
-
-            <TextView
-                android:id="@+id/shop_car_list_author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_5"
-                android:text="作者" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/shop_car_list_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp_5"
-                    android:text="单价" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp_5"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:id="@+id/shop_car_list_num"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp_5"
-                    android:text="x1" />
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp_5">
-        <TextView
-            android:id="@+id/shop_car_list_buynum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="购买数量" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <dingshi.com.hibook.view.QuantityView
-            android:id="@+id/shop_car_list_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:quan_color="@color/red"
-            app:quan_max="100"
-            app:quan_min="1"
-            app:quan_tip=""
-            app:quan_width="@dimen/dp_25"/>
-        <!--app:quan_width="@dimen/dp_25"-->
-        <!--app:quan_tip="借阅期限 / 天"-->
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp_5">
-        <TextView
-            android:id="@+id/shop_car_list_way"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="配送方式" />
-        <TextView
+       <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <TextView
-            android:id="@+id/shop_car_list_express"
+            android:id="@+id/confirm_order_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black_999"
-            android:text="快递免邮/邮费：10元" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp_5"
-        >
+            android:text="共1件商品   小计"
+            />
         <TextView
-            android:id="@+id/shop_car_list_msg"
+            android:id="@+id/confirm_order_totalprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="买家留言:" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" />
-        <EditText
-            android:id="@+id/shop_car_list_buymsg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:hint="选填，填写内容已和卖家协商确认"
-            android:text=""
-            android:ellipsize="end"
-            android:textSize="@dimen/sp_14"
+            android:textColor="@color/red"
+            android:text="￥15.8"
             />
     </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dp_5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5">
+        <CheckBox
+            android:id="@+id/shop_car_item_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_3"
+            android:layout_gravity="center_vertical"/>
+        <ImageView
+            android:id="@+id/shop_car_item_photo"
+            android:layout_width="@dimen/dp_85"
+            android:layout_height="@dimen/dp_120"
+            android:layout_margin="@dimen/dp_5"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_banner"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:id="@+id/shop_car_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_5"
+                android:text="书名" />
+
+            <TextView
+                android:id="@+id/shop_car_item_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_5"
+                android:text="作者" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/shop_car_item_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:text="单价" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/shop_car_item_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:text="x1" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_5"
+        android:layout_marginHorizontal="@dimen/dp_5">
+
+        <TextView
+            android:id="@+id/shop_car_item_buynum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:text="购买数量" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+        <dingshi.com.hibook.view.QuantityView
+            android:id="@+id/shop_car_item_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:quan_color="@color/red"
+            app:quan_max="100"
+            app:quan_min="1"
+            app:quan_tip=""
+            app:quan_width="@dimen/dp_25"/>
+        <!--app:quan_width="@dimen/dp_25"-->
+        <!--app:quan_tip="借阅期限 / 天"-->
+    </LinearLayout>
+</LinearLayout>

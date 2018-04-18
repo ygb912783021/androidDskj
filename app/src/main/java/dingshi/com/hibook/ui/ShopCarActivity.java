@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.yuyh.easyadapter.helper.ViewHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,30 +47,42 @@ public class ShopCarActivity extends BaseActivity{
         fuckYouAdapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
             @Override
             public void convertView(BaseViewHolder helper, Object item) {
-                final CheckBox   shopCheck=helper.getView(R.id.shop_car_item_checkbox1) ;
-                final CheckBox  bookCheck=helper.getView(R.id.shop_car_item_checkbox2);
-                if (isAllChecked){
-                    shopCheck.setChecked(true);
-                    bookCheck.setChecked(true);
-                }else {
-                    shopCheck.setChecked(false);
-                    bookCheck.setChecked(false);
-                }
+//                final CheckBox   shopCheck=helper.getView(R.id.shop_car_item_checkbox1) ;
+////                final CheckBox  bookCheck=helper.getView(R.id.shop_car_item_checkbox2);
+////                if (isAllChecked){
+////                    shopCheck.setChecked(true);
+////                    bookCheck.setChecked(true);
+////                }else {
+////                    shopCheck.setChecked(false);
+////                    bookCheck.setChecked(false);
+////                }
+////
+////                shopCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+////                    @Override
+////                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+////                        if (b){bookCheck.setChecked(true);
+////                            totalePriceText+=1.00;}else {bookCheck.setChecked(false);
+////                            totalePriceText-=1.00;}
+////                    }
+////                });
+////                bookCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+////                    @Override
+////                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+////                        if (b){shopCheck.setChecked(true);}else {shopCheck.setChecked(false);}
+////                    }
+////                });
 
-                shopCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                RecyclerView  recyclerView = helper.getView(R.id.shop_car_item_recycleview);
+                FuckYouAdapter itemadapter=new FuckYouAdapter(R.layout.view_shop_car_item_item, Arrays.asList("",""));
+                recyclerView.setLayoutManager(new LinearLayoutManager(ShopCarActivity.this, LinearLayoutManager.VERTICAL, false));
+                recyclerView.setAdapter(itemadapter);
+                itemadapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
                     @Override
-                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                        if (b){bookCheck.setChecked(true);
-                            totalePriceText+=1.00;}else {bookCheck.setChecked(false);
-                            totalePriceText-=1.00;}
+                    public void convertView(BaseViewHolder helper, Object item) {
+
                     }
                 });
-                bookCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                        if (b){shopCheck.setChecked(true);}else {shopCheck.setChecked(false);}
-                    }
-                });
+
             }
         });
         allcCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -83,7 +96,6 @@ public class ShopCarActivity extends BaseActivity{
         goPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent =new Intent(getApplicationContext(),ConfirmOrderActivity.class);
                 Intent intent =new Intent(getApplicationContext(),ConfirmOrderActivity.class);
                 getApplicationContext().startActivity(intent);
             }

@@ -46,6 +46,7 @@ import retrofit2.http.Part;
 
 import static dingshi.com.hibook.R.id.default_activity_button;
 import static dingshi.com.hibook.R.id.item_book_details_friend_photo;
+import static dingshi.com.hibook.R.id.start;
 import static dingshi.com.hibook.R.id.withText;
 
 /**
@@ -171,7 +172,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
         //解决recycle滑动不流畅的问题
         friendRecycle.setNestedScrollingEnabled(false);
         evalRecycle.setNestedScrollingEnabled(false);
-        requestActionBarStyle(true, "详情", "");
+        requestActionBarStyle(true, "详情","",R.drawable.shopcar);
         bookIsbn = getIntent().getStringExtra("isbn");
         initBookDetails();
         initPersonRecycle();
@@ -226,6 +227,13 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
 
     }
 
+
+    @Override
+    public void onRightClick() {
+        super.onRightClick();
+        Intent intent=new Intent(this,ShopCarActivity.class);
+        startActivity(intent);
+    }
 
     /**
      * 初始化数据

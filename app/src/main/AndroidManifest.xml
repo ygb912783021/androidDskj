@@ -235,6 +235,7 @@
         <activity android:name=".ui.BookSaleActivity"></activity>
         <activity android:name=".ui.ReceiviaddressActivity"/>
         <activity android:name=".ui.EBookDetailsActivity"></activity>
+        <activity android:name=".ui.ShopCarActivity"/>
 
 
     </application>
