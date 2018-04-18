@@ -13,18 +13,21 @@
         android:layout_height="wrap_content"
         android:text="40.00"
         android:textSize="20dp"
+        android:textColor="#5b5a5a"
         android:layout_margin="10dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="余额 30.00"
+        android:textColor="#5b5a5a"
         android:layout_marginBottom="10dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="书籍"
+        android:textColor="#5b5a5a"
         android:layout_margin="10dp"
         />
     <TextView
@@ -32,18 +35,21 @@
         android:layout_height="wrap_content"
         android:text="解忧杂货铺"
         android:textSize="17dp"
+        android:textColor="#5b5a5a"
         android:layout_marginBottom="10dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="作者"
+        android:textColor="#5b5a5a"
         android:layout_margin="10dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="包子"
+        android:textColor="#5b5a5a"
         android:textSize="17dp"
 
         />
