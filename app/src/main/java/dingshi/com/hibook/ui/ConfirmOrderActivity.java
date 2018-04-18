@@ -22,6 +22,10 @@ public class ConfirmOrderActivity extends BaseActivity {
     RecyclerView recyclerView;
 
     @Override
+    public int getLayoutId() {
+        return R.layout.activity_confirm_order;
+    }
+    @Override
     protected void initView(Bundle savedInstanceState) {
         requestActionBarStyle(true,"确认订单");
 
@@ -43,8 +47,5 @@ public class ConfirmOrderActivity extends BaseActivity {
         startActivity(intent);
     }
 
-        @Override
-    public int getLayoutId() {
-        return R.layout.activity_confirm_order;
-    }
+
 }
