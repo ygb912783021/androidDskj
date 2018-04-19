@@ -408,7 +408,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
 
 
     @OnClick({R.id.book_details_edit_eval, R.id.book_details_edit_friend,
-            R.id.book_details_borrow, R.id.book_details_contact,
+            R.id.book_details_borrow, R.id.book_details_contact,R.id.book_details_my_shopcar,
             R.id.book_details_eval_query, R.id.book_details_friend_query, R.id.book_details_share})
     public void onClickActivity(View v) {
         Intent intent = new Intent();
@@ -439,6 +439,10 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                 break;
             case R.id.book_details_contact:
                 KefuUtils.jump(getApplication());
+                break;
+            case R.id.book_details_my_shopcar:
+                intent.setClass(this, ShopCarActivity.class);
+                startActivity(intent);
                 break;
             case R.id.book_details_eval_query:
                 intent.setClass(this, EvalBookListActivity.class);
