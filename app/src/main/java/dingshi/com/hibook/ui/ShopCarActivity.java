@@ -23,8 +23,6 @@ import dingshi.com.hibook.base.BaseActivity;
 public class ShopCarActivity extends BaseActivity{
     @BindView(R.id.shop_car_recyclerview)
     RecyclerView recyclerView;
-    @BindView(R.id.shop_car_checkbox)
-    CheckBox allcCheckBox;
     @BindView(R.id.shop_car_price)
     TextView totalePrice;
     @BindView(R.id.shop_car_gopay)
@@ -83,13 +81,6 @@ public class ShopCarActivity extends BaseActivity{
                     }
                 });
 
-            }
-        });
-        allcCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                isAllChecked=b;
-                fuckYouAdapter.notifyDataSetChanged();
             }
         });
 

@@ -15,7 +15,8 @@
             android:id="@+id/view_receive_address_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/dp_17"
+            android:textSize="@dimen/dp_16"
+            android:textColor="@color/black_3f"
             android:text="钻石王老五" />
 
         <TextView
@@ -23,6 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:textSize="@dimen/dp_16"
+            android:textColor="@color/black_3f"
             android:text="18888888888" />
 
     </RelativeLayout>
@@ -35,7 +38,8 @@
             android:id="@+id/view_receive_address_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/yellow_fc"
+            android:textColor="@color/yellow_d6"
+            android:textSize="@dimen/dp_14"
             android:text="(默认地址)" />
 
         <TextView
@@ -43,6 +47,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/view_receive_address_default"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/black_3f"
             android:ellipsize="end"
             android:singleLine="true"
             android:text="北京市三里屯10086号" />

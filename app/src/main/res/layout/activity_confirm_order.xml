@@ -22,6 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:text="收货人："
+                android:textColor="@color/black_3f"
                 android:textSize="@dimen/dp_17"
                 android:layout_margin="@dimen/dp_10"
                 />
@@ -30,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="包子"
                 android:layout_toRightOf="@+id/confirm_order_default_name"
+                android:textColor="@color/black_3f"
                 android:textSize="@dimen/dp_17"
                 android:layout_margin="@dimen/dp_10"
                 />
@@ -39,17 +41,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/confirm_order_default_name"
+                android:textColor="@color/black_3f"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/dp_10"
+                android:textSize="@dimen/dp_15"
                 android:text="收货地址:" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="上海市浦东新区"
                 android:layout_toRightOf="@+id/confirm_order_default_add"
+                android:textColor="@color/black_3f"
                 android:layout_below="@+id/confirm_order_default_name"
                 android:layout_margin="@dimen/dp_10"
-                android:textSize="@dimen/dp_17"
+                android:textSize="@dimen/dp_15"
                 />
         </RelativeLayout>
 
@@ -86,6 +91,8 @@
                 android:id="@+id/confirm_order_recycle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:background="@color/gray_a5"
                 />
 
             <RelativeLayout

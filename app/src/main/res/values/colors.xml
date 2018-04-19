@@ -13,6 +13,7 @@
     <color name="black_90">#909090</color>
     <color name="black_999">#999999</color>
     <color name="black_888">#888888</color>
+    <color name="black_f6">#F6F6F6</color>
     <color name="black_87">#878787</color>
     <color name="black_65">#656565</color>
     <color name="black_444">#444444</color>
@@ -21,7 +22,7 @@
     <color name="gray_a5">#a5a5a5</color>
 
     <color name="yellow_fc">#FCD531</color>
-
+    <color name="yellow_d6">#D6C48C</color>
     <color name="gold_d8">#D8C795</color>
     <color name="gold_d9">#d9c892</color>
     <color name="gold_cb">#cbb784</color>

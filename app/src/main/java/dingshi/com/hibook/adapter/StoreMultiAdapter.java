@@ -477,9 +477,9 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 //                Intent intent = new Intent(context, BookDetailsActivity.class);
-                Intent intent = new Intent(context, EBookDetailsActivity.class);
+                Intent intent = new Intent(context, BookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
-                intent.putExtra("bookstoretype",2);
+                intent.putExtra("bookstoretype",1);
                 context.startActivity(intent);
             }
         });

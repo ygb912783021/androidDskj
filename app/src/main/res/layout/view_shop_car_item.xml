@@ -6,16 +6,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:orientation="vertical"
+    android:layout_marginHorizontal="@dimen/dp_5"
     android:layout_marginBottom="@dimen/dp_1">
 
 
-    <CheckBox
+    <TextView
         android:id="@+id/shop_car_item_checkbox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/charge_choose"
+        android:drawablePadding="@dimen/sp_15"
         android:textSize="@dimen/sp_17"
         android:layout_margin="@dimen/dp_5"
-        android:text="我的店铺" />
+        android:text="京东自营1号店" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/shop_car_item_recycleview"
         android:layout_width="match_parent"

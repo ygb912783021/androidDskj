@@ -5,18 +5,18 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
-    android:orientation="vertical"
-    android:layout_margin="@dimen/dp_5">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_5">
-        <CheckBox
+        <ImageView
             android:id="@+id/shop_car_item_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_3"
+            android:layout_margin="@dimen/dp_5"
+            android:src="@drawable/charge_choose"
             android:layout_gravity="center_vertical"/>
         <ImageView
             android:id="@+id/shop_car_item_photo"
@@ -37,14 +37,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_5"
-                android:text="书名" />
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/sp_15"
+                android:text="悲伤逆流成河" />
 
             <TextView
                 android:id="@+id/shop_car_item_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/sp_15"
                 android:layout_margin="@dimen/dp_5"
-                android:text="作者" />
+                android:text="作者：刘建华" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,7 +59,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dp_5"
-                    android:text="单价" />
+                    android:textColor="@color/black_3f"
+                    android:textSize="@dimen/sp_15"
+                    android:text="￥198.80" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -68,7 +74,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dp_5"
-                    android:text="x1" />
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="@color/black_999"
+                    android:text="x10" />
             </LinearLayout>
 
 
@@ -86,6 +94,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/dp_30"
+            android:textColor="@color/black_3f"
+            android:textSize="@dimen/sp_15"
             android:text="购买数量" />
         <TextView
             android:layout_width="wrap_content"

@@ -16,7 +16,8 @@
                 android:id="@+id/view_receive_address_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/dp_17"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/dp_16"
                 android:text="钻石王老五" />
 
             <TextView
@@ -24,6 +25,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/dp_16"
                 android:text="18888888888" />
 
         </RelativeLayout>
@@ -38,6 +41,7 @@
                 android:id="@+id/view_address_manager_default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_14"
                 android:textColor="@color/gold_d8"
                 android:text="(默认地址)" />
 
@@ -46,6 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/view_receive_address_default"
+                android:textColor="@color/black_3f"
+                android:textSize="@dimen/dp_14"
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:text="北京市三里屯10086号" />
@@ -60,9 +66,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="默认地址"
-                android:textColor="@color/gold_d9"
+                android:textColor="@color/yellow_d6"
                 android:drawablePadding="@dimen/dp_10"
-                android:textSize="@dimen/sp_17"
+                android:textSize="@dimen/sp_14"
                 android:drawableLeft="@drawable/charge_choose"/>
 
             <TextView
@@ -71,10 +77,10 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/lib_edit"
                 android:drawablePadding="@dimen/dp_10"
-                android:textColor="@color/gold_d9"
+                android:textColor="@color/yellow_d6"
                 android:layout_toLeftOf="@+id/address_manager_delete"
                 android:layout_marginRight="@dimen/dp_20"
-                android:textSize="@dimen/sp_17"
+                android:textSize="@dimen/sp_14"
                 android:text="编辑" />
 
             <TextView
@@ -83,9 +89,9 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/delete"
                 android:drawablePadding="@dimen/dp_10"
-                android:textColor="@color/gold_d9"
+                android:textColor="@color/yellow_d6"
                 android:layout_alignParentRight="true"
-                android:textSize="@dimen/sp_17"
+                android:textSize="@dimen/sp_14"
                 android:text="删除" />
         </RelativeLayout>
 

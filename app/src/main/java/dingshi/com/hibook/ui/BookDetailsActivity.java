@@ -172,7 +172,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
         //解决recycle滑动不流畅的问题
         friendRecycle.setNestedScrollingEnabled(false);
         evalRecycle.setNestedScrollingEnabled(false);
-        requestActionBarStyle(true, "详情","",R.drawable.shopcar);
+        requestActionBarStyle(true, "详情");
         bookIsbn = getIntent().getStringExtra("isbn");
         initBookDetails();
         initPersonRecycle();
@@ -193,6 +193,9 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                 case 2:
                     txShareBook.setText("已共享");
                     txShareBook.setClickable(false);
+                    txBorrow.setVisibility(View.VISIBLE);
+                    txBorrow.setText("卖了换钱");
+                    txBorrow.setClickable(true);
                     break;
                 case 3:
                     txShareBook.setText("共享该书");
@@ -212,15 +215,6 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             txBorrow.setText("立即购买");
             txShareBook.setClickable(true);
             txBorrow.setClickable(true);
-            txShareBook.setVisibility(View.VISIBLE);
-            txBorrow.setVisibility(View.VISIBLE);
-        }
-
-        if(getIntent().getIntExtra("bookstoretype", -1)==2){
-            txShareBook.setText("卖了换钱");
-            txBorrow.setText("已共享");
-            txShareBook.setClickable(true);
-            txBorrow.setClickable(false);
             txShareBook.setVisibility(View.VISIBLE);
             txBorrow.setVisibility(View.VISIBLE);
         }
@@ -433,11 +427,13 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             case R.id.book_details_borrow:
                 if(getIntent().getIntExtra("bookstoretype", -1)==1){
                     intent.setClass(this, ConfirmOrderActivity.class);
-//                    intent.setClass(this, ShopCarActivity.class);
-//                    intent.setClass(this, ReceiviaddressActivity.class);
                     startActivity(intent);}
-
-                else {
+                else if(getIntent().getIntExtra("type", 0)==2){
+                    FuckDialog bottomDialog = new FuckDialog(BookDetailsActivity.this  );
+                    View view =  LayoutInflater.from(BookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
+                    bottomDialog.addView(view);
+                    bottomDialog.show();
+                } else {
                 jumpActivity();
                 }
                 break;
@@ -455,13 +451,6 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             case R.id.book_details_share:
                 if(getIntent().getIntExtra("bookstoretype", -1)==1){
                     //新书
-                }
-                if (getIntent().getIntExtra("bookstoretype", -1)==2){
-                    //旧书
-                    FuckDialog bottomDialog = new FuckDialog(BookDetailsActivity.this  );
-                    View view =  LayoutInflater.from(BookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
-                    bottomDialog.addView(view);
-                    bottomDialog.show();
                 }
                 else {
                     switch (getIntent().getIntExtra("type", 0)) {
