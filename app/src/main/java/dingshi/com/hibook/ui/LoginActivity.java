@@ -3,8 +3,10 @@ package dingshi.com.hibook.ui;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -112,6 +114,7 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onError(int code, String error) {
+                Log.e("登录失败",""+code+"--------"+error);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

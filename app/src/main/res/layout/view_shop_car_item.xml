@@ -9,16 +9,28 @@
     android:layout_marginHorizontal="@dimen/dp_5"
     android:layout_marginBottom="@dimen/dp_1">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/shop_car_item_checkbox1"
+    <CheckBox
+        android:id="@+id/shop_car_item_checkbox"
+        style="@style/CustomCheckboxThemeShop"
+        android:layout_margin="@dimen/dp_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/charge_choose"
+        android:layout_gravity="center_vertical" />
+    <TextView
+        android:id="@+id/shop_car_item_itemcheckboxtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:drawablePadding="@dimen/sp_15"
         android:textSize="@dimen/sp_17"
         android:layout_margin="@dimen/dp_5"
         android:text="京东自营1号店" />
+    <!--android:drawableLeft="@drawable/charge_choose"-->
+</LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/shop_car_item_recycleview"
         android:layout_width="match_parent"

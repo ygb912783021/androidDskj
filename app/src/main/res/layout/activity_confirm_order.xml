@@ -98,7 +98,7 @@
                 />
 
             <RelativeLayout
-                android:id="@+id/pay_book_coupon_layout"
+                android:id="@+id/pay_confirm_coupon_layout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45"
                 android:layout_marginTop="8dp"
@@ -128,7 +128,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/pay_book_money_layout"
+                android:id="@+id/pay_confirm_money_layout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45"
                 android:gravity="center_vertical"
@@ -154,7 +154,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/pay_book_wx_layout"
+                android:id="@+id/pay_confirm_wx_layout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45"
                 android:gravity="center_vertical"
@@ -180,7 +180,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/pay_book_ali_layout"
+                android:id="@+id/pay_confirm_ali_layout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45"
                 android:gravity="center_vertical"

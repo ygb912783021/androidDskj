@@ -2,7 +2,6 @@ package dingshi.com.hibook.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -29,7 +28,6 @@ import dingshi.com.hibook.ui.BookElectronicActivity;
 import dingshi.com.hibook.ui.BookListActivity;
 import dingshi.com.hibook.ui.BookSaleActivity;
 import dingshi.com.hibook.ui.Case2BookActivity;
-import dingshi.com.hibook.ui.EBookDetailsActivity;
 import dingshi.com.hibook.ui.RallyActivity;
 import dingshi.com.hibook.ui.ReceiviaddressActivity;
 import dingshi.com.hibook.ui.UserListActivity;

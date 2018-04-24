@@ -226,17 +226,17 @@
         <activity android:name=".ui.BookElectronicActivity"/>
         <activity android:name=".ui.BookElectronicCaseActivity"/>
         <activity android:name=".ui.BookReadActivity"
-            android:theme="@style/HwTxtFullScreen"
-            ></activity>
-        <activity android:name=".ui.RefundActivity"></activity>
-        <activity android:name=".ui.AddressManagerActivity"></activity>
-        <activity android:name=".ui.AddNewADddressActivity"></activity>
-        <activity android:name=".ui.ConfirmOrderActivity"></activity>
-        <activity android:name=".ui.FriendvalidationActivity"></activity>
-        <activity android:name=".ui.UserListActivity"></activity>
-        <activity android:name=".ui.BookSaleActivity"></activity>
+            android:theme="@style/HwTxtFullScreen" />
+        <activity android:name=".ui.RefundActivity"/>
+        <activity android:name=".ui.AddressManagerActivity"/>
+        <activity android:name=".ui.AddNewADddressActivity"/>
+        <activity android:name=".ui.ConfirmOrderActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:name=".ui.FriendvalidationActivity"/>
+        <activity android:name=".ui.UserListActivity"/>
+        <activity android:name=".ui.BookSaleActivity"/>
         <activity android:name=".ui.ReceiviaddressActivity"/>
-        <activity android:name=".ui.EBookDetailsActivity"></activity>
+        <activity android:name=".ui.EBookDetailsActivity"/>
         <activity android:name=".ui.ShopCarActivity"/>
 
 

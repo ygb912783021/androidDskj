@@ -29,7 +29,7 @@ import dingshi.com.hibook.view.FuckDialog;
 
 public class ConfirmOrderActivity extends BaseActivity implements IPayMent {
     @BindView(R.id.confirm_order_recycle)
-    RecyclerView recyclerView;
+    RecyclerView allRecyclerView;
     @BindView(R.id.confirm_order_default_name)
     TextView name;
     @BindView(R.id.confirm_order_default_add)
@@ -50,6 +50,7 @@ public class ConfirmOrderActivity extends BaseActivity implements IPayMent {
      */
     private int payMethod = 1;
 
+    private FuckYouAdapter allAdapter;
 
 
     @Override
@@ -60,10 +61,10 @@ public class ConfirmOrderActivity extends BaseActivity implements IPayMent {
     protected void initView(Bundle savedInstanceState) {
         requestActionBarStyle(true,"确认订单");
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        FuckYouAdapter fuckYouAdapter=new FuckYouAdapter(R.layout.view_shop_car_list, Arrays.asList("","",""));
-        recyclerView.setAdapter(fuckYouAdapter);
-        fuckYouAdapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
+        allRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        allAdapter=new FuckYouAdapter(R.layout.view_shop_car_list, Arrays.asList("","",""));
+        allRecyclerView.setAdapter(allAdapter);
+        allAdapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
             @Override
             public void convertView(BaseViewHolder helper, Object item) {
                 RecyclerView itemRecyclerView=helper.getView(R.id.shop_car_list_recycleview);
@@ -81,8 +82,8 @@ public class ConfirmOrderActivity extends BaseActivity implements IPayMent {
         });
     }
 
-    @OnClick({R.id.tiaozhuan,R.id.confirm_order_pay_coupon, R.id.confirm_order_money_balance,R.id.confirm_order_money_wx,
-            R.id.comfirm_order_gopay,R.id.confirm_order_money_ali})
+    @OnClick({R.id.tiaozhuan,R.id.pay_confirm_coupon_layout, R.id.pay_confirm_money_layout,R.id.pay_confirm_wx_layout,
+            R.id.comfirm_order_gopay,R.id.pay_confirm_ali_layout})
     public  void onClick(View view){
         Intent intent=new Intent();
         switch (view.getId()){
@@ -90,22 +91,22 @@ public class ConfirmOrderActivity extends BaseActivity implements IPayMent {
                 intent.setClass(this,ReceiviaddressActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.confirm_order_pay_coupon:
+            case R.id.pay_confirm_coupon_layout:
                  intent.setClass(this, CouponActivity.class);
                 intent.putExtra("payCoupon", true);
                 startActivityForResult(intent, CouponActivity.COUPON_REQUEST_CODE);
                 break;
-            case R.id.confirm_order_money_balance:
+            case R.id.pay_confirm_money_layout:
                 reset();
                 payBalance.setImageResource(R.drawable.pay_choose_focus);
                 payMethod = 3;
                 break;
-            case R.id.confirm_order_money_wx:
+            case R.id.pay_confirm_wx_layout:
                 reset();
                 payWX.setImageResource(R.drawable.pay_choose_focus);
                 payMethod = 2;
                 break;
-            case R.id.confirm_order_money_ali:
+            case R.id.pay_confirm_ali_layout:
                 reset();
                 payAli.setImageResource(R.drawable.pay_choose_focus);
                 payMethod = 1;
