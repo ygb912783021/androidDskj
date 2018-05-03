@@ -32,6 +32,7 @@ import io.reactivex.disposables.Disposable;
 
 
 public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
+    private static final String TAG = "LoginPresent";
 
     public LoginPresent(ILoginView view, BaseFragment activity) {
         super(view, activity);
@@ -73,7 +74,7 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
                     //登录成功后，将用户信息存储在本地
                     SpUtils.putUser(user);
                     getView().success();
-                    Log.i("user_id=",user.getJsonData().getUser_id().toString());
+                    Log.i("user_id=", user.getJsonData().getUser_id().toString());
                 } else {
                     getView().error("密码错误");
                 }
@@ -139,6 +140,7 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
 
             @Override
             protected void onSuccess(User user) {
+                Log.d(TAG, "onSuccess: " + user.toString());
                 if (user.getJsonData() != null) {
                     SpUtils.putUser(user);
                     getView().success();
@@ -318,9 +320,9 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
 
             @Override
             protected void onError(ApiException e) {
-                if (authResult.getMemo().contains("操作已经取消")){
+                if (authResult.getMemo().contains("操作已经取消")) {
                     Toast.makeText(getActivity().mActivity, "取消登录", Toast.LENGTH_LONG).show();
-                }else {
+                } else {
                     getView().error(e.getMsg());
                 }
 
