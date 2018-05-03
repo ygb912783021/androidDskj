@@ -938,7 +938,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
      */
     protected void emptyHistory() {
         String msg = getResources().getString(R.string.Whether_to_empty_all_chats);
-        new EaseAlertDialog(getActivity(), null, msg, null, new AlertDialogUser() {
+        new EaseAlertDialog(getActivity(), "", msg, null, new AlertDialogUser() {
 
             @Override
             public void onResult(boolean confirmed, Bundle bundle) {

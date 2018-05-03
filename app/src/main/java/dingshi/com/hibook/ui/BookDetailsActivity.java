@@ -482,36 +482,44 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             return;
         }
 
-        dialog = new AlertDialog.Builder(this)
-                .setTitle("请选择借阅方式")
-                .setSingleChoiceItems(pros, 0,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface d, int which) {
-                                if (which == 0) {
-                                    if (bookCaseList.size()>0){
-                                        Intent intent = new Intent();
-                                        intent.putExtra("isbn", bookIsbn);
-                                        intent.setClass(BookDetailsActivity.this, BorrowBookActivity.class);
-                                        intent.putExtra("bookCase", (Serializable) bookCaseList);
-                                        intent.putExtra("bookDetails", bookDetails);
-                                        startActivity(intent);
-                                    }else {
-                                        showToast("当前无书柜");
-                                    }
+        Intent intent = new Intent();
+        intent.putExtra("isbn", bookIsbn);
+        intent.setClass(BookDetailsActivity.this, BorrowBookActivity.class);
+        intent.putExtra("bookPerson", (Serializable) bookPersonList);
+        intent.putExtra("bookDetails", bookDetails);
+        startActivity(intent);
 
-                                } else {
-                                    Intent intent = new Intent();
-                                    intent.putExtra("isbn", bookIsbn);
-                                    intent.setClass(BookDetailsActivity.this, BorrowBookActivity.class);
-                                    intent.putExtra("bookPerson", (Serializable) bookPersonList);
-                                    intent.putExtra("bookDetails", bookDetails);
-                                    startActivity(intent);
-                                }
-                                dialog.dismiss();
-                            }
-                        }).create();
-        dialog.show();
+        //按照bug259修改，默认调到个人借阅界面
+//        dialog = new AlertDialog.Builder(this)
+//                .setTitle("请选择借阅方式")
+//                .setSingleChoiceItems(pros, 0,
+//                        new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface d, int which) {
+//                                if (which == 0) {
+//                                    if (bookCaseList.size()>0){
+//                                        Intent intent = new Intent();
+//                                        intent.putExtra("isbn", bookIsbn);
+//                                        intent.setClass(BookDetailsActivity.this, BorrowBookActivity.class);
+//                                        intent.putExtra("bookCase", (Serializable) bookCaseList);
+//                                        intent.putExtra("bookDetails", bookDetails);
+//                                        startActivity(intent);
+//                                    }else {
+//                                        showToast("当前无书柜");
+//                                    }
+//
+//                                } else {
+//                                    Intent intent = new Intent();
+//                                    intent.putExtra("isbn", bookIsbn);
+//                                    intent.setClass(BookDetailsActivity.this, BorrowBookActivity.class);
+//                                    intent.putExtra("bookPerson", (Serializable) bookPersonList);
+//                                    intent.putExtra("bookDetails", bookDetails);
+//                                    startActivity(intent);
+//                                }
+//                                dialog.dismiss();
+//                            }
+//                        }).create();
+//        dialog.show();
 
     }
 

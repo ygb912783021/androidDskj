@@ -83,7 +83,7 @@
     </style>
 
     <style name="CustomCheckboxThemeShop" parent="@android:style/Widget.CompoundButton.CheckBox">
-        <item name="android:button">@drawable/shop_checkbox_style</item>
+        <!--<item name="android:button">@drawable/shop_checkbox_style</item>-->
         <item name="android:gravity">center_horizontal</item>
     </style>
 </resources>

@@ -1,10 +1,11 @@
 package dingshi.com.hibook.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
+import com.hyphenate.easeui.widget.EaseAlertDialog;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import java.util.HashMap;
@@ -18,7 +19,6 @@ import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.SpUtils;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 
@@ -54,13 +54,36 @@ public class BackMoneyActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.back_money_ok:
-                returnMoney();
+                checkBalanceAndReturn();
                 break;
             default:
         }
     }
 
+    private void checkBalanceAndReturn() {
+        if (TextUtils.isEmpty(strPrice)) {
+            showNoBalanceNoticeDialog();
+        } else {
+
+            double balance = Double.valueOf(strPrice).doubleValue();
+            if (balance > 0) {
+                returnMoney();
+
+            } else {
+                showNoBalanceNoticeDialog();
+            }
+        }
+
+    }
+
+    private void showNoBalanceNoticeDialog() {
+        new EaseAlertDialog(this, "您还没有余额，不能申请退款").show();
+
+    }
+
     public void returnMoney() {
+
+
         HashMap<String, String> map = new HashMap<>(2);
         map.put("amount", strPrice);
         map.put("type", "2");
