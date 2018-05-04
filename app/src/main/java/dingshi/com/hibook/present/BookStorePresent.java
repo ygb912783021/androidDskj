@@ -25,11 +25,13 @@ import io.reactivex.disposables.Disposable;
  */
 
 public class BookStorePresent extends BasePresent<IRequestView<Home>, BaseFragment> {
+    private static final String TAG = "BookStorePresent";
     public BookStorePresent(IRequestView<Home> view, BaseFragment activity) {
         super(view, activity);
     }
 
     public void onLoad() {
+        Log.d(TAG, "onLoad: loaddata");
         HashMap<String, String> map = new HashMap<>();
         map.put("lat", MyApplicationLike.lat);
         map.put("lng", MyApplicationLike.lng);

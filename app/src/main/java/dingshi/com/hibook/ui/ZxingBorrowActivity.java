@@ -43,6 +43,7 @@ import io.reactivex.disposables.Disposable;
 
 
 public class ZxingBorrowActivity extends BaseActivity implements QRCodeView.Delegate {
+    private static final String TAG = "ZxingBorrowActivity";
     @BindView(R.id.zxing_borrow_zxing)
     ZXingView zxingView;
 
@@ -77,7 +78,8 @@ public class ZxingBorrowActivity extends BaseActivity implements QRCodeView.Dele
      */
     public void judgeResult(String url) {
 
-        Log.i("url", url);
+//        Log.i("url", url);
+        Log.d(TAG, "judgeResult: scanurl ::: "+url);
 
         Strategy strategy = new Strategy();
 

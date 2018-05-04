@@ -58,10 +58,15 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
         addItemType(StoreMultipleItem.BOOK_BANNER, R.layout.view_store_item_banner);
         addItemType(StoreMultipleItem.BOOK_NEWS, R.layout.view_store_item_news);
         addItemType(StoreMultipleItem.BOOK_NEWUSERS, R.layout.view_store_item_newusers);
+        //附近书柜
         addItemType(StoreMultipleItem.BOOK_CASE, R.layout.view_store_item_case);
+        //图片轮播
         addItemType(StoreMultipleItem.BOOK_ADVERTISE, R.layout.view_store_item_advertise);
+        //书房达人
         addItemType(StoreMultipleItem.BOOK_TALENT, R.layout.view_store_item_talent);
+        //最受关注的图书
         addItemType(StoreMultipleItem.BOOK_CENTRE, R.layout.view_store_item_centre);
+        //电子书
         addItemType(StoreMultipleItem.BOOK_SELLING, R.layout.view_store_item_selling);
         addItemType(StoreMultipleItem.BOOK_SALE1, R.layout.view_store_item_newbook);
         addItemType(StoreMultipleItem.BOOK_SALE2, R.layout.view_store_item_oldbook);
@@ -109,11 +114,12 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
                 setOldBooksSale(helper, (ArrayList<Home.JsonDataBean.SellWellBooksBean>) item.getData());
                 break;
             case StoreMultipleItem.BOOK_THEME:
-               setBookTheme(helper, (ArrayList<Home.JsonDataBean.CarouselBean>) item.getData());
+                setBookTheme(helper, (ArrayList<Home.JsonDataBean.CarouselBean>) item.getData());
                 break;
             default:
         }
     }
+
     /**
      * 首页滚动新闻
      *
@@ -121,15 +127,15 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
      * @param data
      */
     private void setBookNewUsers(BaseViewHolder helper, ArrayList<Home.JsonDataBean.HeadlineBean> data) {
-        ViewFlipper view=helper.getView(R.id.newusers_viewflipper);
-        view .addView(View.inflate(context,R.layout.view_store_item_newusers_item,null));
-        view .addView(View.inflate(context,R.layout.view_store_item_newusers_item,null));
-        view .addView(View.inflate(context,R.layout.view_store_item_newusers_item,null));
-        Log.e("BookNewUsers","setBookNewUsers");
+        ViewFlipper view = helper.getView(R.id.newusers_viewflipper);
+        view.addView(View.inflate(context, R.layout.view_store_item_newusers_item, null));
+        view.addView(View.inflate(context, R.layout.view_store_item_newusers_item, null));
+        view.addView(View.inflate(context, R.layout.view_store_item_newusers_item, null));
+        Log.e("BookNewUsers", "setBookNewUsers");
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, UserListActivity.class);
+                Intent intent = new Intent(context, UserListActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -150,8 +156,8 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
                     public void OnBannerClick(int position) {
                         Intent intent = new Intent(context, WebActivity.class);
                         intent.putExtra("url", data.get(position).getShare_link());
-                        intent.putExtra("share_title",data.get(position).getTitle());
-                        intent.putExtra("share_content",data.get(position).getChaining());
+                        intent.putExtra("share_title", data.get(position).getTitle());
+                        intent.putExtra("share_content", data.get(position).getChaining());
                         context.startActivity(intent);
                     }
                 })
@@ -176,7 +182,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
 //                Intent intent = new Intent(context, WebActivity.class);
 //                intent.putExtra("url", url);
 //                context.startActivity(intent);
-                Intent intent=new Intent(context, UserListActivity.class);
+                Intent intent = new Intent(context, UserListActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -256,19 +262,52 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
      * @param data
      */
     private void setBookAdv(BaseViewHolder helper, final ArrayList<Home.JsonDataBean.CarouselBean> data) {
-        Banner banner = helper.getView(R.id.item_adv_banner);
-        banner.setImages(data)
-                .setImageLoader(new BannerRoundLoader())
-                .setOnBannerListener(new OnBannerListener() {
-                    @Override
-                    public void OnBannerClick(int position) {
-                        Intent intent = new Intent(context, WebActivity.class);
-                        intent.putExtra("url", data.get(position).getShare_link());
-                        context.startActivity(intent);
 
-                    }
-                })
-                .start();
+
+        RecyclerView recyclerView = helper.getView(R.id.item_adv_banner);
+        FuckYouAdapter adapter = new FuckYouAdapter<Home.JsonDataBean.CarouselBean>(R.layout.view_store_item_banner_adv, data);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setAdapter(adapter);
+        adapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
+            @Override
+            public void convertView(BaseViewHolder helper, Object item) {
+                ImageView iv =helper.getView(R.id.iv_itme_store_item_adv);
+                GlideUtils.load(context,((Home.JsonDataBean.CarouselBean) item).getFile(),iv);
+//                helper.setText(R.id.item_case_address, bean.getAddress());
+//                helper.setText(R.id.item_case_name, bean.getName());
+//                helper.setText(R.id.item_case_distance, bean.getRadius() + "km");
+            }
+        });
+
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(context, WebActivity.class);
+                intent.putExtra("url", data.get(position).getShare_link());
+                context.startActivity(intent);
+
+            }
+        });
+
+
+
+
+
+//
+//        Log.d(TAG, "setBookAdv: " + data.size());
+//        Banner banner = helper.getView(R.id.item_adv_banner);
+//        banner.setImages(data)
+//                .setImageLoader(new BannerRoundLoader())
+//                .setOnBannerListener(new OnBannerListener() {
+//                    @Override
+//                    public void OnBannerClick(int position) {
+//                        Intent intent = new Intent(context, WebActivity.class);
+//                        intent.putExtra("url", data.get(position).getShare_link());
+//                        context.startActivity(intent);
+//
+//                    }
+//                })
+//                .start();
 
 
     }
@@ -410,7 +449,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
 //                Intent intent = new Intent(context, BookDetailsActivity.class);
                 Intent intent = new Intent(context, ReceiviaddressActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
-                intent.putExtra("bookstoretype",1);
+                intent.putExtra("bookstoretype", 1);
                 context.startActivity(intent);
             }
         });
@@ -432,7 +471,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(context, BookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
-                intent.putExtra("bookstoretype",1);
+                intent.putExtra("bookstoretype", 1);
                 context.startActivity(intent);
             }
         });
@@ -477,7 +516,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
 //                Intent intent = new Intent(context, BookDetailsActivity.class);
                 Intent intent = new Intent(context, BookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
-                intent.putExtra("bookstoretype",1);
+                intent.putExtra("bookstoretype", 1);
                 context.startActivity(intent);
             }
         });
@@ -504,10 +543,10 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
                 GlideUtils.load(context, bean.getCover(), photo);
                 helper.setText(R.id.item_list_book, bean.getName());
                 helper.setText(R.id.item_list_author, "作者: " + bean.getAuthor());
-                if (bean!=null&&bean.getPress()!=null){
-                    if (bean.getPress().contains("null")||bean.getPress()==""){
+                if (bean != null && bean.getPress() != null) {
+                    if (bean.getPress().contains("null") || bean.getPress() == "") {
                         helper.setText(R.id.item_list_concern, "出版社: 暂无");
-                    }else {
+                    } else {
                         helper.setText(R.id.item_list_concern, "出版社: " + bean.getPress());
                     }
                 }
@@ -555,7 +594,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             @Override
             public void onClick(View v) {
 
-                context.startActivity(new Intent(context,BookElectronicActivity.class));
+                context.startActivity(new Intent(context, BookElectronicActivity.class));
             }
         });
     }
@@ -565,7 +604,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
      *
      * @param helper
      */
-    private void setBookTheme(BaseViewHolder helper,final ArrayList<Home.JsonDataBean.CarouselBean> data) {
+    private void setBookTheme(BaseViewHolder helper, final ArrayList<Home.JsonDataBean.CarouselBean> data) {
         RecyclerView recyclerView = helper.getView(R.id.item_theme_recycle);
         FuckYouAdapter adapter = new FuckYouAdapter<>(R.layout.view_store_item_theme_item, data);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
