@@ -53,7 +53,7 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
         }
 
         if (password.length() == 0 && !isCaptchLogin) {
-            getView().error("请输入密码");
+            getView().error("请输入验证码");
             return;
         }
         HttpRxObserver httpRxObserver = new HttpRxObserver<User>("login") {

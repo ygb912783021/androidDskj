@@ -72,7 +72,7 @@ public class LoginFragment extends BaseFragment implements ILoginView {
     /**
      * 判断当前登录方式
      */
-    boolean isCaptchLogin;
+    boolean isCaptchLogin = false;
 
     @Override
     public int getLayoutId() {
@@ -81,7 +81,7 @@ public class LoginFragment extends BaseFragment implements ILoginView {
 
     @Override
     public void initView() {
-        switchLogin();
+//        switchLogin();
         activity = (LoginActivity) mActivity;
         EventBus.getDefault().register(this);
     }
