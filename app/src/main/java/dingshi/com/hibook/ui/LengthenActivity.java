@@ -58,9 +58,9 @@ public class LengthenActivity extends BaseActivity {
      */
     private String order;
     /**
-     *
+     * 默认延迟期限
      */
-
+    private final int DEFALUT_DATE_VALUE = 10;
 
 
     BookDetails bookDetails;
@@ -86,13 +86,16 @@ public class LengthenActivity extends BaseActivity {
         quantityView.setOnBackDay(new QuantityView.OnBackValue() {
             @Override
             public void day(int day) {
-                if (day <= 10) {
-                    txPrice.setText("合计: 1元");
-                } else {
-                    txPrice.setText("合计: " + ((day - 10) * 0.5 + 1) + "元");
-                }
+//                if (day <= 10) {
+//                    txPrice.setText("合计: 1元");
+//                } else {
+//                    txPrice.setText("合计: " + ((day - 10) * 0.5 + 1) + "元");
+//                }
+                txPrice.setText("合计: " + (day * 0.5) + "元");
+
             }
         });
+        quantityView.setValue(DEFALUT_DATE_VALUE);
     }
 
 

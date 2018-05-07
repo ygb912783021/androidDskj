@@ -1,5 +1,6 @@
 package dingshi.com.hibook.present;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -52,7 +53,7 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
             return;
         }
 
-        if (password.length() == 0 && !isCaptchLogin) {
+        if (password.length() == 0 && isCaptchLogin) {
             getView().error("请输入验证码");
             return;
         }
@@ -267,7 +268,7 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
      *
      * @param info
      */
-    public void loginWexin(WexinInfo info) {
+    public void loginWexin(final WexinInfo info) {
 
         HashMap<String, String> map = new HashMap<>();
         map.put("nick_name", info.getNickname());
@@ -292,6 +293,10 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
 
             @Override
             protected void onSuccess(User user) {
+                //解决初次微信登录没有头像
+                if (TextUtils.isEmpty(user.getJsonData().getAvatar())) {
+                    user.getJsonData().setAvatar(info.getHeadimgurl());
+                }
                 SpUtils.putUser(user);
                 getView().success();
             }

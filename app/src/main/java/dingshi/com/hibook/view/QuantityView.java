@@ -33,7 +33,7 @@ public class QuantityView extends LinearLayout {
     /**
      * value值
      */
-    int value = 10;
+    int value;
 
     /**
      * 控件的宽高
@@ -82,6 +82,8 @@ public class QuantityView extends LinearLayout {
         textColor = ta.getColor(R.styleable.QuantityView_quan_color, 0xff000000);
         minValue = ta.getInteger(R.styleable.QuantityView_quan_min, 0);
         maxValue = ta.getInteger(R.styleable.QuantityView_quan_max, 100);
+        value = ta.getInteger(R.styleable.QuantityView_quan_default_value, 10);
+
         src = ta.getResourceId(R.styleable.QuantityView_quan_src, R.drawable.quantity_gray);
         width = ta.getDimensionPixelOffset(R.styleable.QuantityView_quan_width, 80);
         tip = ta.getString(R.styleable.QuantityView_quan_tip);
@@ -170,6 +172,17 @@ public class QuantityView extends LinearLayout {
         return value;
     }
 
+    /**
+     * 设置值
+     *
+     * @param value
+     */
+    public void setValue(int value) {
+        if (value >= 0) {
+            this.value = value;
+            updateValue();
+        }
+    }
 
     OnBackValue onBackValue;
 
