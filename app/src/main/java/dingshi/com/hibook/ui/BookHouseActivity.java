@@ -92,6 +92,7 @@ public class BookHouseActivity extends BaseActivity {
         houseFragment = new BookHouseFragment();
         Bundle b = new Bundle();
         b.putString("uid", user.getJsonData().getUser_id());
+        b.putSerializable("userCenter", userCenter);
         houseFragment.setArguments(b);
         list.add(houseFragment);
 

@@ -36,6 +36,7 @@ import dingshi.com.hibook.bean.BookTalent;
 import dingshi.com.hibook.bean.CommentGrade;
 import dingshi.com.hibook.bean.CommentInfo;
 import dingshi.com.hibook.bean.Result;
+import dingshi.com.hibook.bean.UserCenter;
 import dingshi.com.hibook.present.BookDetailsPresent;
 import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.utils.KefuUtils;
@@ -159,7 +160,8 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
     /**
      * 0表示未被借出，1表示已经被借出
      */
-    int is_borrow=0;
+    int is_borrow = 0;
+
 
 
     @Override
@@ -210,7 +212,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
         }
         //判断是不是新书  是就修改按钮  立即购买
 
-        if(getIntent().getIntExtra("bookstoretype", -1)==1){
+        if (getIntent().getIntExtra("bookstoretype", -1) == 1) {
             txShareBook.setText("加入购物车");
             txBorrow.setText("立即购买");
             txShareBook.setClickable(true);
@@ -225,7 +227,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
     @Override
     public void onRightClick() {
         super.onRightClick();
-        Intent intent=new Intent(this,ShopCarActivity.class);
+        Intent intent = new Intent(this, ShopCarActivity.class);
         startActivity(intent);
     }
 
@@ -278,14 +280,14 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             @Override
             public void convertView(BaseViewHolder helper, Object item) {
                 BookPerson.JsonDataBean bean = (BookPerson.JsonDataBean) item;
-                if(is_borrow==0){
+                if (is_borrow == 0) {
                     personRecycle.setVisibility(View.VISIBLE);
                     ImageView photo = helper.getView(R.id.book_details_person_photo);
                     GlideUtils.loadCircleImage(BookDetailsActivity.this, bean.getAvatar(), photo);
                     helper.setText(R.id.book_details_person_name, bean.getNick_name());
                     helper.setText(R.id.book_details_person_content, "读书" + bean.getRead_num() + "|藏书" + bean.getHave_num() + "本");
 
-                }else {
+                } else {
                     personRecycle.setVisibility(View.GONE);
                 }
 
@@ -334,7 +336,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
 
                 helper.setText(R.id.item_book_details_eval_nick, bean.getNick_name());
                 AppCompatRatingBar rating = helper.getView(R.id.item_book_details_eval_rating);
-                rating.setRating(bean.getScore() );
+                rating.setRating(bean.getScore());
                 helper.setText(R.id.item_book_details_eval_score, (int) (bean.getScore()) + "分");
                 helper.setText(R.id.item_book_details_eval_content, bean.getContent());
                 helper.setText(R.id.item_book_details_eval_praise_num, bean.getPraise() + "");
@@ -408,7 +410,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
 
 
     @OnClick({R.id.book_details_edit_eval, R.id.book_details_edit_friend,
-            R.id.book_details_borrow, R.id.book_details_contact,R.id.book_details_my_shopcar,
+            R.id.book_details_borrow, R.id.book_details_contact, R.id.book_details_my_shopcar,
             R.id.book_details_eval_query, R.id.book_details_friend_query, R.id.book_details_share})
     public void onClickActivity(View v) {
         Intent intent = new Intent();
@@ -425,16 +427,16 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                 startActivityForResult(intent, EvalFriendActivity.EVAL_FRIEND_REQUEST);
                 break;
             case R.id.book_details_borrow:
-                if(getIntent().getIntExtra("bookstoretype", -1)==1){
+                if (getIntent().getIntExtra("bookstoretype", -1) == 1) {
                     intent.setClass(this, ConfirmOrderActivity.class);
-                    startActivity(intent);}
-                else if(getIntent().getIntExtra("type", 0)==2){
-                    FuckDialog bottomDialog = new FuckDialog(BookDetailsActivity.this  );
-                    View view =  LayoutInflater.from(BookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
+                    startActivity(intent);
+                } else if (getIntent().getIntExtra("type", 0) == 2) {
+                    FuckDialog bottomDialog = new FuckDialog(BookDetailsActivity.this);
+                    View view = LayoutInflater.from(BookDetailsActivity.this).inflate(R.layout.view_oldbooks_dialog, null);
                     bottomDialog.addView(view);
                     bottomDialog.show();
                 } else {
-                jumpActivity();
+                    jumpActivity();
                 }
                 break;
             case R.id.book_details_contact:
@@ -453,21 +455,21 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                 startActivity(intent);
                 break;
             case R.id.book_details_share:
-                if(getIntent().getIntExtra("bookstoretype", -1)==1){
+                if (getIntent().getIntExtra("bookstoretype", -1) == 1) {
                     //新书
-                }
-                else {
+                } else {
                     switch (getIntent().getIntExtra("type", 0)) {
-                    case 1:
-                        recoverBook();
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        shareBook();
-                        break;
-                    default:
-                }}
+                        case 1:
+                            recoverBook();
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            shareBook();
+                            break;
+                        default:
+                    }
+                }
                 break;
             default:
         }
@@ -536,6 +538,7 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
                                 Intent intent = new Intent();
                                 intent.setClass(BookDetailsActivity.this, ShareBookActivity.class);
                                 intent.putExtra("share", which);
+                                intent.putExtra("userCenter", getIntent().getSerializableExtra("userCenter"));
                                 intent.putExtra("bookDetails", bookDetails);
                                 startActivity(intent);
                                 dialog.dismiss();
@@ -578,20 +581,20 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
     public void onBookDetails(BookDetails bookDetails) {
         BookDetails.JsonDataBean bean = bookDetails.getJsonData();
         this.bookDetails = bean;
-        is_borrow=bean.getIs_borrow();
+        is_borrow = bean.getIs_borrow();
         GlideUtils.load(this, bean.getCover(), imgBook);
         txBookName.setText(bean.getName());
-        if (bean!=null&&bean.getAuthor()!=null){
-            if (bean.getAuthor().contains("null")){
+        if (bean != null && bean.getAuthor() != null) {
+            if (bean.getAuthor().contains("null")) {
                 txBookAuthor.setText("作者: 暂无");
-            }else {
+            } else {
                 txBookAuthor.setText("作者: " + bean.getAuthor());
             }
         }
-        if (bean!=null&&bean.getPress()!=null){
-            if (bean.getPress().contains("null")||bean.getPress()==""){
+        if (bean != null && bean.getPress() != null) {
+            if (bean.getPress().contains("null") || bean.getPress() == "") {
                 txConcern.setText("出版社: 暂无");
-            }else {
+            } else {
                 txConcern.setText("出版社: " + bean.getPress());
             }
         }

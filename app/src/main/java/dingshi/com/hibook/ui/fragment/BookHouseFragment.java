@@ -37,6 +37,7 @@ import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.BookList;
 import dingshi.com.hibook.bean.Result;
+import dingshi.com.hibook.bean.UserCenter;
 import dingshi.com.hibook.eventbus.EventBusHelper;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
@@ -72,11 +73,12 @@ public class BookHouseFragment extends BaseFragment {
     List<BookDetails.JsonDataBean> list = new ArrayList<>();
 
     int page = 1;
-    int pos=0;
+    int pos = 0;
 
     String uid;
     ImageView imageView;
     ImageView bookPhoto;
+    UserCenter userCenter;
 
     @Override
     public int getLayoutId() {
@@ -87,6 +89,7 @@ public class BookHouseFragment extends BaseFragment {
     public void initView() {
         if (getArguments() != null) {
             uid = getArguments().getString("uid");
+            userCenter = (UserCenter) getArguments().getSerializable("userCenter");
         }
         fuckYouAdapter = new FuckYouAdapter<>(R.layout.view_item_book_house, list);
 
@@ -99,25 +102,25 @@ public class BookHouseFragment extends BaseFragment {
             }
 
             @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view,  int position) {
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 super.onItemChildClick(adapter, view, position);
-                 pos=position;
+                pos = position;
                 int itemViewId = view.getId();
-                imageView=view.findViewById(R.id.iv_item_delete);
-                if (itemViewId==R.id.iv_item_delete){
+                imageView = view.findViewById(R.id.iv_item_delete);
+                if (itemViewId == R.id.iv_item_delete) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("确认删除？")
                             .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     BookDetails.JsonDataBean bean = list.get(pos);
-                                    String isbn=bean.getIsbn();
+                                    String isbn = bean.getIsbn();
                                     bookDelete(isbn);
 //                                    Toast.makeText(getActivity(),""+pos+"×",Toast.LENGTH_SHORT).show();
                                     return;
                                 }
                             })
-                            .setNegativeButton("取消",new DialogInterface.OnClickListener() {
+                            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 //                                    Toast.makeText(getActivity(),"取消了"+pos+"×",Toast.LENGTH_SHORT).show();
@@ -134,9 +137,9 @@ public class BookHouseFragment extends BaseFragment {
             @Override
             public void convertView(BaseViewHolder helper, final Object item) {
                 helper.addOnClickListener(R.id.iv_item_delete);
-                if (Constant.isEditDelete){
+                if (Constant.isEditDelete) {
                     helper.getView(R.id.iv_item_delete).setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     helper.getView(R.id.iv_item_delete).setVisibility(View.GONE);
                 }
                 BookDetails.JsonDataBean bean = (BookDetails.JsonDataBean) item;
@@ -160,6 +163,7 @@ public class BookHouseFragment extends BaseFragment {
                 Intent intent = new Intent(mActivity, BookDetailsActivity.class);
                 intent.putExtra("isbn", bean.getIsbn());
                 intent.putExtra("uid", uid);
+                intent.putExtra("userCenter", userCenter);
 
                 //如果当前uid是自己的话，才会跳共享界面，不是的话，跳详情
                 if (uid.equals(user.getJsonData().getUser_id())) {
@@ -264,26 +268,28 @@ public class BookHouseFragment extends BaseFragment {
         Observable<BookList> user = NetUtils.getGsonRetrofit().personalBook(map);
         HttpRxObservable.getObservable(user, this, FragmentEvent.PAUSE).subscribe(httpRxObserver);
     }
+
     /**
      * 删除图书
+     *
      * @param isbn
      */
     public void bookDelete(String isbn) {
         HttpRxObserver httpRxObserver = new HttpRxObserver<Result>("bookrack/delete") {
             @Override
             protected void onStart(Disposable d) {
-                showProgressDialog("正在删除中...",true);
+                showProgressDialog("正在删除中...", true);
             }
 
             @Override
             protected void onError(ApiException e) {
-                Log.e("删除图书异常：",e.toString());
+                Log.e("删除图书异常：", e.toString());
                 dismissProgressDialog();
             }
 
             @Override
             protected void onSuccess(Result bookList) {
-                Log.i("删除图书成功：",bookList.toString());
+                Log.i("删除图书成功：", bookList.toString());
                 page = 1;
                 dismissProgressDialog();
                 getInfo();

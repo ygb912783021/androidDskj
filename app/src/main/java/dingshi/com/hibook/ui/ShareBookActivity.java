@@ -27,6 +27,7 @@ import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.BookCase;
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.Result;
+import dingshi.com.hibook.bean.UserCenter;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
@@ -66,6 +67,7 @@ public class ShareBookActivity extends BaseActivity {
 
     List<BookCase.JsonDataBean> list = new ArrayList<>();
 
+    private UserCenter userCenter;
     /**
      * 分享类型  0为共享到书柜   1为放在自己手里
      */
@@ -89,6 +91,7 @@ public class ShareBookActivity extends BaseActivity {
             txCase.setText("选择书柜");
             getBookCase();
         }
+        userCenter = (UserCenter) getIntent().getSerializableExtra("userCenter");
     }
 
     public void initBookDetails() {
@@ -217,9 +220,14 @@ public class ShareBookActivity extends BaseActivity {
 
             @Override
             protected void onSuccess(Result response) {
+
+
                 showToast("共享成功");
+
+                handleBookInfo();
+
                 AppManager.getInstance().finishOthersActivity(MainActivity.class);
-                startActivity(new Intent(ShareBookActivity.this, BookHouseActivity.class));
+                startActivity(new Intent(ShareBookActivity.this, BookHouseActivity.class).putExtra("bean", userCenter));
 
             }
         };
@@ -230,6 +238,15 @@ public class ShareBookActivity extends BaseActivity {
         map = AppSign.buildMap(map);
         Observable<Result> observable = NetUtils.getGsonRetrofit().bookShare(map);
         HttpRxObservable.getObservable(observable, this, ActivityEvent.PAUSE).subscribe(httpRxObserver);
+
+    }
+
+    /**
+     * 分享的书数字加1
+     */
+    private void handleBookInfo() {
+        int sharedNum = userCenter.getJsonData().getShare_book_num() + 1;
+        userCenter.getJsonData().setShare_book_num(sharedNum);
 
     }
 
