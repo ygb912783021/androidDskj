@@ -3,14 +3,14 @@ package dingshi.com.hibook.retrofit.api;
 
 import java.util.HashMap;
 
-import dingshi.com.hibook.BuildConfig;
 import dingshi.com.hibook.bean.BookCase;
 import dingshi.com.hibook.bean.BookDetails;
+import dingshi.com.hibook.bean.BookList;
 import dingshi.com.hibook.bean.BookPerson;
-import dingshi.com.hibook.bean.Borrows;
-import dingshi.com.hibook.bean.Case2Book;
 import dingshi.com.hibook.bean.BookTalent;
+import dingshi.com.hibook.bean.Borrows;
 import dingshi.com.hibook.bean.Captcha;
+import dingshi.com.hibook.bean.Case2Book;
 import dingshi.com.hibook.bean.CommGradeAdd;
 import dingshi.com.hibook.bean.CommInfoAdd;
 import dingshi.com.hibook.bean.CommList;
@@ -25,10 +25,8 @@ import dingshi.com.hibook.bean.OrderDetails;
 import dingshi.com.hibook.bean.Payment;
 import dingshi.com.hibook.bean.RallySearch;
 import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.bean.BookList;
 import dingshi.com.hibook.bean.User;
 import dingshi.com.hibook.bean.UserCenter;
-import dingshi.com.hibook.bean.Zxing;
 import dingshi.com.hibook.bean.card.CardDetails;
 import dingshi.com.hibook.bean.card.CardList;
 import dingshi.com.hibook.bean.lib.ClubList;
@@ -39,18 +37,14 @@ import dingshi.com.hibook.bean.lib.LibIntro;
 import dingshi.com.hibook.bean.lib.LibList;
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
-import retrofit2.http.PartMap;
 import retrofit2.http.QueryMap;
 
 /**

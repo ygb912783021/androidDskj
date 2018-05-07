@@ -59,7 +59,8 @@ public class JoinLibActivity extends BaseActivity {
     TextView txSubmit;
 
     List<Fragment> list = new ArrayList<>();
-
+    //viewPager下标指示，第一个，用于滑动监听
+    private final int VIEWPAGER_POSTION_FIRST = 0;
     String catalogId;
     String catalogImgUrl;
 
@@ -137,6 +138,25 @@ public class JoinLibActivity extends BaseActivity {
         list.add(bookHouse2);
 
         viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager(), list, title));
+        viewPager.setOffscreenPageLimit(list.size());
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                //申请按钮只有在图书馆介绍fragment（viewpager第一个）时候显示
+                txSubmit.setVisibility(position == VIEWPAGER_POSTION_FIRST ? View.VISIBLE : View.GONE);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 

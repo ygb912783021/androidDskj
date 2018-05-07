@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import com.umeng.analytics.MobclickAgent;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
@@ -17,11 +16,9 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 
 import java.util.Map;
-import java.util.concurrent.BlockingDeque;
 
 import dingshi.com.hibook.R;
-import dingshi.com.hibook.share.EasyPayShare;
-import dingshi.com.hibook.ui.InviteActivity;
+import dingshi.com.hibook.utils.CheckWecheatUtil;
 import dingshi.com.hibook.view.FuckDialog;
 
 /**
@@ -121,7 +118,8 @@ public class BaseUmengActivity extends BaseRxActivity {
 
 
     public void loginWx() {
-        if (!EasyPayShare.wxApi.isWXAppInstalled()) {
+//        if (!EasyPayShare.wxApi.isWXAppInstalled()) {
+        if (!CheckWecheatUtil.checkWecheat(this)) {
             Toast.makeText(BaseUmengActivity.this, "未安装微信", Toast.LENGTH_LONG).show();
             return;
         }
@@ -141,6 +139,7 @@ public class BaseUmengActivity extends BaseRxActivity {
         @Override//授权失败回调
         public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
 //            Toast.makeText(BaseUmengActivity.this, "未安装客户端", Toast.LENGTH_LONG).show();
+
         }
 
         @Override//取消授权回调

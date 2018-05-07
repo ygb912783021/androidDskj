@@ -107,7 +107,7 @@ public class BookHouseActivity extends BaseActivity {
         Log.i("TEST", "initView: userCenter = "+ userCenter);
         if (userCenter != null) {
             Log.i("sharebook","已共享="+userCenter.getJsonData().getShare_book_num()+"未共享="+userCenter.getJsonData().getBook_num()+"-"+userCenter.getJsonData().getShare_book_num());
-//            txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
+            txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
         }
     }
 
