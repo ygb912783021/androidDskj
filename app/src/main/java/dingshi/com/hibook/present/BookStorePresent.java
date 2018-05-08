@@ -16,6 +16,7 @@ import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
+import dingshi.com.hibook.utils.NetWorkUtils;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 

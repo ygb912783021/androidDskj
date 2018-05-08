@@ -163,7 +163,6 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
     int is_borrow = 0;
 
 
-
     @Override
     public int getLayoutId() {
         return R.layout.activity_book_details;
@@ -280,16 +279,20 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             @Override
             public void convertView(BaseViewHolder helper, Object item) {
                 BookPerson.JsonDataBean bean = (BookPerson.JsonDataBean) item;
-                if (is_borrow == 0) {
-                    personRecycle.setVisibility(View.VISIBLE);
-                    ImageView photo = helper.getView(R.id.book_details_person_photo);
-                    GlideUtils.loadCircleImage(BookDetailsActivity.this, bean.getAvatar(), photo);
-                    helper.setText(R.id.book_details_person_name, bean.getNick_name());
-                    helper.setText(R.id.book_details_person_content, "读书" + bean.getRead_num() + "|藏书" + bean.getHave_num() + "本");
+//                if (is_borrow == 0) {
+                personRecycle.setVisibility(View.VISIBLE);
+                ImageView photo = helper.getView(R.id.book_details_person_photo);
+                GlideUtils.loadCircleImage(BookDetailsActivity.this, bean.getAvatar(), photo);
+                helper.setText(R.id.book_details_person_name, bean.getNick_name());
+                helper.setText(R.id.book_details_person_content, "读书" + bean.getRead_num() + "|藏书" + bean.getHave_num() + "本");
 
-                } else {
-                    personRecycle.setVisibility(View.GONE);
-                }
+                //因为头像不显示，所以干掉这个判断
+//                } else {
+//                    helper.setText(R.id.book_details_person_name,"");
+//                    helper.setText(R.id.book_details_person_content,"");
+//
+//                    personRecycle.setVisibility(View.GONE);
+//                }
 
             }
         });

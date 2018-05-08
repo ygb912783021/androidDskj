@@ -70,7 +70,6 @@ public class BookDetailsPresent extends BasePresent<IBookDetailsView, BaseActivi
     }
 
 
-
     /**
      * 加载书柜
      *
@@ -136,6 +135,8 @@ public class BookDetailsPresent extends BasePresent<IBookDetailsView, BaseActivi
         Observable<BookPerson> observable = NetUtils.getGsonRetrofit().bookPerson(map);
         HttpRxObservable.getObservable(observable, getActivity(), ActivityEvent.PAUSE).subscribe(httpRxObserver);
     }
+
+
 
 
     /**

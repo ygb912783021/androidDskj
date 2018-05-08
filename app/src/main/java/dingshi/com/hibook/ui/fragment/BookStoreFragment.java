@@ -27,6 +27,8 @@ import dingshi.com.hibook.present.BookStorePresent;
 import dingshi.com.hibook.ui.BookHouseActivity;
 import dingshi.com.hibook.ui.MyBorrowActivity;
 import dingshi.com.hibook.ui.SearchActivity;
+import dingshi.com.hibook.utils.NetWorkUtils;
+import dingshi.com.hibook.utils.NetworkType;
 
 /**
  * @author wangqi
@@ -56,7 +58,11 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
     @Override
     public void initView() {
 
-        present.onLoad();
+        if (NetWorkUtils.hasInternet(getContext())) {
+            present.onLoad();
+        } else {
+            NetworkType.openNetSetting(getContext());
+        }
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
         multiItemAdapter = new StoreMultiAdapter(mActivity, list);
         mRecyclerView.setAdapter(multiItemAdapter);
@@ -143,12 +149,12 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
         }
         //图书售卖 新书，二手书，电子书。
         if (bean.getSell_well_books().size() > 0) {
-            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SALE1,  bean.getSell_well_books()));
-            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SALE2,  bean.getSell_well_books()));
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SALE1, bean.getSell_well_books()));
+            list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SALE2, bean.getSell_well_books()));
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_SELLING, bean.getSell_well_books()));
 
         }
-        if (bean.getCarousel().size() > 0){
+        if (bean.getCarousel().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_THEME, bean.getCarousel()));
         }
         if (bean.getRecommend_books().size() > 0) {
