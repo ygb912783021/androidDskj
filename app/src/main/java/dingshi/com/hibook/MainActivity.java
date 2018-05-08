@@ -16,11 +16,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.hyphenate.EMMessageListener;
-import com.hyphenate.chat.EMChatManager;
 import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.util.EMLog;
+import com.pgyersdk.update.PgyUpdateManager;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
@@ -91,6 +90,15 @@ public class MainActivity extends BaseActivity implements ISettingView {
         setTabSelection(1);
         showExceptionDialogFromIntent(getIntent());
         registerBroadcastReceiver();
+
+        registerPgyerUpdate();
+    }
+
+    private void registerPgyerUpdate() {
+        if (BuildConfig.BUILD_TYPE.equals("debug")) {
+            PgyUpdateManager.setIsForced(true); //设置是否强制更新。true为强制更新；false为不强制更新（默认值）。
+            PgyUpdateManager.register(this);
+        }
     }
 
 
