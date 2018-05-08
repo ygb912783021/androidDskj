@@ -172,6 +172,7 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
     @Override
     public void onError(String error) {
         showToast(error);
+        smartRefreshLayout.finishRefresh();
     }
 
     @Override
