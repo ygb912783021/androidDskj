@@ -220,6 +220,7 @@ dependencies {
     // or 1.4-beta1
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     // or 1.4-beta1
+
     compile 'com.pgyersdk:sdk:2.8.1'
 
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
