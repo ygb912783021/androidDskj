@@ -2,7 +2,6 @@ package dingshi.com.hibook.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -30,7 +29,6 @@ import dingshi.com.hibook.ui.BookElectronicActivity;
 import dingshi.com.hibook.ui.BookListActivity;
 import dingshi.com.hibook.ui.BookSaleActivity;
 import dingshi.com.hibook.ui.Case2BookActivity;
-import dingshi.com.hibook.ui.EBookDetailsActivity;
 import dingshi.com.hibook.ui.RallyActivity;
 import dingshi.com.hibook.ui.ReceiviaddressActivity;
 import dingshi.com.hibook.ui.UserListActivity;
@@ -61,10 +59,15 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
         addItemType(StoreMultipleItem.BOOK_BANNER, R.layout.view_store_item_banner);
         addItemType(StoreMultipleItem.BOOK_NEWS, R.layout.view_store_item_news);
         addItemType(StoreMultipleItem.BOOK_NEWUSERS, R.layout.view_store_item_newusers);
+        //附近书柜
         addItemType(StoreMultipleItem.BOOK_CASE, R.layout.view_store_item_case);
+        //图片轮播
         addItemType(StoreMultipleItem.BOOK_ADVERTISE, R.layout.view_store_item_advertise);
+        //书房达人
         addItemType(StoreMultipleItem.BOOK_TALENT, R.layout.view_store_item_talent);
+        //最受关注的图书
         addItemType(StoreMultipleItem.BOOK_CENTRE, R.layout.view_store_item_centre);
+        //电子书
         addItemType(StoreMultipleItem.BOOK_SELLING, R.layout.view_store_item_selling);
         addItemType(StoreMultipleItem.BOOK_SALE1, R.layout.view_store_item_newbook);
         addItemType(StoreMultipleItem.BOOK_SALE2, R.layout.view_store_item_oldbook);
@@ -112,11 +115,12 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
                 setOldBooksSale(helper, (ArrayList<Home.JsonDataBean.SellWellBooksBean>) item.getData());
                 break;
             case StoreMultipleItem.BOOK_THEME:
-               setBookTheme(helper, (ArrayList<Home.JsonDataBean.CarouselBean>) item.getData());
+                setBookTheme(helper, (ArrayList<Home.JsonDataBean.CarouselBean>) item.getData());
                 break;
             default:
         }
     }
+
     /**
      * 首页滚动新闻
      *
@@ -124,15 +128,15 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
      * @param data
      */
     private void setBookNewUsers(BaseViewHolder helper, ArrayList<Home.JsonDataBean.HeadlineBean> data) {
-        ViewFlipper view=helper.getView(R.id.newusers_viewflipper);
-        view .addView(View.inflate(context,R.layout.view_store_item_newusers_item,null));
-        view .addView(View.inflate(context,R.layout.view_store_item_newusers_item,null));
-        view .addView(View.inflate(context,R.layout.view_store_item_newusers_item,null));
-        Log.e("BookNewUsers","setBookNewUsers");
+        ViewFlipper view = helper.getView(R.id.newusers_viewflipper);
+        view.addView(View.inflate(context, R.layout.view_store_item_newusers_item, null));
+        view.addView(View.inflate(context, R.layout.view_store_item_newusers_item, null));
+        view.addView(View.inflate(context, R.layout.view_store_item_newusers_item, null));
+        Log.e("BookNewUsers", "setBookNewUsers");
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, UserListActivity.class);
+                Intent intent = new Intent(context, UserListActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -153,8 +157,8 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
                     public void OnBannerClick(int position) {
                         Intent intent = new Intent(context, WebActivity.class);
                         intent.putExtra("url", data.get(position).getShare_link());
-                        intent.putExtra("share_title",data.get(position).getTitle());
-                        intent.putExtra("share_content",data.get(position).getChaining());
+                        intent.putExtra("share_title", data.get(position).getTitle());
+                        intent.putExtra("share_content", data.get(position).getChaining());
                         context.startActivity(intent);
                     }
                 })
@@ -179,7 +183,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
 //                Intent intent = new Intent(context, WebActivity.class);
 //                intent.putExtra("url", url);
 //                context.startActivity(intent);
-                Intent intent=new Intent(context, UserListActivity.class);
+                Intent intent = new Intent(context, UserListActivity.class);
                 context.startActivity(intent);
             }
         });

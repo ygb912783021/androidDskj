@@ -1,5 +1,6 @@
 package dingshi.com.hibook.present;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ import io.reactivex.disposables.Disposable;
 
 
 public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
+    private static final String TAG = "LoginPresent";
 
     public LoginPresent(ILoginView view, BaseFragment activity) {
         super(view, activity);
@@ -51,8 +53,8 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
             return;
         }
 
-        if (password.length() == 0 && !isCaptchLogin) {
-            getView().error("请输入密码");
+        if (password.length() == 0 && isCaptchLogin) {
+            getView().error("请输入验证码");
             return;
         }
         HttpRxObserver httpRxObserver = new HttpRxObserver<User>("login") {
@@ -73,7 +75,7 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
                     //登录成功后，将用户信息存储在本地
                     SpUtils.putUser(user);
                     getView().success();
-                    Log.i("user_id=",user.getJsonData().getUser_id().toString());
+                    Log.i("user_id=", user.getJsonData().getUser_id().toString());
                 } else {
                     getView().error("密码错误");
                 }
@@ -139,6 +141,7 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
 
             @Override
             protected void onSuccess(User user) {
+                Log.d(TAG, "onSuccess: " + user.toString());
                 if (user.getJsonData() != null) {
                     SpUtils.putUser(user);
                     getView().success();
@@ -265,7 +268,7 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
      *
      * @param info
      */
-    public void loginWexin(WexinInfo info) {
+    public void loginWexin(final WexinInfo info) {
 
         HashMap<String, String> map = new HashMap<>();
         map.put("nick_name", info.getNickname());
@@ -290,6 +293,10 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
 
             @Override
             protected void onSuccess(User user) {
+                //解决初次微信登录没有头像
+                if (TextUtils.isEmpty(user.getJsonData().getAvatar())) {
+                    user.getJsonData().setAvatar(info.getHeadimgurl());
+                }
                 SpUtils.putUser(user);
                 getView().success();
             }
@@ -318,9 +325,9 @@ public class LoginPresent extends BasePresent<ILoginView, BaseFragment> {
 
             @Override
             protected void onError(ApiException e) {
-                if (authResult.getMemo().contains("操作已经取消")){
+                if (authResult.getMemo().contains("操作已经取消")) {
                     Toast.makeText(getActivity().mActivity, "取消登录", Toast.LENGTH_LONG).show();
-                }else {
+                } else {
                     getView().error(e.getMsg());
                 }
 

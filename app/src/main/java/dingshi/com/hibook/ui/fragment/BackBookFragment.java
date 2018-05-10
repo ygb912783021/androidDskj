@@ -19,7 +19,6 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -29,8 +28,6 @@ import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.bean.BorrowRefresh;
 import dingshi.com.hibook.bean.Borrows;
-import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.bean.User;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
@@ -38,19 +35,13 @@ import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.ui.BackBookActivity;
 import dingshi.com.hibook.ui.BackPersonActivity;
 import dingshi.com.hibook.ui.BookDetailsActivity;
-import dingshi.com.hibook.ui.BorrowBookActivity;
 import dingshi.com.hibook.ui.LengthenActivity;
 import dingshi.com.hibook.ui.OrderBookActivity;
-import dingshi.com.hibook.ui.OrderPersonActivity;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.GlideUtils;
-import dingshi.com.hibook.utils.PixelUtils;
-import dingshi.com.hibook.utils.SpUtils;
-import dingshi.com.hibook.view.DividVerticalDecoration;
 import dingshi.com.hibook.view.LoadingLayout;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import retrofit2.http.Part;
 
 /**
  * @author wangqi
@@ -257,6 +248,7 @@ public class BackBookFragment extends BaseFragment {
                         map.put("recharge_type", "2");
                         //此参数是为了区分当前是延长时间,支付成功后需要向拥有者发送延长消息提醒
                         map.put("owner_uid", bean.getOwner_user_id());
+
                         Intent intent = new Intent(mActivity, LengthenActivity.class);
                         //个人
                         if (bean.getIs_personal() == 1) {

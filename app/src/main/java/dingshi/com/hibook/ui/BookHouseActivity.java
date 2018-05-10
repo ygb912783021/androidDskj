@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.trello.rxlifecycle2.android.ActivityEvent;
+import com.trello.rxlifecycle2.android.FragmentEvent;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
@@ -37,9 +38,11 @@ import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.ui.fragment.BookHouseFragment;
+import dingshi.com.hibook.ui.fragment.BookMyFragment;
 import dingshi.com.hibook.ui.fragment.FriendRecFragment;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.GlideUtils;
+import dingshi.com.hibook.utils.SpUtils;
 import dingshi.com.hibook.view.SwitchViewPager;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
@@ -47,7 +50,6 @@ import io.reactivex.disposables.Disposable;
 /**
  * @author wangqi
  * @since 2017/11/7 上午11:27
- *
  */
 
 
@@ -72,7 +74,7 @@ public class BookHouseActivity extends BaseActivity {
     String[] title = new String[]{"书库", "动态"};
     UserCenter userCenter;
     BookHouseFragment houseFragment;
-    String user_id="";
+    String user_id = "";
 
     @Override
     public int getLayoutId() {
@@ -82,7 +84,7 @@ public class BookHouseActivity extends BaseActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
         Log.i("TEST", "initView: .......................................");
-        Constant.isEditDelete=false;
+        Constant.isEditDelete = false;
         EventBusHelper.register(this);
         requestActionBarStyle(true, "我的书房", "共享规则");
         userCenter = (UserCenter) getIntent().getSerializableExtra("bean");
@@ -92,10 +94,11 @@ public class BookHouseActivity extends BaseActivity {
         houseFragment = new BookHouseFragment();
         Bundle b = new Bundle();
         b.putString("uid", user.getJsonData().getUser_id());
+        b.putSerializable("userCenter", userCenter);
         houseFragment.setArguments(b);
         list.add(houseFragment);
 
-        user_id= user.getJsonData().getUser_id();
+        user_id = user.getJsonData().getUser_id();
 
         Fragment recFragment = new FriendRecFragment();
         list.add(recFragment);
@@ -122,28 +125,64 @@ public class BookHouseActivity extends BaseActivity {
 
         GlideUtils.loadCircleImage(BookHouseActivity.this, user.getJsonData().getAvatar(), imgPhoto);
         txNick.setText(user.getJsonData().getNick_name());
-        Log.i("TEST", "initView: userCenter = "+ userCenter);
+        Log.i("TEST", "initView: userCenter = " + userCenter);
+
         if (userCenter != null) {
-            Log.i("sharebook","已共享="+userCenter.getJsonData().getShare_book_num()+"未共享="+userCenter.getJsonData().getBook_num()+"-"+userCenter.getJsonData().getShare_book_num());
-//            txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
+            Log.i("sharebook", "已共享=" + userCenter.getJsonData().getShare_book_num() + "未共享=" + userCenter.getJsonData().getBook_num() + "-" + userCenter.getJsonData().getShare_book_num());
+            txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
+        } else {
+            getUserBookInfo();
         }
+
+
+    }
+
+    private void getUserBookInfo() {
+
+        HttpRxObserver httpRxObserver = new HttpRxObserver<UserCenter>("configure") {
+            @Override
+            protected void onStart(Disposable d) {
+            }
+
+            @Override
+            protected void onError(ApiException e) {
+            }
+
+            @Override
+            protected void onSuccess(UserCenter userCenter) {
+
+                txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
+
+
+            }
+        };
+
+        HashMap<String, String> map = new HashMap<>(2);
+
+        map = AppSign.buildMap(map);
+
+        Observable<UserCenter> user = NetUtils.getGsonRetrofit().configure(map);
+
+        HttpRxObservable.getObservable(user, this, ActivityEvent.PAUSE).subscribe(httpRxObserver);
+
     }
 
 
     @OnClick({R.id.tv_book_house_edit})
-    public  void onClickEdit(){
-        if (Constant.isEditDelete){
-            Constant.isEditDelete=false;
-            if (houseFragment!=null){
+    public void onClickEdit() {
+        if (Constant.isEditDelete) {
+            Constant.isEditDelete = false;
+            if (houseFragment != null) {
                 houseFragment.updateData(user_id);
             }
-        }else {
-            Constant.isEditDelete=true;
-            if (houseFragment!=null){
+        } else {
+            Constant.isEditDelete = true;
+            if (houseFragment != null) {
                 houseFragment.updateData(user_id);
             }
         }
     }
+
     @OnClick({R.id.book_house_zxing})
     public void onClick(View v) {
         AndPermission.with(this)
@@ -170,17 +209,17 @@ public class BookHouseActivity extends BaseActivity {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-     public void updateBookNum(UserCenter userCenter) {
+    public void updateBookNum(UserCenter userCenter) {
 
-        Log.i("updateBookNum","dasdasdad");
-        this.userCenter=userCenter;
+        Log.i("updateBookNum", "dasdasdad");
+        this.userCenter = userCenter;
         if (userCenter != null) {
             txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
         }
     }
 
     @Subscribe
-    public void updateBookNum(List<BookDetails.JsonDataBean> list){
+    public void updateBookNum(List<BookDetails.JsonDataBean> list) {
 //        Log.i("list",list.toString());
 //        for (int i = 0; i < list.size(); i++) {
 //           if (list.get(i).getAvailable()==1){//已共享
@@ -206,9 +245,12 @@ public class BookHouseActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         userCenter = (UserCenter) getIntent().getSerializableExtra("bean");
-        Log.i("TEST", "onResume: .......................................userCenter = "+userCenter);
+        if (userCenter == null) {
+            getUserBookInfo();
+        }
+        Log.i("TEST", "onResume: .......................................userCenter = " + userCenter);
         if (userCenter != null) {
-            Log.i("sharebook","已共享="+userCenter.getJsonData().getShare_book_num()+"未共享="+userCenter.getJsonData().getBook_num()+"-"+userCenter.getJsonData().getShare_book_num());
+            Log.i("sharebook", "已共享=" + userCenter.getJsonData().getShare_book_num() + "未共享=" + userCenter.getJsonData().getBook_num() + "-" + userCenter.getJsonData().getShare_book_num());
 //            txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
         }
 

@@ -81,4 +81,9 @@
         <item name="colorControlNormal">@color/gray_a5</item>
         <item name="colorControlActivated">@color/yellow_fc</item>
     </style>
+
+    <style name="CustomCheckboxThemeShop" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <!--<item name="android:button">@drawable/shop_checkbox_style</item>-->
+        <item name="android:gravity">center_horizontal</item>
+    </style>
 </resources>

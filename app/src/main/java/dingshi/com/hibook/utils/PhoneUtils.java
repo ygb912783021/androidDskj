@@ -2,6 +2,9 @@ package dingshi.com.hibook.utils;
 
 import android.text.TextUtils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by Administrator on 2017/8/14.
  */
@@ -14,7 +17,7 @@ public class PhoneUtils {
      */
     public static boolean isPhoneNumber(String phoneNums) {
         //
-        if (isMatchLength(phoneNums, 11) && isMobileNO(phoneNums)) {
+        if (isMatchLength(phoneNums, 11) && checkMobileNumber(phoneNums)) {
             return true;
         }
         return false;
@@ -49,5 +52,25 @@ public class PhoneUtils {
         } else {
             return mobileNums.matches(telRegex);
         }
+    }
+
+    /**
+     * 验证手机号是否符合
+     * @param mobileNumber
+     * @return boolean true 符合 false 不符合
+     */
+
+    public static boolean checkMobileNumber(String mobileNumber) {
+
+        boolean flag = false;
+        try {
+            Pattern regex = Pattern
+                    .compile("^(((13[0-9])|(14([0-9]))|(15([0-9]))|(17([0-9]))|(18[0-9]))\\d{8})|(0\\d{2}-\\d{8})|(0\\d{3}-\\d{7})$");
+            Matcher matcher = regex.matcher(mobileNumber);
+            flag = matcher.matches();
+        } catch (Exception e) {
+            flag = false;
+        }
+        return flag;
     }
 }

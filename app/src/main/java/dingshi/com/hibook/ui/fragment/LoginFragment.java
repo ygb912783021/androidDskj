@@ -1,11 +1,18 @@
 package dingshi.com.hibook.ui.fragment;
 
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -13,6 +20,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -21,11 +29,13 @@ import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.action.ILoginView;
 import dingshi.com.hibook.base.BaseFragment;
+import dingshi.com.hibook.base.BaseUmengActivity;
 import dingshi.com.hibook.bean.WexinInfo;
 import dingshi.com.hibook.present.LoginPresent;
 import dingshi.com.hibook.share.AuthResult;
 import dingshi.com.hibook.share.EasyPayShare;
 import dingshi.com.hibook.ui.LoginActivity;
+import dingshi.com.hibook.utils.CheckWecheatUtil;
 import dingshi.com.hibook.utils.PhoneUtils;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -39,6 +49,7 @@ import io.reactivex.functions.Function;
 
 
 public class LoginFragment extends BaseFragment implements ILoginView {
+    private static final String TAG = "LoginFragment";
     private static final int SDK_AUTH_FLAG = 0x2;
     @BindView(R.id.login_mobile)
     EditText mobileEdit;
@@ -61,7 +72,7 @@ public class LoginFragment extends BaseFragment implements ILoginView {
     /**
      * 判断当前登录方式
      */
-    boolean isCaptchLogin;
+    boolean isCaptchLogin ;
 
     @Override
     public int getLayoutId() {
@@ -95,6 +106,7 @@ public class LoginFragment extends BaseFragment implements ILoginView {
                 switchLogin();
                 break;
             case R.id.login_zhifubao:
+
                 EasyPayShare.getInstance().doLoginAli(getActivity(), new EasyPayShare.OnBackListener() {
                     @Override
                     public void back(AuthResult authResult) {
@@ -106,6 +118,7 @@ public class LoginFragment extends BaseFragment implements ILoginView {
                 break;
             case R.id.login_weixin:
                 activity.loginWx();
+
                 break;
             case R.id.login_password_show:
                 pswShow = !pswShow;

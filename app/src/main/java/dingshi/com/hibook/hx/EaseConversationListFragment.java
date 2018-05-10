@@ -42,6 +42,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import dingshi.com.hibook.utils.KefuUtils;
 import dingshi.com.hibook.utils.SpUtils;
@@ -60,6 +62,9 @@ public class EaseConversationListFragment extends EaseBaseFragment implements Ea
     private LinearLayout kefuLayout;
 
     protected boolean isConflict;
+
+    //检查消息的task，在fragment可见时启动，不可见时停止
+    private Timer msgRefreshTimer;
 
     protected EMConversationListener convListener = new EMConversationListener() {
 
@@ -159,6 +164,24 @@ public class EaseConversationListFragment extends EaseBaseFragment implements Ea
                 return false;
             }
         });
+
+
+    }
+
+    private void refreshMsg() {
+        TimerTask task = new TimerTask() {
+
+            public void run() {
+                refresh();
+                //execute the task
+
+            }
+
+        };
+
+        msgRefreshTimer = new Timer();
+
+        msgRefreshTimer.schedule(task, 2000, 1000);
     }
 
 
@@ -318,6 +341,14 @@ public class EaseConversationListFragment extends EaseBaseFragment implements Ea
         if (!hidden) {
             refresh();
         }
+        refreshMsg();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (msgRefreshTimer != null)
+            msgRefreshTimer.cancel();
     }
 
     @Override

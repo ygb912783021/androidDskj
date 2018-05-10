@@ -1,35 +1,25 @@
 package dingshi.com.hibook;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
-import com.hyphenate.easeui.EaseUI;
-import com.hyphenate.easeui.domain.EaseUser;
-import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.util.EMLog;
-import com.igexin.sdk.PushManager;
-import com.trello.rxlifecycle2.android.ActivityEvent;
+import com.pgyersdk.update.PgyUpdateManager;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
@@ -49,7 +39,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import dingshi.com.hibook.action.ISettingView;
 import dingshi.com.hibook.base.BaseActivity;
+import dingshi.com.hibook.hx.Constant;
 import dingshi.com.hibook.hx.DemoHelper;
 import dingshi.com.hibook.present.SettingPresent;
 import dingshi.com.hibook.push.DemoIntentService;
@@ -66,11 +58,7 @@ import dingshi.com.hibook.ui.fragment.BookMyFragment;
 import dingshi.com.hibook.ui.fragment.BookStoreFragment;
 import dingshi.com.hibook.ui.fragment.LibraryFragment;
 import dingshi.com.hibook.ui.fragment.MsgFragment;
-import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.SpUtils;
 import dingshi.com.hibook.view.BottomBarItem;
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 
 /**
  * @author wangqi 2017-10-25 10:11
@@ -122,8 +110,16 @@ public class MainActivity extends BaseActivity implements ISettingView {
         setTabSelection(1);
         showExceptionDialogFromIntent(getIntent());
         registerBroadcastReceiver();
-//        Intent intent = new Intent(this,BookElectronicActivity.class);
-//        startActivity(intent);
+
+
+        registerPgyerUpdate();
+    }
+
+    private void registerPgyerUpdate() {
+        if (BuildConfig.BUILD_TYPE.equals("debug")) {
+            PgyUpdateManager.setIsForced(true); //设置是否强制更新。true为强制更新；false为不强制更新（默认值）。
+            PgyUpdateManager.register(this);
+        }
     }
 
 

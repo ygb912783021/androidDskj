@@ -78,24 +78,12 @@ public class BookReadActivity extends Activity implements View.OnClickListener {
         mTxtReaderView = (TxtReaderView) findViewById(R.id.activity_hwtxtplay_readerView);
         line_bottom = findViewById(R.id.line_bottom);
         relative_r = findViewById(R.id.relative_r);
-        relative_1 = findViewById(R.id.relative_1);
         loadOurFile();
         mStyle1 = findViewById(R.id.hwtxtreader_menu_style1);
         mStyle2 = findViewById(R.id.hwtxtreader_menu_style2);
         mStyle3 = findViewById(R.id.hwtxtreader_menu_style3);
         mStyle4 = findViewById(R.id.hwtxtreader_menu_style4);
         mStyle5 = findViewById(R.id.hwtxtreader_menu_style5);
-        mTxtReaderView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                relative_1.setVisibility(View.GONE);
-                line_bottom.setVisibility(View.GONE);
-                return false;
-            }
-        });
-//        stringArrayList.addAll();
-//        Log.i("READ", "onCreate:mTxtReaderView.getCurrentChapter() =  "+mTxtReaderView.getTxtReaderContext().getParagraphData().getCharNum());
-//        Log.i("READ", "onCreate:mTxtReaderView.getCurdasdsdsarentChapter() =  "+mTxtReaderView.getChapters().size());
 //        mStyle1.setOnClickListener(new StyleChangeClickListener(ContextCompat.getColor(this, R.color.hwtxtreader_styleclor1), StyleTextColors[0]));
 //        mStyle2.setOnClickListener(new StyleChangeClickListener(ContextCompat.getColor(this, R.color.hwtxtreader_styleclor2), StyleTextColors[1]));
 //        mStyle3.setOnClickListener(new StyleChangeClickListener(ContextCompat.getColor(this, R.color.hwtxtreader_styleclor3), StyleTextColors[2]));
@@ -132,15 +120,17 @@ public class BookReadActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.book_read_chapter:
                 dl_left.openDrawer(GravityCompat.START);
+                bottomDialog.dissmis();
                 break;
             case R.id.read_view_middle:
-//                View view1 = LayoutInflater.from(this).inflate(R.layout.view_dialog_bottom, null, false);
-//                bottomDialog = new BottomDialog(this).addView(view1).builder();
-//                bottomDialog.show();
-                relative_1.setVisibility(View.VISIBLE);
-                line_bottom.setVisibility(View.VISIBLE);
+                View view1 = LayoutInflater.from(this).inflate(R.layout.view_dialog_bottom, null, false);
+                bottomDialog = new BottomDialog(this).addView(view1).builder();
+                bottomDialog.show();
+                relative_r.setVisibility(View.VISIBLE);
                 break;
-
+            case R.id.relative_1:
+                line_bottom.setVisibility(View.GONE);
+                break;
             case R.id.hwtxtreader_menu_style1:
                 mTxtReaderView.setStyle(ContextCompat.getColor(this, R.color.hwtxtreader_styleclor1), StyleTextColors[0]);
                 break;
@@ -241,7 +231,7 @@ public class BookReadActivity extends Activity implements View.OnClickListener {
     }
 
     private void loadOurFile() {
-        mTxtReaderView.loadTxtFile("/storage/emulated/0/盖世魔君.txt", new ILoadListener() {
+        mTxtReaderView.loadTxtFile("/storage/emulated/0/Text.txt", new ILoadListener() {
             @Override
             public void onSuccess() {
 

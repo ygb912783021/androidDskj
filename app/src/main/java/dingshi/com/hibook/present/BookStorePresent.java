@@ -16,6 +16,7 @@ import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
+import dingshi.com.hibook.utils.NetWorkUtils;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 
@@ -25,11 +26,13 @@ import io.reactivex.disposables.Disposable;
  */
 
 public class BookStorePresent extends BasePresent<IRequestView<Home>, BaseFragment> {
+    private static final String TAG = "BookStorePresent";
     public BookStorePresent(IRequestView<Home> view, BaseFragment activity) {
         super(view, activity);
     }
 
     public void onLoad() {
+        Log.d(TAG, "onLoad: loaddata");
         HashMap<String, String> map = new HashMap<>();
         map.put("lat", MyApplicationLike.lat);
         map.put("lng", MyApplicationLike.lng);

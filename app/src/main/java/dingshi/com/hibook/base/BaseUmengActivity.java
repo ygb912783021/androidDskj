@@ -2,12 +2,12 @@ package dingshi.com.hibook.base;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import com.umeng.analytics.MobclickAgent;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
@@ -17,11 +17,9 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 
 import java.util.Map;
-import java.util.concurrent.BlockingDeque;
 
 import dingshi.com.hibook.R;
-import dingshi.com.hibook.share.EasyPayShare;
-import dingshi.com.hibook.ui.InviteActivity;
+import dingshi.com.hibook.utils.CheckWecheatUtil;
 import dingshi.com.hibook.view.FuckDialog;
 
 /**
@@ -30,7 +28,7 @@ import dingshi.com.hibook.view.FuckDialog;
  */
 
 public class BaseUmengActivity extends BaseRxActivity {
-
+    private static final String TAG = "BaseUmengActivity";
 
     UMWeb web;
 
@@ -121,7 +119,8 @@ public class BaseUmengActivity extends BaseRxActivity {
 
 
     public void loginWx() {
-        if (!EasyPayShare.wxApi.isWXAppInstalled()) {
+//        if (!EasyPayShare.wxApi.isWXAppInstalled()) {
+        if (!CheckWecheatUtil.checkWecheat(this)) {
             Toast.makeText(BaseUmengActivity.this, "未安装微信", Toast.LENGTH_LONG).show();
             return;
         }
@@ -141,6 +140,7 @@ public class BaseUmengActivity extends BaseRxActivity {
         @Override//授权失败回调
         public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
 //            Toast.makeText(BaseUmengActivity.this, "未安装客户端", Toast.LENGTH_LONG).show();
+
         }
 
         @Override//取消授权回调
@@ -151,9 +151,44 @@ public class BaseUmengActivity extends BaseRxActivity {
 
 
     public void loginSuccess(Map<String, String> map) {
-        for (Map.Entry entry : map.entrySet()) {
-            Log.i("tag", entry.getKey() + "---" + entry.getValue());
+
+        /**
+         * openid :
+         * platform_type : 3
+         * user_id : 491823389864890376
+         * sex : 0
+         * nick_name : 15055407294
+         * avatar :
+         * balance : 0  余额
+         * mobile : 15055407294
+         * birthday: "2017-11-16",
+         * province :
+         * city :
+         * cert_status :  押金 没0  交过1
+         * disable : 0
+         * signable : 1
+         * created_at : 2017-11-09 14:05:16
+         * token : a15da4b74b8c15d8220e41c5323a6ef886a5a814
+         * foregift : 用户押金的钱是多少
+         * read_num   读书量
+         * book_num   藏书量
+         * balance_refund_status  押金的状态  0、无状态  1、审核中
+         */
+
+
+//        for (Map.Entry entry : map.entrySet()) {
+//            Log.d(TAG, entry.getKey() + "---" + entry.getValue());
+//        }
+    }
+
+    private String get(Map<String, String> dataSrc, String key) {
+        if (TextUtils.isEmpty(key)) {
+            return "";
         }
+        if (dataSrc.containsKey(key)) {
+            return dataSrc.get(key);
+        }
+        return "";
     }
 
 

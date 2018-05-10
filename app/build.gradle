@@ -5,7 +5,7 @@ android {
         release {
             keyAlias 'hibook'
             keyPassword 'hibook'
-            storeFile file('E:/3/hibook/app/hibook.jks')
+            storeFile file('D:/project backup/2/hibook/app/hibook.jks')
             storePassword 'hibook'
         }
     }
@@ -55,7 +55,6 @@ android {
             ]
         }
 
-//        debug.initWith(buildTypes.release)
         debug {
             buildConfigField "String", "LOCALHOST", appConfig.LOCALHOST_DEBUG
             signingConfig signingConfigs.release
@@ -67,6 +66,17 @@ android {
                     GETUI_APP_SECRET   : appConfig.GETUI_APP_SECRET,
             ]
         }
+//        test {
+//            buildConfigField "String", "LOCALHOST", appConfig.LOCALHOST_DEBUG
+//            signingConfig signingConfigs.release
+//            manifestPlaceholders = [
+//                    UMENG_CHANNEL_VALUE: channel.HIBOOK_TEST_NAME,
+//                    EASEMOB_VALUE      :  appConfig.EASEMOB_RELEASE,
+//                    GETUI_APP_ID       : appConfig.GETUI_APP_ID,
+//                    GETUI_APP_KEY      : appConfig.GETUI_APP_KEY,
+//                    GETUI_APP_SECRET   : appConfig.GETUI_APP_SECRET,
+//            ]
+//        }
     }
     productFlavors {
         Baidu {
@@ -84,6 +94,7 @@ android {
         Tencent {
         }
 
+
     }
 
     productFlavors.all { flavor ->
@@ -91,23 +102,6 @@ android {
     }
 
 
-//    applicationVariants.all { variant ->
-//        if (variant.buildType.name == "release") {
-//            variant.outputs.each { output ->
-//                def appName = 'hibook'
-//                def oldFile = output.outputFile
-//                def buildName
-//                def releaseApkName
-//
-//                variant.productFlavors.each { product ->
-//                    buildName = product.name
-//                }
-//
-//                releaseApkName = appName + '-' + buildName + '-' + getDate() + '.apk'
-//                output.outputFile = new File(oldFile.parent, releaseApkName)
-//            }
-//        }
-//    }
 
     //AS3.0版本
     android.applicationVariants.all { variant ->
@@ -159,6 +153,19 @@ configurations.all {
 }
 
 
+//应用 Bugtags 插件
+apply plugin: 'com.bugtags.library.plugin'
+
+//Bugtags 插件配置
+bugtags {
+    //自动上传符号表功能配置，如果需要根据 build varint 配置，请参考帮助中心->符号表->Android 符号表->配置自动上传符号表
+    appKey "50d8b7dca2e6f3b5dcc1ecdce58b9e0d"  //这里是你的 appKey
+    appSecret "e810b3e8e6247ac1dc13579ab128323a"    //这里是你的 appSecret，管理员在设置页可以查看
+    mappingUploadEnabled true
+
+    //网络跟踪功能配置(企业版)
+    trackingNetworkEnabled true
+}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -166,17 +173,18 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation project(':easeui')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation project(':readbook')
 
     implementation 'com.android.support:appcompat-v7:28.0.0 rc1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.jakewharton:butterknife:8.8.1'
-    implementation 'com.android.support:support-v4:28.0.0 rc1'
-    implementation 'com.android.support:recyclerview-v7:28.0.0 rc1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3-alpha-5'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    implementation 'com.android.support:design:28.0.0 rc1'
-    implementation 'com.android.support:cardview-v7:28.0.0 rc1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'com.yuyh.imgsel:library:2.0.2'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.tencent.bugly:crashreport_upgrade:1.3.4'
@@ -200,7 +208,6 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.10'
     implementation 'top.zibin:Luban:1.1.3'
     implementation 'org.greenrobot:eventbus:3.0.0'
-    implementation 'org.greenrobot:greendao:3.0.1'
     //    provided 'org.glassfish:javax.annotation:10.0-b28'
     compileOnly 'org.glassfish:javax.annotation:10.0-b28'
     //解决获取不到@Subscribe注解的问题
@@ -213,6 +220,10 @@ dependencies {
     // or 1.4-beta1
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     // or 1.4-beta1
+    compile 'com.pgyersdk:sdk:2.8.1'
+
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+
 }
 // 依赖插件脚本
 apply from: 'tinker-support.gradle'

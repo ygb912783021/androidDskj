@@ -77,4 +77,13 @@ public class GlideUtils {
                 .into(imageView);
     }
 
+    public static void loadWithErr(Context context, String url, ImageView imageView) {
+        Glide.with(context)
+                .load(url)
+                .transform(new GlideRoundTransform(context))
+                .error(R.drawable.loading)
+                .into(imageView);
+    }
+
+
 }

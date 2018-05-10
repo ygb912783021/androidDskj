@@ -1,54 +1,26 @@
 package dingshi.com.hibook.ui;
 
-import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
-import com.baidu.location.LocationClient;
-import com.baidu.location.LocationClientOption;
-import com.baidu.mapapi.SDKInitializer;
-import com.baidu.mapapi.map.BitmapDescriptorFactory;
-import com.baidu.mapapi.map.MapStatusUpdate;
-import com.baidu.mapapi.map.MapStatusUpdateFactory;
-import com.baidu.mapapi.map.MarkerOptions;
-import com.baidu.mapapi.map.OverlayOptions;
-import com.baidu.mapapi.model.LatLng;
-import com.baidu.mapapi.utils.CoordinateConverter;
-import com.google.gson.Gson;
 import com.hyphenate.chat.EMClient;
-import com.hyphenate.easeui.ui.EaseBaiduMapActivity;
 import com.igexin.sdk.PushManager;
-import com.yanzhenjie.permission.AndPermission;
-import com.yanzhenjie.permission.PermissionListener;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.OnClick;
 import dingshi.com.hibook.MainActivity;
-import dingshi.com.hibook.MyApplication;
 import dingshi.com.hibook.MyApplicationLike;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.bean.Push;
-import dingshi.com.hibook.db.City;
-import dingshi.com.hibook.db.CityDao;
-import dingshi.com.hibook.db.SQLTools;
 import dingshi.com.hibook.push.DemoIntentService;
 import dingshi.com.hibook.push.DemoPushService;
 import dingshi.com.hibook.push.PushUtils;
-import dingshi.com.hibook.ui.card.CardDetailsActivity;
-import dingshi.com.hibook.ui.library.JoinLibActivity;
 import dingshi.com.hibook.utils.LocationUtils;
 import dingshi.com.hibook.utils.SpUtils;
 import io.reactivex.Flowable;

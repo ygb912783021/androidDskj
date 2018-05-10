@@ -34,9 +34,9 @@
     <string name="forward">Forward</string>
     <string name="button_logout">Logout</string>
     <string name="button_uploadlog">Upload the log</string>
-    <string name="ok">OK</string>
+    <string name="ok">确定</string>
     <string name="cancel">Cancel</string>
-    <string name="prompt">Prompt</string>
+    <string name="prompt"></string>
     <string name="clear_records">Clear conversation?</string>
     <string name="clear_all_records">Clear all conversations？</string>
     <string name="location_recv">[%1$s location]</string>
@@ -148,7 +148,7 @@
     <string name="cant_find_pictures">"Can't find pictures"</string>
     <string name="File_does_not_exist">File does not exist</string>
     <string name="The_file_is_not_greater_than_10_m">The file is not greater than 10 m</string>
-    <string name="Whether_to_empty_all_chats">Clear all messages?</string>
+    <string name="Whether_to_empty_all_chats">清除所有聊天记录?</string>
     <string name="Send_voice_need_sdcard_support">Send voice need sdcard support</string>
     <string name="Recording_without_permission">Recording without permission</string>
     <string name="The_recording_time_is_too_short">The recording time is too short</string>

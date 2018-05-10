@@ -45,10 +45,10 @@ public class LibManagerPresent extends BasePresent<ILibManagerView, BaseActivity
      * @param catalogId
      */
 
-    public void deleteLib(final String catalogId) {
+    public void deleteLib(final String catalogId,String msg) {
         AlertDialog dialog = new AlertDialog.Builder(getActivity())
                 .setTitle("提示")
-                .setMessage("确认删除图书馆？")
+                .setMessage(msg)
                 .setNegativeButton("确认", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

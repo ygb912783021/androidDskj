@@ -8,25 +8,29 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.0+'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 //        classpath "com.tencent.bugly:tinker-support:1.0.8"
         classpath "com.tencent.bugly:tinker-support:1.1.1"
+        //Bugtags
+        classpath 'com.bugtags.library:bugtags-gradle:latest.integration'
     }
 }
 
 allprojects {
     repositories {
+        jcenter()
+        google()
         maven {
             url "https://jitpack.io"
         }
         maven {
             url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
         }
-        jcenter()
-        google()
+        maven { url "https://raw.githubusercontent.com/Pgyer/mvn_repo_pgyer/master" }
+
     }
 }
 

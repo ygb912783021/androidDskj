@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -16,11 +17,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;
+import dingshi.com.hibook.share.EasyWxEntryActivity;
 
-public class ShopCarActivity extends BaseActivity{
+public class ShopCarActivity extends BaseActivity {
     @BindView(R.id.shop_car_recyclerview)
     RecyclerView recyclerView;
     @BindView(R.id.shop_car_price)
@@ -37,7 +40,7 @@ public class ShopCarActivity extends BaseActivity{
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        requestActionBarStyle(true,"购物车");
+        requestActionBarStyle(true, "购物车");
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         final FuckYouAdapter fuckYouAdapter=new FuckYouAdapter(R.layout.view_shop_car_item, Arrays.asList("", ""));

@@ -32,6 +32,7 @@
         <attr name="quan_color" format="color" />
         <attr name="quan_min" format="integer" />
         <attr name="quan_max" format="integer" />
+        <attr name="quan_default_value" format="integer" />
         <attr name="quan_src" format="reference" />
         <attr name="quan_tip" format="string" />
     </declare-styleable>

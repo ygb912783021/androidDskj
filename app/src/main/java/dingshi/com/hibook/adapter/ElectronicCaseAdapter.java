@@ -100,7 +100,6 @@ public class ElectronicCaseAdapter extends BaseAdapter {
         }else {
 
                 electronic_gridview_text.setText(arrayList.get(i).getName());
-
         }
 
 //        Log.i("READ", "getView: arrayList.get(i).getBookInfoBean().getName() =====   "+arrayList.get(i).getBookInfoBean().getName());

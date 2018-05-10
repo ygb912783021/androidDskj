@@ -1,15 +1,12 @@
 package dingshi.com.hibook.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.trello.rxlifecycle2.android.ActivityEvent;
-
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
@@ -18,7 +15,6 @@ import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.BookDetails;
-import dingshi.com.hibook.present.PayBookPresent;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
@@ -37,6 +33,7 @@ import io.reactivex.disposables.Disposable;
 
 
 public class LengthenActivity extends BaseActivity {
+    private static final String TAG = "LengthenActivity";
     @BindView(R.id.lengthen_img)
     ImageView imgPhoto;
     @BindView(R.id.lengthen_author)
@@ -61,9 +58,10 @@ public class LengthenActivity extends BaseActivity {
      */
     private String order;
     /**
-     *
+     * 默认延迟期限
      */
-    private String serialNumber;
+    private final int DEFALUT_DATE_VALUE = 10;
+
 
     BookDetails bookDetails;
 
@@ -79,23 +77,25 @@ public class LengthenActivity extends BaseActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
         requestActionBarStyle(true, "延长时间");
-//        isbn = getIntent().getStringExtra("isbn");
-//        order = getIntent().getStringExtra("out_trade_no");
-//        serialNumber = getIntent().getStringExtra("serial_number");
+
         map = (HashMap<String, String>) getIntent().getSerializableExtra("map");
+        isbn = map.get("isbn");
 
 
         getBook();
         quantityView.setOnBackDay(new QuantityView.OnBackValue() {
             @Override
             public void day(int day) {
-                if (day <= 10) {
-                    txPrice.setText("合计: 1元");
-                } else {
-                    txPrice.setText("合计: " + ((day - 10) * 0.5 + 1) + "元");
-                }
+//                if (day <= 10) {
+//                    txPrice.setText("合计: 1元");
+//                } else {
+//                    txPrice.setText("合计: " + ((day - 10) * 0.5 + 1) + "元");
+//                }
+                txPrice.setText("合计: " + (day * 0.5) + "元");
+
             }
         });
+        quantityView.setValue(DEFALUT_DATE_VALUE);
     }
 
 
@@ -154,14 +154,15 @@ public class LengthenActivity extends BaseActivity {
      * 更新ui
      */
     private void updateUI() {
-        GlideUtils.load(this, bookDetails.getJsonData().getCover(), imgPhoto);
+        GlideUtils.loadWithErr(this, bookDetails.getJsonData().getCover(), imgPhoto);
+
         txName.setText(bookDetails.getJsonData().getName());
         txAuthor.setText("作者: " + bookDetails.getJsonData().getAuthor());
-        if (bookDetails!=null&&bookDetails.getJsonData()!=null&&bookDetails.getJsonData().getPress()!=null){
-            if (bookDetails.getJsonData().getPress().contains("null")||
-                    bookDetails.getJsonData().getPress()==""){
+        if (bookDetails != null && bookDetails.getJsonData() != null && bookDetails.getJsonData().getPress() != null) {
+            if (bookDetails.getJsonData().getPress().contains("null") ||
+                    bookDetails.getJsonData().getPress() == "") {
                 txConcern.setText("出版社: 暂无");
-            }else {
+            } else {
                 txConcern.setText("出版社: " + bookDetails.getJsonData().getPress());
             }
         }
