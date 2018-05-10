@@ -8,6 +8,7 @@ import dingshi.com.hibook.bean.BookCase;
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.BookList;
 import dingshi.com.hibook.bean.BookPerson;
+import dingshi.com.hibook.bean.BookShelf;
 import dingshi.com.hibook.bean.Borrows;
 import dingshi.com.hibook.bean.Case2Book;
 import dingshi.com.hibook.bean.BookTalent;
