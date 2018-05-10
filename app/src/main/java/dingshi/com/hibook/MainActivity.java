@@ -38,7 +38,10 @@ import org.greenrobot.eventbus.Subscribe;
 
 import dingshi.com.hibook.action.ISettingView;
 import dingshi.com.hibook.bean.Avatar;
+import dingshi.com.hibook.bean.Book;
+import dingshi.com.hibook.bean.EbookGratis;
 import dingshi.com.hibook.bean.User;
+import dingshi.com.hibook.bean.lib.LibCreate;
 import dingshi.com.hibook.hx.Constant;
 
 import java.util.HashMap;
@@ -55,6 +58,8 @@ import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
+import dingshi.com.hibook.ui.BookElectronicActivity;
+import dingshi.com.hibook.ui.BookElectronicCaseActivity;
 import dingshi.com.hibook.ui.LoginActivity;
 import dingshi.com.hibook.ui.ZxingBorrowActivity;
 import dingshi.com.hibook.ui.fragment.BookMyFragment;
@@ -117,7 +122,8 @@ public class MainActivity extends BaseActivity implements ISettingView {
         setTabSelection(1);
         showExceptionDialogFromIntent(getIntent());
         registerBroadcastReceiver();
-
+//        Intent intent = new Intent(this,BookElectronicActivity.class);
+//        startActivity(intent);
     }
 
 
@@ -478,4 +484,7 @@ public class MainActivity extends BaseActivity implements ISettingView {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
+
+
 }

@@ -5,4 +5,5 @@
     android:id="@+id/item_store_banner"
     android:layout_width="match_parent"
     android:layout_height="207dp"
+
     app:delay_time="4000" />

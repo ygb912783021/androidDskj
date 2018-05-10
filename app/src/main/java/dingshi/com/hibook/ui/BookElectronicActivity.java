@@ -1,6 +1,5 @@
 package dingshi.com.hibook.ui;
 
-import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,14 +9,14 @@ import android.view.View;
 import android.widget.GridView;
 
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.administrator.readbook.base.observer.SimpleObserver;
+import com.example.administrator.readbook.bean.BookInfoBean;
+import com.example.administrator.readbook.bean.BookShelfBean;
+import com.example.administrator.readbook.common.RxBusTag;
+import com.example.administrator.readbook.dao.DbHelper;
 import com.trello.rxlifecycle2.android.ActivityEvent;
-import com.yanzhenjie.permission.AndPermission;
-import com.yanzhenjie.permission.PermissionListener;
-
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,12 +27,22 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import dingshi.com.hibook.Constant;
 import dingshi.com.hibook.R;
-import dingshi.com.hibook.adapter.MyViewPagerAdapter;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.bean.BookDetails;
-import dingshi.com.hibook.bean.User;
-import dingshi.com.hibook.bean.UserCenter;
+import dingshi.com.hibook.bean.EbookGratis;
+import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.eventbus.EventBusHelper;
+import dingshi.com.hibook.retrofit.exception.ApiException;
+import dingshi.com.hibook.retrofit.net.NetUtils;
+import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
+import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
+import dingshi.com.hibook.utils.AppSign;
+import dingshi.com.hibook.utils.SpUtils;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author yangguangbing
@@ -46,22 +55,24 @@ public class BookElectronicActivity extends BaseActivity {
 
     @BindView(R.id.book_electroic_gridview)
     GridView electroic_gridview;
-    private List<Map<String, Object>> dataList;
+    private List<Map<String, Object>> dataList = null;
     private SimpleAdapter adapter;
+    private List<EbookGratis.JsonDataBean> ebookGratis = new ArrayList<>();
     @Override
     public int getLayoutId() {
         return R.layout.activity_electronic_shelf;
     }
+
     @Override
     protected void initView(Bundle savedInstanceState) {
         Log.i("TEST", "initView: .......................................");
         Constant.isEditDelete=false;
-        EventBusHelper.register(this);
+//        EventBusHelper.register(this);
         requestActionBarStyle(true, "电子书柜", "");
-        initData();
-        int[] to={R.id.electronic_gridview_img,R.id.electronic_gridview_text};
-        adapter=new SimpleAdapter(this, dataList, R.layout.view_electronic_gridview_item, new String[]{"img","text"}, to);
-        electroic_gridview.setAdapter(adapter);
+
+        showEbook();
+
+
     }
 
     /**
@@ -76,82 +87,44 @@ public class BookElectronicActivity extends BaseActivity {
         //图标下的文字
         String name[]={"第一个","第二个","第三个","第四个","第五个","第六个"};
         dataList = new ArrayList<Map<String, Object>>();
-        for (int i = 0; i <icno.length; i++) {
+        for (int i = 0; i <ebookGratis.size(); i++) {
             Map<String, Object> map=new HashMap<String, Object>();
             map.put("img", icno[i]);
-            map.put("text",name[i]);
+            map.put("text",ebookGratis.get(i).getName());
             dataList.add(map);
         }
     }
 
-//    @OnClick({R.id.tv_book_house_edit})
-//    public  void onClickEdit(){
-//        if (Constant.isEditDelete){
-//            Constant.isEditDelete=false;
-////            if (houseFragment!=null){
-////                houseFragment.updateData(user_id);
-////            }
-//        }else {
-//            Constant.isEditDelete=true;
-////            if (houseFragment!=null){
-////                houseFragment.updateData(user_id);
-////            }
-//        }
-//    }
+
     @OnClick({R.id.electroic_gridview_text})
     public void onClick(View v) {
-        startActivity(new Intent(this,BookElectronicCaseActivity.class));
-        finish();
-    }
-//
-//    @Override
-//    public void onRightClick() {
-//        super.onRightClick();
-//        startActivity(new Intent(this, RuleShareActivity.class));
-//    }
-
-//    @Subscribe(threadMode = ThreadMode.MAIN)
-//     public void updateBookNum(UserCenter userCenter) {
-//
-//        Log.i("updateBookNum","dasdasdad");
-////        this.userCenter=userCenter;
-//        if (userCenter != null) {
-////            txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
+//        for (int i = 0;i<ebookGratis.size();i++){
+//            BookShelfBean bookShelfBean = new BookShelfBean();
+//            BookInfoBean bookInfoBean = new BookInfoBean();
+//            bookInfoBean.setAuthor(ebookGratis.get(i).getAuthor());
+//            bookInfoBean.setName(ebookGratis.get(i).getName());
+////            bookInfoBean.setChapterlist();
+//            bookInfoBean.setChapterUrl(ebookGratis.get(i).getFile_name());
+//            bookInfoBean.setCoverUrl(ebookGratis.get(i).getCover());
+//            bookInfoBean.setIntroduce(ebookGratis.get(i).getTranslator());
+//            bookInfoBean.setNoteUrl(ebookGratis.get(i).getFile_name());
+//            bookShelfBean.setBookInfoBean(bookInfoBean);
+//            bookShelfBean.setDurChapter(1);
+//            bookShelfBean.setDurChapterPage(1);
+//            bookShelfBean.setNoteUrl(ebookGratis.get(i).getFile_name());
+//            addToBookShelf(bookShelfBean);
 //        }
-//    }
-
-    @Subscribe
-    public void updateBookNum(List<BookDetails.JsonDataBean> list){
-//        Log.i("list",list.toString());
-//        for (int i = 0; i < list.size(); i++) {
-//           if (list.get(i).getAvailable()==1){//已共享
-//               if (userCenter!=null){
-////                   userCenter.getJsonData().setBook_num(userCenter.getJsonData().getBook_num());
-//                   userCenter.getJsonData().setShare_book_num(userCenter.getJsonData().getShare_book_num()+1);
-//               }
-//
-//           }else {//未共享
-//               userCenter.getJsonData().setBook_num(userCenter.getJsonData().getBook_num()+1);
-//           }
-//
-//        }
-//        if (userCenter != null) {
-//            userCenter.getJsonData().setBook_num(list.size());
-//            userCenter.getJsonData().setBook_num(list.size());
-//            txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
-//        }
+        setOpen();
 
     }
+
+
+
 
     @Override
     protected void onResume() {
         super.onResume();
-//        userCenter = (UserCenter) getIntent().getSerializableExtra("bean");
-//        Log.i("TEST", "onResume: .......................................userCenter = "+userCenter);
-//        if (userCenter != null) {
-//            Log.i("sharebook","已共享="+userCenter.getJsonData().getShare_book_num()+"未共享="+userCenter.getJsonData().getBook_num()+"-"+userCenter.getJsonData().getShare_book_num());
-////            txBookNum.setText("已共享:" + userCenter.getJsonData().getShare_book_num() + "\t\t未共享:" + (userCenter.getJsonData().getBook_num() - userCenter.getJsonData().getShare_book_num()));
-//        }
+
 
     }
 
@@ -160,32 +133,77 @@ public class BookElectronicActivity extends BaseActivity {
         super.onDestroy();
         EventBusHelper.unRegister(this);
     }
+    public void showEbook() {
+        HttpRxObserver httpRxObserver = new HttpRxObserver<EbookGratis>("gratisEbook") {
+            @Override
+            protected void onStart(Disposable d) {
+                Log.i("READ", "onError:  gratisEbook  Disposable d = "+ d);
+            }
+
+            @Override
+            protected void onError(ApiException e) {
+                Log.i("READ", "onError:  gratisEbook  ApiException e = "+ e);
+            }
+
+            @Override
+            protected void onSuccess(EbookGratis response) {
+                Log.i("READ", "onSuccess: gratis Ebookresponse = "+response.getJsonData());
+                if(null!=response.getJsonData()) {
+                    ebookGratis.addAll(response.getJsonData());
+                    initData();
+                    int[] to = {R.id.electronic_gridview_img, R.id.electronic_gridview_text};
+                    adapter = new SimpleAdapter(BookElectronicActivity.this, dataList, R.layout.view_electronic_gridview_item, new String[]{"img", "text"}, to);
+                    electroic_gridview.setAdapter(adapter);
+                    Log.i("READ", "onSuccess: ebookGratis = " + ebookGratis.size());
+                }
+            }
+
+
+        };
+
+        HashMap<String, String> map = new HashMap<>(1);
+        map = AppSign.buildMap(map);
+        Observable<EbookGratis> observable = NetUtils.getGsonRetrofit().gratisEbook(map);
+        HttpRxObservable.getObservable(observable, this, ActivityEvent.PAUSE).subscribe(httpRxObserver);
+    }
 
     /**
-     * 获取用户的id
+     *  领取电子书
      */
-//    public void getUserInfo() {
-//        HttpRxObserver httpRxObserver = new HttpRxObserver<User>("userShow") {
-//            @Override
-//            protected void onStart(Disposable d) {
-//            }
-//
-//            @Override
-//            protected void onError(ApiException e) {
-//            }
-//
-//            @Override
-//            protected void onSuccess(User bookList) {
-//                if (bookList.getJsonData() != null) {
-////                    GlideUtils.loadCircleImage(BookElectronicActivity.this, bookList.getJsonData().getAvatar(), imgPhoto);
-////                    txNick.setText(bookList.getJsonData().getNick_name());
-//                }
-//            }
-//        };
-//        HashMap<String, String> map = new HashMap<>(2);
-//        map.put("uid", String.valueOf(user.getJsonData().getUser_id()));
-//        map = AppSign.buildMap(map);
-//        Observable<User> user = NetUtils.getGsonRetrofit().userShow(map);
-//        HttpRxObservable.getObservable(user, this, ActivityEvent.PAUSE).subscribe(httpRxObserver);
-//    }
+    public void setOpen() {
+        HttpRxObserver httpRxObserver = new HttpRxObserver<Result>("takeEBooks") {
+            @Override
+            protected void onStart(Disposable d) {
+            }
+
+            @Override
+            protected void onError(ApiException e) {
+//                getView().onError(e.getMsg());
+                showToast("领取失败");
+            }
+
+            @Override
+            protected void onSuccess(Result response) {
+                startActivity(new Intent(BookElectronicActivity.this,BookElectronicCaseActivity.class));
+                finish();
+            }
+        };
+        HashMap<String, String> map = new HashMap<>(2);
+        map = AppSign.buildMap(map);
+        Observable<Result> observable = NetUtils.getGsonRetrofit().takeEBooks(map);
+        HttpRxObservable.getObservable(observable, this, ActivityEvent.PAUSE).subscribe(httpRxObserver);
+    }
+    /**
+     * 添加电子书到书架
+     */
+    public void addToBookShelf(final BookShelfBean bookShelf) {
+        if (bookShelf != null) {
+            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getChapterListBeanDao().insertOrReplaceInTx(bookShelf.getBookInfoBean().getChapterlist());
+            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookInfoBeanDao().insertOrReplace(bookShelf.getBookInfoBean());
+            //网络数据获取成功  存入BookShelf表数据库
+            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookShelfBeanDao().insertOrReplace(bookShelf);
+        }
+    }
+
+
 }

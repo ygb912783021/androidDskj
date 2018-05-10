@@ -10,9 +10,11 @@ import android.graphics.RectF;
 import android.graphics.Region;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Scroller;
 
 
@@ -20,6 +22,11 @@ import android.widget.Scroller;
 import java.util.ArrayList;
 import java.util.List;
 
+import dingshi.com.hibook.read.animation.AnimationProvider;
+import dingshi.com.hibook.read.animation.CoverAnimation;
+import dingshi.com.hibook.read.animation.NoneAnimation;
+import dingshi.com.hibook.read.animation.SimulationAnimation;
+import dingshi.com.hibook.read.animation.SlideAnimation;
 import dingshi.com.hibook.read.bean.Slider;
 import dingshi.com.hibook.read.bean.TxtChar;
 import dingshi.com.hibook.read.bean.TxtLine;
@@ -44,7 +51,7 @@ import dingshi.com.hibook.read.utils.ELogger;
 public abstract class TxtReaderBaseView extends View implements GestureDetector.OnGestureListener {
     private String tag = "TxtReaderBaseView";
     protected static final int SliderWidth = 40;//滑动条宽度
-    protected static int PageChangeMinMoveDistance = 40;//页面切换需要的最小滑动距离
+    protected static int PageChangeMinMoveDistance = 20;//页面切换需要的最小滑动距离
     protected TxtReaderContext readerContext;
     protected Scroller mScroller;
     private GestureDetector mGestureDetector;
@@ -57,6 +64,9 @@ public abstract class TxtReaderBaseView extends View implements GestureDetector.
     protected Bitmap TopPage = null;
     protected Bitmap BottomPage = null;
     protected Mode CurrentMode = Mode.Normal;
+    private AnimationProvider mAnimationProvider;
+    private int mScreenWidth = 0; // 屏幕宽
+    private int mScreenHeight = 0; // 屏幕高
 
     public TxtReaderBaseView(Context context) {
         super(context);
@@ -75,7 +85,12 @@ public abstract class TxtReaderBaseView extends View implements GestureDetector.
         mGestureDetector = new GestureDetector(getContext(), this);
         PageChangeMinMoveDistance = DisPlayUtil.dip2px(getContext(), 30);
         setClickable(true);
-
+        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics metric = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(metric);
+        mScreenWidth = metric.widthPixels;
+        mScreenHeight = metric.heightPixels;
+        setPageMode(0);
     }
 
 
@@ -86,10 +101,11 @@ public abstract class TxtReaderBaseView extends View implements GestureDetector.
             drawLineText(canvas);
             if (readerContext.getTxtConfig().showNote) {
                 drawNote(canvas);
+//                mAnimationProvider.drawMove(canvas);
             }
-
             if (readerContext.getTxtConfig().canPressSelect && CurrentMode != Mode.Normal) {
                 drawSelectedText(canvas);
+//                mAnimationProvider.drawStatic(canvas);
             }
         }
     }
@@ -134,6 +150,7 @@ public abstract class TxtReaderBaseView extends View implements GestureDetector.
     protected void onActionUp(MotionEvent event) {
         if (CurrentMode == Mode.Normal) {
             startPageUpAnimation(event);
+
         }
     }
 
@@ -152,60 +169,79 @@ public abstract class TxtReaderBaseView extends View implements GestureDetector.
                 float x = mRightSlider.Left + dx - 5;//为了准确计算到里面，添加5的偏移量
                 float y = mRightSlider.Top + dy - 5;
 
-                if (CanMoveBack(x, y)) {
-                    TxtChar moveToChar = findCharByPosition(x, y);
-                    if (moveToChar != null) {
-                        LastSelectedChar = moveToChar;
-                        checkSelectedText();
-                        onTextSelectMoveBack(event);
-                        invalidate();
-                    }
-                }
+//                if (CanMoveBack(x, y)) {
+//                    TxtChar moveToChar = findCharByPosition(x, y);
+//                    if (moveToChar != null) {
+//                        LastSelectedChar = moveToChar;
+//                        checkSelectedText();
+//                        onTextSelectMoveBack(event);
+//                        invalidate();
+//                    }
+//                }
             } else if (CurrentMode == Mode.SelectMoveForward) {
                 float dx = event.getX() - mDown.x;
                 float dy = event.getY() - mDown.y;
-
+                mAnimationProvider.setDirection(AnimationProvider.Direction.pre);
                 float x = mLeftSlider.Right + dx + 5;//为了准确计算到里面，添加5的偏移量
                 float y = mLeftSlider.Top + dy - 5;
 
-                if (CanMoveForward(x, y)) {
-                    TxtChar moveToChar = findCharByPosition(x, y);
-                    if (moveToChar != null) {
-                        FirstSelectedChar = moveToChar;
-                        checkSelectedText();
-                        onTextSelectMoveForward(event);
-                        invalidate();
-                    }
-                }
+//                if (CanMoveForward(x, y)) {
+//                    TxtChar moveToChar = findCharByPosition(x, y);
+//                    if (moveToChar != null) {
+//                        FirstSelectedChar = moveToChar;
+//                        checkSelectedText();
+//                        onTextSelectMoveForward(event);
+//                        invalidate();
+//                    }
+//                }
             }
         }
     }
-
+    public void setPageMode(int pageMode){
+        switch (pageMode){
+            case 0:
+                mAnimationProvider = new SimulationAnimation(TopPage,BottomPage,mScreenWidth,mScreenHeight);
+                break;
+            case 1:
+                mAnimationProvider = new CoverAnimation(TopPage,BottomPage,mScreenWidth,mScreenHeight);
+                break;
+            case 2:
+                mAnimationProvider = new SlideAnimation(TopPage,BottomPage,mScreenWidth,mScreenHeight);
+                break;
+            case 3:
+                mAnimationProvider = new NoneAnimation(TopPage,BottomPage,mScreenWidth,mScreenHeight);
+                break;
+            default:
+                mAnimationProvider = new SimulationAnimation(TopPage,BottomPage,mScreenWidth,mScreenHeight);
+        }
+    }
     /**
      * 执行上一页动画
      *
      * @param event
      */
     protected void startPageUpAnimation(MotionEvent event) {
-
         if (getMoveDistance() < -PageChangeMinMoveDistance || getMoveDistance() > PageChangeMinMoveDistance) {
             if (isPagePre()) {
                 if (!isFirstPage()) {
-                    startPagePreAnimation();
+//                    startPagePreAnimation();
+                    mAnimationProvider.setDirection(AnimationProvider.Direction.pre);
                 } else {
                     releaseTouch();
                     invalidate();
                 }
             } else if (isPageNext()) {
                 if (!isLastPage()) {
-                    startPageNextAnimation();
+                    mAnimationProvider.setDirection(AnimationProvider.Direction.next);
+//                    startPageNextAnimation();
                 } else {
                     releaseTouch();
                     invalidate();
                 }
             }
         } else {//没有超出距离，自动还原
-            startPageStateBackAnimation();
+            mAnimationProvider.setDirection(AnimationProvider.Direction.none);
+//            startPageStateBackAnimation();
         }
 
     }
@@ -329,7 +365,7 @@ public abstract class TxtReaderBaseView extends View implements GestureDetector.
      */
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-        return false;
+        return true;
     }
 
     /**

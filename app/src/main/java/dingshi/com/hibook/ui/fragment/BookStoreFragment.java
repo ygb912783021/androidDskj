@@ -1,6 +1,7 @@
 package dingshi.com.hibook.ui.fragment;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -53,6 +54,7 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
         return R.layout.fragment_book_store;
     }
 
+    @SuppressLint("NewApi")
     @Override
     public void initView() {
 
@@ -117,6 +119,7 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
         list.clear();
         smartRefreshLayout.finishRefresh();
         Home.JsonDataBean bean = home.getJsonData();
+
         //轮播图
         if (bean.getCarousel().size() > 0) {
             list.add(new StoreMultipleItem<>(StoreMultipleItem.BOOK_BANNER, bean.getCarousel()));

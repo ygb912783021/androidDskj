@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -31,6 +32,7 @@ import dingshi.com.hibook.ui.BookSaleActivity;
 import dingshi.com.hibook.ui.Case2BookActivity;
 import dingshi.com.hibook.ui.EBookDetailsActivity;
 import dingshi.com.hibook.ui.RallyActivity;
+import dingshi.com.hibook.ui.ReceiviaddressActivity;
 import dingshi.com.hibook.ui.UserListActivity;
 import dingshi.com.hibook.ui.WebActivity;
 import dingshi.com.hibook.utils.BannerImageLoader;
@@ -257,19 +259,28 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
      * @param data
      */
     private void setBookAdv(BaseViewHolder helper, final ArrayList<Home.JsonDataBean.CarouselBean> data) {
-        Banner banner = helper.getView(R.id.item_adv_banner);
-        banner.setImages(data)
-                .setImageLoader(new BannerRoundLoader())
-                .setOnBannerListener(new OnBannerListener() {
-                    @Override
-                    public void OnBannerClick(int position) {
-                        Intent intent = new Intent(context, WebActivity.class);
-                        intent.putExtra("url", data.get(position).getShare_link());
-                        context.startActivity(intent);
-
-                    }
-                })
-                .start();
+        ImageView banner = helper.getView(R.id.item_adv_banner);
+        GlideUtils.load(context, data.get(0).getFile(), banner);
+        banner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    Intent intent = new Intent(context, WebActivity.class);
+                    intent.putExtra("url", data.get(0).getShare_link());
+                    context.startActivity(intent);
+            }
+        });
+//        Banner banner = helper.getView(R.id.item_adv_banner);
+//        banner.setImages(data)
+//                .setImageLoader(new BannerRoundLoader())
+//                .setOnBannerListener(new OnBannerListener() {
+//                    @Override
+//                    public void OnBannerClick(int position) {
+//                        Intent intent = new Intent(context, WebActivity.class);
+//                        intent.putExtra("url", data.get(position).getShare_link());
+//                        context.startActivity(intent);
+//
+//                    }
+//                }).start();
 
 
     }
@@ -408,7 +419,8 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Intent intent = new Intent(context, BookDetailsActivity.class);
+//                Intent intent = new Intent(context, BookDetailsActivity.class);
+                Intent intent = new Intent(context, ReceiviaddressActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
                 intent.putExtra("bookstoretype",1);
                 context.startActivity(intent);
@@ -432,7 +444,7 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Intent intent = new Intent(context, BookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
-                intent.putExtra("newbook",1);
+                intent.putExtra("bookstoretype",1);
                 context.startActivity(intent);
             }
         });
@@ -475,9 +487,9 @@ public class StoreMultiAdapter extends BaseMultiItemQuickAdapter<StoreMultipleIt
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 //                Intent intent = new Intent(context, BookDetailsActivity.class);
-                Intent intent = new Intent(context, EBookDetailsActivity.class);
+                Intent intent = new Intent(context, BookDetailsActivity.class);
                 intent.putExtra("isbn", data.get(position).getIsbn());
-                intent.putExtra("bookstoretype",2);
+                intent.putExtra("bookstoretype",1);
                 context.startActivity(intent);
             }
         });

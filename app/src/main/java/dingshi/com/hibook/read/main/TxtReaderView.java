@@ -2,6 +2,7 @@ package dingshi.com.hibook.read.main;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -228,6 +229,7 @@ public class TxtReaderView extends TxtReaderBaseView {
         readerContext.getPageData().refreshTag[1] = 1;
         readerContext.getPageData().refreshTag[2] = 1;
         TxtConfigInitTask configInitTask = new TxtConfigInitTask();
+        readerContext.getTxtConfig().textColor = Color.BLACK;
         configInitTask.Run(actionLoadListener, readerContext);
     }
 
@@ -238,6 +240,7 @@ public class TxtReaderView extends TxtReaderBaseView {
      */
     public void setTextSize(int textSize) {
         readerContext.getTxtConfig().saveTextSize(getContext(), textSize);
+
         Reload();
     }
 

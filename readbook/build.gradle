@@ -1,0 +1,91 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+//        applicationId "com.example.administrator.readbook"
+        minSdkVersion 14
+        targetSdkVersion 26
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+//            buildConfigField "boolean", "IS_RELEASE", "true"
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //    implementation 'com.android.support:appcompat-v7:27.1.1'
+//    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation(name: 'autoupdatesdk-release', ext: 'aar')
+    implementation 'com.android.support:cardview-v7:25.1.0'
+    implementation 'com.android.support:support-compat:25.1.0'
+    implementation 'org.greenrobot:greendao:3.0.1'
+    implementation 'org.greenrobot:greendao-generator:3.0.0'
+    //JSOUP
+    implementation 'org.jsoup:jsoup:1.10.2'
+    //沉浸式状态栏
+    implementation 'com.zhangmonke:ImmerseLayout:1.1.1'
+    //ProgressBar
+    implementation 'com.zhangmonke:MProgressBar:1.0.1'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    //AutofitTextView
+    implementation 'me.grantland:autofittextview:0.2.1'
+    //删除粒子效果
+    implementation 'tyrantgit:explosionfield:1.0.1'
+    //View简易动画
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.2@aar'
+    //CircleImageView
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    //SwitchButton
+    implementation 'com.kyleduo.switchbutton:library:1.4.4'
+    implementation 'com.victor:lib:1.0.4'
+    implementation files('libs/commons-codec-1.10-sources.jar')
+    implementation files('libs/juniversalchardet-1.0.3.jar')
+    implementation files('libs/utdid4all-1.0.4.jar')
+    //RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    //Rxlifecycle
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-android:2.0.1'
+    // If you want to bind to Android-specific lifecycles
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+    // If you want pre-written Activities and Fragments you can subclass as providers
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-navi:2.0.1'
+    // If you want to use Navi for providers
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-kotlin:2.0.1'
+    // If you want to use Kotlin syntax
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.2.0'
+    //RxBus
+    implementation('com.hwangjr.rxbus:rxbus:2.0.0-beta') {
+        exclude group: 'com.jakewharton.timber', module: 'timber'
+    }
+    implementation 'com.android.support:design:27.1.1'
+}
+
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
+}

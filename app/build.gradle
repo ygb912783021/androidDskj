@@ -5,7 +5,7 @@ android {
         release {
             keyAlias 'hibook'
             keyPassword 'hibook'
-            storeFile file('D:/project backup/2/hibook/app/hibook.jks')
+            storeFile file('E:/3/hibook/app/hibook.jks')
             storePassword 'hibook'
         }
     }
@@ -166,6 +166,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation project(':easeui')
+    implementation project(':readbook')
+
     implementation 'com.android.support:appcompat-v7:28.0.0 rc1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.jakewharton:butterknife:8.8.1'
@@ -198,6 +200,7 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.10'
     implementation 'top.zibin:Luban:1.1.3'
     implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'org.greenrobot:greendao:3.0.1'
     //    provided 'org.glassfish:javax.annotation:10.0-b28'
     compileOnly 'org.glassfish:javax.annotation:10.0-b28'
     //解决获取不到@Subscribe注解的问题
@@ -213,4 +216,9 @@ dependencies {
 }
 // 依赖插件脚本
 apply from: 'tinker-support.gradle'
+repositories{
+    flatDir{
+        dirs 'libs', '/../readbook/libs'
+    }
+}
 

@@ -7,12 +7,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 
 import java.util.Arrays;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;
@@ -23,6 +25,11 @@ public class ReceiviaddressActivity extends BaseActivity{
     TextView addAddress;
     @BindView(R.id.receive_address_recycle)
     RecyclerView recyclerView;
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_receive_address;
+    }
     @Override
     protected void initView(Bundle savedInstanceState) {
         requestActionBarStyle(true,"选择收货地址","管理");
@@ -40,11 +47,18 @@ public class ReceiviaddressActivity extends BaseActivity{
                 defaultadd.setText("");
             }
         });
+        fuckYouAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+        });
     }
 
-    @Override
-    public int getLayoutId() {
-        return R.layout.activity_receive_address;
+    @OnClick({R.id.receive_new_address})
+    public void onClick(View v){
+        Intent intent=new Intent(this,AddNewADddressActivity.class);
+        startActivity(intent);
     }
 
     @Override

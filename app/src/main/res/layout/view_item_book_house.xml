@@ -38,7 +38,7 @@
         android:layout_width="@dimen/x25"
         android:layout_height="@dimen/x25"
         android:scaleType="centerInside"
-        android:src="@drawable/delete"
+        android:src="@mipmap/delete_book"
         android:focusable="false"
         app:layout_constraintRight_toRightOf="@id/item_book_house_avatar" />
 

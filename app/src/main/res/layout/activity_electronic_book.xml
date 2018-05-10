@@ -37,13 +37,50 @@
         <!--android:numColumns="3"-->
         <!--android:stretchMode="columnWidth">-->
     <!--</GridView>-->
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/book_house_smart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        >
+        <LinearLayout
+            android:id="@+id/electroi_lin_sou"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="4"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/circle_gold"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sousuotushuguan"
+                    android:layout_gravity="center_vertical"
+                    />
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="输入关键字"
+                    android:textSize="15dp"
+                    android:layout_margin="5dp"
+
+                    />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/lishijilu"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
         <GridView
+            android:layout_below="@+id/electroi_lin_sou"
         android:id="@+id/electroic_gridview_book"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,7 +90,7 @@
         android:stretchMode="columnWidth">
         </GridView>
 
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
 
     <LinearLayout
         android:id="@+id/electroi_book_bottom"

@@ -1,77 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/add_newadd_consignee"
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/black_999"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/add_newadd_consigneeedit"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="54dp"
-        android:text="收货人：" />
+        android:layout_marginBottom="@dimen/dp_1"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/add_newadd_consignee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/black_333"
+            android:text="收货人：    " />
 
-    <EditText
-        android:id="@+id/add_newadd_consigneeedit"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/add_newadd_consigneeedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:ellipsize="end"
+            android:background="@null"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/black_333"
+            android:text="张三" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="147dp"
-        android:text="张三" />
+        android:layout_marginBottom="@dimen/dp_1"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/add_newadd_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/black_333"
+            android:text="联系电话："  />
 
-    <TextView
-        android:id="@+id/add_newadd_tel"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/add_newadd_teledit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/black_333"
+            android:ellipsize="end"
+            android:background="@null"
+            android:text="13678965437" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/add_newadd_consignee"
-        android:layout_marginTop="74dp"
-        android:text="联系电话："  />
-
-    <EditText
-        android:id="@+id/add_newadd_teledit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/add_newadd_tel"
-        android:layout_centerHorizontal="true"
-        android:text="13678965437" />
-
-    <TextView
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/dp_1"
+        android:background="@color/white"
+        >
+        <TextView
         android:id="@+id/add_newadd_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/add_newadd_consignee"
-        android:layout_marginTop="147dp"
-        android:text="所在地区" />
+        android:layout_margin="@dimen/dp_10"
+        android:textSize="@dimen/sp_17"
+        android:textColor="@color/black_333"
+        android:text="所在地区：" />
+        <TextView
+            android:id="@+id/add_newadd_place_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/black_333"
+            android:layout_margin="@dimen/dp_10"/>
+        <TextView
+            android:id="@+id/add_newadd_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/gold_d9"
+            android:text="请选择" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/add_newadd_choose"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/add_newadd_check"
-        android:layout_alignTop="@+id/add_newadd_place"
-        android:text="请选择" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/dp_1"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/add_newadd_place_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/black_333"
+            android:text="详细地址：" />
 
-    <TextView
-        android:id="@+id/add_newadd_defaultadd"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/add_newadd_place_details_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/black_333"
+            android:ellipsize="end"
+            android:background="@null"
+            android:maxLines="3"
+            android:hint="点击输入详细地址"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/add_newadd_consignee"
-        android:layout_marginTop="207dp"
-        android:text="设为默认地址" />
+        android:background="@color/white"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/add_newadd_defaultadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_17"
+            android:textColor="@color/gold_d9"
+            android:layout_margin="@dimen/dp_10"
+            android:drawableLeft="@drawable/charge_choose"
+            android:drawablePadding="@dimen/dp_10"
+            android:text="设为默认地址" />
 
-    <ImageView
-        android:id="@+id/add_newadd_check"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="59dp"
-        android:layout_marginTop="188dp"
-        android:src="@drawable/ic_launcher" />
+        android:background="@color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shap_black_7"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/add_newadd_savebtn"
+            >
 
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="保存"
+                android:textSize="@dimen/dp_17"
+                android:layout_margin="@dimen/dp_10"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

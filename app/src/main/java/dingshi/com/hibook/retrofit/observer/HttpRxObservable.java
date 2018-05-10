@@ -1,6 +1,8 @@
 package dingshi.com.hibook.retrofit.observer;
 
 
+import android.util.Log;
+
 import com.trello.rxlifecycle2.LifecycleProvider;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 import com.trello.rxlifecycle2.android.FragmentEvent;
@@ -29,7 +31,7 @@ public class HttpRxObservable {
      * @author ZhongDaFeng
      */
     public static Observable getObservable(Observable<? extends Result> apiObservable) {
-        // showLog(request);
+//         showLog(request);
         Observable observable = apiObservable
 //                .map(new ServerResultFunction())
                 .subscribeOn(Schedulers.io())
@@ -57,8 +59,11 @@ public class HttpRxObservable {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread());
         } else {
+
             observable = getObservable(apiObservable);
+            Log.i("READ", "getObservable: observable = "+observable.toString());
         }
+
         return observable;
     }
 

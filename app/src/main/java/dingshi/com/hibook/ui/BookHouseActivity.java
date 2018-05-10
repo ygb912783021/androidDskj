@@ -63,8 +63,8 @@ public class BookHouseActivity extends BaseActivity {
     TextView txNick;
     @BindView(R.id.book_house_book_num)
     TextView txBookNum;
-//    @BindView(R.id.tv_book_house_edit)
-//    TextView tv_book_house_edit;
+    @BindView(R.id.tv_book_house_edit)
+    TextView tv_book_house_edit;
 //    boolean isEditDelete=false;
 
 
@@ -99,7 +99,25 @@ public class BookHouseActivity extends BaseActivity {
 
         Fragment recFragment = new FriendRecFragment();
         list.add(recFragment);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
+            @Override
+            public void onPageSelected(int position) {
+                if (position==0){
+                    tv_book_house_edit.setVisibility(View.VISIBLE);
+                }else {
+                    tv_book_house_edit.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager(), list, title));
 
         GlideUtils.loadCircleImage(BookHouseActivity.this, user.getJsonData().getAvatar(), imgPhoto);

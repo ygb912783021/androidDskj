@@ -2,17 +2,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/black_f6">
 
-<Button
-    android:id="@+id/receive_address_addtext"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:text="添加收货地址"/>
+    <Button
+        android:id="@+id/receive_address_addtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="添加收货地址"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/receive_address_recycle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shap_black_7"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/receive_new_address"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="添加新地址"
+            android:textSize="@dimen/dp_17"
+            android:layout_margin="@dimen/dp_10"
+            />
+    </RelativeLayout>
 </RelativeLayout>

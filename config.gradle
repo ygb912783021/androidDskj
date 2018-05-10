@@ -29,8 +29,9 @@ ext.appConfig = [
         EASEMOB_DEBUG    : "1191180110115352#hello-book",
         EASEMOB_RELEASE  : "1191180110115352#hello-book",
         LOCALHOST_DEBUG  : "\"http://api.linkbooker.com/\"",
-//      LOCALHOST_DEBUG  : "\"http://testapi.linkbooker.com/\"",
+//      LOCALHOST_DEBUG  : "\"http://192.168.2.137/hellobook_api/\"",
         LOCALHOST_RELEASE: "\"http://api.linkbooker.com/\""
+//        LOCALHOST_RELEASE: "\"http://192.168.2.137/hellobook_api/\""
 
 ]
 

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.administrator.readbook">
+
+    <!--<application-->
+        <!--android:name=".MApplication"-->
+
+   <!--&gt;-->
+        <!--<activity-->
+            <!--android:name=".view.impl.MainActivity"-->
+            <!--android:screenOrientation="portrait">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--&lt;!&ndash;<activity&ndash;&gt;-->
+            <!--&lt;!&ndash;android:name=".view.impl.MainActivity"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:launchMode="singleTask"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:screenOrientation="portrait" />&ndash;&gt;-->
+        <!--<activity-->
+            <!--android:name=".view.impl.SearchActivity"-->
+            <!--android:configChanges="locale|keyboardHidden|orientation|screenSize"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/CAppTransparentTheme"-->
+            <!--android:windowSoftInputMode="stateHidden|adjustPan" />-->
+
+        <!--<service android:name=".service.DownloadService" />-->
+
+        <!--<activity-->
+            <!--android:name=".view.impl.LibraryActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/CAppTransparentTheme" />-->
+        <!--<activity-->
+            <!--android:name=".view.impl.ChoiceBookActivity"-->
+            <!--android:screenOrientation="portrait" />-->
+        <!--<activity-->
+            <!--android:name=".view.impl.BookDetailActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/CAppTransparentTheme" />-->
+        <!--<activity-->
+            <!--android:name=".view.impl.ReadBookActivity"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:screenOrientation="portrait">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.VIEW"></action>-->
+                <!--<category android:name="android.intent.category.DEFAULT"></category>-->
+                <!--<data android:mimeType="text/plain"></data>-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name=".view.impl.ImportBookActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/CAppTransparentTheme" />-->
+
+
+
+        <!--<provider-->
+            <!--android:name="android.support.v4.content.FileProvider"-->
+            <!--android:authorities="${applicationId}.fileprovider"-->
+            <!--android:exported="false"-->
+            <!--android:grantUriPermissions="true">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                <!--android:resource="@xml/bdp_update_filepaths" />-->
+        <!--</provider>-->
+    <!--</application>-->
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-sdk android:minSdkVersion="8"></uses-sdk>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+</manifest>

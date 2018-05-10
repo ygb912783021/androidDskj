@@ -40,16 +40,16 @@
                 />
         </LinearLayout>
     </RelativeLayout>
+
     <TextView
-        android:layout_below="@+id/electronic_gridview_img"
         android:id="@+id/electronic_gridview_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_gravity="center"
-        android:textColor="#000"
+        android:layout_below="@+id/electronic_gridview_img"
         android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
         android:text="文字"
-        />
+        android:textColor="#000" />
 
 </RelativeLayout>

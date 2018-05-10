@@ -1,5 +1,6 @@
 package dingshi.com.hibook.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -47,9 +48,7 @@ public class AddressBookActivity extends BaseActivity {
     RecyclerView recyclerView;
     @BindView(R.id.address_book_smart)
     SmartRefreshLayout smartRefreshLayout;
-
     FuckYouAdapter fuckYouAdapter;
-
     int page = 1;
 
     List<LibIntro.JsonDataBean> list = new ArrayList<>();

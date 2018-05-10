@@ -225,7 +225,9 @@
         <activity android:name=".ui.AddressBookActivity" />
         <activity android:name=".ui.BookElectronicActivity"/>
         <activity android:name=".ui.BookElectronicCaseActivity"/>
-        <activity android:name=".ui.BookReadActivity"></activity>
+        <activity android:name=".ui.BookReadActivity"
+            android:theme="@style/HwTxtFullScreen"
+            ></activity>
         <activity android:name=".ui.RefundActivity"></activity>
         <activity android:name=".ui.AddressManagerActivity"></activity>
         <activity android:name=".ui.AddNewADddressActivity"></activity>
@@ -233,9 +235,18 @@
         <activity android:name=".ui.FriendvalidationActivity"></activity>
         <activity android:name=".ui.UserListActivity"></activity>
         <activity android:name=".ui.BookSaleActivity"></activity>
+        <activity android:name=".ui.ReceiviaddressActivity"/>
         <activity android:name=".ui.EBookDetailsActivity"></activity>
+        <activity android:name=".ui.ShopCarActivity"/>
 
 
+        <activity android:name="com.example.administrator.readbook.view.impl.MainActivity"></activity>
+        <activity android:name="com.example.administrator.readbook.view.impl.SearchActivity"></activity>
+        <activity android:name="com.example.administrator.readbook.view.impl.ChoiceBookActivity"></activity>
+        <activity android:name="com.example.administrator.readbook.view.impl.BookDetailActivity"></activity>
+        <activity android:name="com.example.administrator.readbook.view.impl.ReadBookActivity"></activity>
+        <activity android:name="com.example.administrator.readbook.view.impl.ImportBookActivity"></activity>
+        <activity android:name="com.example.administrator.readbook.view.impl.LibraryActivity"></activity>
     </application>
 
 </manifest>

@@ -2,11 +2,11 @@ package dingshi.com.hibook.retrofit.api;
 
 
 import java.util.HashMap;
-
-import dingshi.com.hibook.BuildConfig;
 import dingshi.com.hibook.bean.BookCase;
 import dingshi.com.hibook.bean.BookDetails;
+import dingshi.com.hibook.bean.BookList;
 import dingshi.com.hibook.bean.BookPerson;
+import dingshi.com.hibook.bean.BookShelf;
 import dingshi.com.hibook.bean.Borrows;
 import dingshi.com.hibook.bean.Case2Book;
 import dingshi.com.hibook.bean.BookTalent;
@@ -17,6 +17,8 @@ import dingshi.com.hibook.bean.CommList;
 import dingshi.com.hibook.bean.CommentGrade;
 import dingshi.com.hibook.bean.CommentInfo;
 import dingshi.com.hibook.bean.Coupon;
+import dingshi.com.hibook.bean.EbookGratis;
+import dingshi.com.hibook.bean.EbookGroup;
 import dingshi.com.hibook.bean.Home;
 import dingshi.com.hibook.bean.MoneyDetails;
 import dingshi.com.hibook.bean.Notice;
@@ -25,10 +27,8 @@ import dingshi.com.hibook.bean.OrderDetails;
 import dingshi.com.hibook.bean.Payment;
 import dingshi.com.hibook.bean.RallySearch;
 import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.bean.BookList;
 import dingshi.com.hibook.bean.User;
 import dingshi.com.hibook.bean.UserCenter;
-import dingshi.com.hibook.bean.Zxing;
 import dingshi.com.hibook.bean.card.CardDetails;
 import dingshi.com.hibook.bean.card.CardList;
 import dingshi.com.hibook.bean.lib.ClubList;
@@ -39,18 +39,14 @@ import dingshi.com.hibook.bean.lib.LibIntro;
 import dingshi.com.hibook.bean.lib.LibList;
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
-import retrofit2.http.PartMap;
 import retrofit2.http.QueryMap;
 
 /**
@@ -216,7 +212,7 @@ public interface ApiService {
     /**
      * 优惠券
      */
-    @GET("coupon/all")
+    @GET("user/coupon")
     Observable<Coupon> couponAll(@QueryMap HashMap<String, String> map);
 
 
@@ -898,5 +894,65 @@ public interface ApiService {
      */
     @GET("clubs/search")
     Observable<RallySearch> clubSearch(@QueryMap HashMap<String, String> map);
+
+    /**
+     * 电子书推荐
+     * @param map 请求参数
+     * @return
+     */
+    @GET("book/gratis")
+    Observable<EbookGratis> gratisEbook(@QueryMap HashMap<String,String> map);
+
+    /**
+     *  领取推荐过来的电子书
+     * @param map
+     * @return
+     */
+    @POST("user/take_ebooks")
+    Observable<Result> takeEBooks(@QueryMap HashMap<String, String> map);
+
+
+    /**
+     *  获取所有电子书（包括分组）
+     * @param map
+     * @return
+     */
+    @GET("user/ebooks")
+    Observable<BookShelf> eBooks(@QueryMap HashMap<String,String> map);
+
+    /**
+     *  获取电子书分组列表
+     * @param map
+     * @return
+     */
+    @GET("ebook/selbookgroup")
+    Observable<EbookGroup> selBookGroup(@QueryMap HashMap<String,String> map);
+
+    /**
+     *  领取推荐过来的电子书
+     * @param map
+     * @return
+     */
+    @POST("ebook/ebookgroup")
+    Observable<Result> newEBooksGroup(@QueryMap HashMap<String, String> map);
+
+    /**
+     *  删除电子书
+     * @param map
+     * @return
+     */
+    @POST("bookrack/deleteebooks")
+    Observable<Result> deleteEbooks(@QueryMap HashMap<String, String> map);
+
+    /**
+     *  添加电子书到分组
+     * @param map
+     * @return
+     */
+    @POST("ebook/ebookmove")
+    Observable<Result> ebookMove(@QueryMap HashMap<String, String> map);
+
+//    @GET("ebook/getEbook_chapter")
+//    Observable<BookChapter> getEbookChapter(@QueryMap HashMap<String, String> map);
 
 }
