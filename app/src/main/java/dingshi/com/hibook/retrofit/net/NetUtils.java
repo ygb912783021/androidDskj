@@ -20,6 +20,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class NetUtils {
     private static final Retrofit RETROFIT = new Retrofit.Builder()
             .baseUrl(BuildConfig.LOCALHOST)
+//            .baseUrl("http://192.168.2.137/hellobook_api/")
             .client(getHttpClient())
             .addConverterFactory(ResponseConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -37,6 +38,8 @@ public class NetUtils {
     public static ApiService getGsonCall() {
         return new Retrofit.Builder()
                 .baseUrl(BuildConfig.LOCALHOST)
+//                .baseUrl("http://192.168.2.137/hellobook_api/")
+
                 .client(getHttpClient())
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build().create(ApiService.class);
@@ -50,6 +53,7 @@ public class NetUtils {
     public static ApiService getStringRetrofit() {
         return new Retrofit.Builder()
                 .baseUrl(BuildConfig.LOCALHOST)
+//                .baseUrl("http://192.168.2.137/hellobook_api/")
                 .client(getHttpClient())
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

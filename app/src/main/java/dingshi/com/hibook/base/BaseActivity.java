@@ -14,8 +14,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bugtags.library.Bugtags;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import dingshi.com.hibook.BuildConfig;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.action.LifeCycleListener;
 import dingshi.com.hibook.bean.User;
@@ -224,6 +227,9 @@ public abstract class BaseActivity extends BaseUmengActivity {
         if (mListener != null) {
             mListener.onResume();
         }
+        if (BuildConfig.BUILD_TYPE.contains("debug")) {
+            Bugtags.onResume(this);
+        }
     }
 
     @Override
@@ -231,6 +237,10 @@ public abstract class BaseActivity extends BaseUmengActivity {
         super.onPause();
         if (mListener != null) {
             mListener.onPause();
+        }
+        if (BuildConfig.BUILD_TYPE.contains("debug")) {
+
+            Bugtags.onPause(this);
         }
     }
 
@@ -250,6 +260,15 @@ public abstract class BaseActivity extends BaseUmengActivity {
         }
         unbinder.unbind();
         AppManager.getInstance().removeActivity(this);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (BuildConfig.BUILD_TYPE.contains("debug")) {
+            //注：回调 3
+            Bugtags.onDispatchTouchEvent(this, ev);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
     /**

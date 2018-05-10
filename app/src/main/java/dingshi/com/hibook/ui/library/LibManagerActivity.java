@@ -68,6 +68,17 @@ public class LibManagerActivity extends BaseActivity implements ILibManagerView 
     TextView txShares;
     @BindView(R.id.lib_manager_delete)
     TextView txSubmit;
+
+    //编辑
+    @BindView(R.id.lib_manager_edit)
+    TextView txEdit;
+    //查看
+    @BindView(R.id.lib_manager_query)
+    TextView txQuery;
+    //名单
+    @BindView(R.id.lib_manager_menu)
+    TextView tvList;
+
     LibList.JsonDataBean libBean;
 
     LibManagerPresent present = new LibManagerPresent(this, this);
@@ -91,10 +102,17 @@ public class LibManagerActivity extends BaseActivity implements ILibManagerView 
         txShares.setText("已共享\n" + libBean.getBook_share_sum() + "本");
 
 
-        if (isRally){
+        if (isRally) {
             txSubmit.setText("删除书友会");
-        }else{
+            txEdit.setText("编辑书友会");
+            txQuery.setText("查看书友会");
+            tvList.setText("书友会名单");
+        } else {
+            txEdit.setText("编辑图书馆");
             txSubmit.setText("删除图书馆");
+            txQuery.setText("查看图书馆");
+            tvList.setText("图书馆名单");
+
         }
 
     }
@@ -143,7 +161,7 @@ public class LibManagerActivity extends BaseActivity implements ILibManagerView 
                 startActivity(managerIntent);
                 break;
             case R.id.lib_manager_delete:
-                present.deleteLib(libBean.getCatalog_id());
+                present.deleteLib(libBean.getCatalog_id(), isRally ?"确认删除书友会？":"确认删除图书馆？");
                 break;
             default:
         }

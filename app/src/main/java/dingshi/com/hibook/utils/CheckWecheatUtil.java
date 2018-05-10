@@ -22,10 +22,10 @@ public class CheckWecheatUtil {
 
     public static boolean checkWecheat(Context context) {
 
-        final PackageManager packageManager = context.getPackageManager();// 获取packagemanager
-        List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);// 获取所有已安装程序的包信息
+        final PackageManager packageManager = context.getPackageManager();// 1.获取packagemanager
+        List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);// 2.获取所有已安装程序的包信息列表
         if (pinfo != null) {
-            for (int i = 0; i < pinfo.size(); i++) {
+            for (int i = 0; i < pinfo.size(); i++) {                        //3.从所有已安装app的列表中查询
                 String pn = pinfo.get(i).packageName;
                 Log.d(TAG, "onClick package name ::: " + pn);
                 if (pn.equals(WECHEAT_PACKAGENAME))

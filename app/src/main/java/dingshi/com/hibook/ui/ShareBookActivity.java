@@ -221,13 +221,17 @@ public class ShareBookActivity extends BaseActivity {
             @Override
             protected void onSuccess(Result response) {
 
-
                 showToast("共享成功");
 
                 handleBookInfo();
 
                 AppManager.getInstance().finishOthersActivity(MainActivity.class);
-                startActivity(new Intent(ShareBookActivity.this, BookHouseActivity.class).putExtra("bean", userCenter));
+                Intent intent = new Intent(ShareBookActivity.this, BookHouseActivity.class);
+                if (userCenter != null) {
+
+                    intent.putExtra("bean", userCenter);
+                }
+                startActivity(intent);
 
             }
         };
@@ -245,9 +249,10 @@ public class ShareBookActivity extends BaseActivity {
      * 分享的书数字加1
      */
     private void handleBookInfo() {
-        int sharedNum = userCenter.getJsonData().getShare_book_num() + 1;
-        userCenter.getJsonData().setShare_book_num(sharedNum);
-
+        if (userCenter != null) {
+            int sharedNum = userCenter.getJsonData().getShare_book_num() + 1;
+            userCenter.getJsonData().setShare_book_num(sharedNum);
+        }
     }
 
 

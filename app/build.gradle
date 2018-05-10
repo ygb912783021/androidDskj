@@ -93,9 +93,7 @@ android {
         }
         Tencent {
         }
-        flavor_test {
-            applicationId "dingshi.com.hibook.test"
-        }
+
 
     }
 
@@ -155,6 +153,19 @@ configurations.all {
 }
 
 
+//应用 Bugtags 插件
+apply plugin: 'com.bugtags.library.plugin'
+
+//Bugtags 插件配置
+bugtags {
+    //自动上传符号表功能配置，如果需要根据 build varint 配置，请参考帮助中心->符号表->Android 符号表->配置自动上传符号表
+    appKey "50d8b7dca2e6f3b5dcc1ecdce58b9e0d"  //这里是你的 appKey
+    appSecret "e810b3e8e6247ac1dc13579ab128323a"    //这里是你的 appSecret，管理员在设置页可以查看
+    mappingUploadEnabled true
+
+    //网络跟踪功能配置(企业版)
+    trackingNetworkEnabled true
+}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -207,6 +218,8 @@ dependencies {
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     // or 1.4-beta1
     compile 'com.pgyersdk:sdk:2.8.1'
+
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
 
 }
 // 依赖插件脚本
