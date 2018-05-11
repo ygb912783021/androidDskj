@@ -73,7 +73,7 @@ public class BookElectronicCaseActivity extends BaseActivity  {
     @BindView(R.id.electroi_lin_sou)
     LinearLayout electroi_lin_sou;
     boolean editState = true;
-    private List<BookShelfBean> bookShelfBeans = new ArrayList<>();
+//    private List<BookShelfBean> bookShelfBeans = new ArrayList<>();
     FuckDialog fuckDialog;
     ElectronicCaseAdapter electronicCaseAdapter;
     float x,y;
@@ -295,22 +295,22 @@ public class BookElectronicCaseActivity extends BaseActivity  {
 //        Observable.create(new ObservableOnSubscribe<List<BookShelfBean>>() {
 //            @Override
 //            public void subscribe(ObservableEmitter<List<BookShelfBean>> e) throws Exception {
-                bookShelfBeans = DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookShelfBeanDao().queryBuilder().orderDesc(BookShelfBeanDao.Properties.FinalDate).list();
-                for (int i = 0; i < bookShelfBeans.size(); i++) {
-                    List<BookInfoBean> temp = DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookInfoBeanDao().queryBuilder().where(BookInfoBeanDao.Properties.NoteUrl.eq(bookShelfBeans.get(i).getNoteUrl())).limit(1).build().list();
-                    if (temp != null && temp.size() > 0) {
-                        BookInfoBean bookInfoBean = temp.get(0);
-                        bookInfoBean.setChapterlist(DbHelper.getInstance(getApplicationContext()).getmDaoSession().getChapterListBeanDao().queryBuilder().where(ChapterListBeanDao.Properties.NoteUrl.eq(bookShelfBeans.get(i).getNoteUrl())).orderAsc(ChapterListBeanDao.Properties.DurChapterIndex).build().list());
-                        bookShelfBeans.get(i).setBookInfoBean(bookInfoBean);
-                    } else {
-                        DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookShelfBeanDao().delete(bookShelfBeans.get(i));
-                        bookShelfBeans.remove(i);
-                        i--;
-                    }
-                }
+//                bookShelfBeans = DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookShelfBeanDao().queryBuilder().orderDesc(BookShelfBeanDao.Properties.FinalDate).list();
+//                for (int i = 0; i < bookShelfBeans.size(); i++) {
+//                    List<BookInfoBean> temp = DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookInfoBeanDao().queryBuilder().where(BookInfoBeanDao.Properties.NoteUrl.eq(bookShelfBeans.get(i).getNoteUrl())).limit(1).build().list();
+//                    if (temp != null && temp.size() > 0) {
+//                        BookInfoBean bookInfoBean = temp.get(0);
+//                        bookInfoBean.setChapterlist(DbHelper.getInstance(getApplicationContext()).getmDaoSession().getChapterListBeanDao().queryBuilder().where(ChapterListBeanDao.Properties.NoteUrl.eq(bookShelfBeans.get(i).getNoteUrl())).orderAsc(ChapterListBeanDao.Properties.DurChapterIndex).build().list());
+//                        bookShelfBeans.get(i).setBookInfoBean(bookInfoBean);
+//                    } else {
+//                        DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookShelfBeanDao().delete(bookShelfBeans.get(i));
+//                        bookShelfBeans.remove(i);
+//                        i--;
+//                    }
+//                }
 //                e.onNext(bookShelfBeans == null ? new ArrayList<BookShelfBean>() : bookShelfBeans);
 //                handler.sendEmptyMessage(0);
-                Log.i("READ", "subscribe:bookShelfBeans =  "+bookShelfBeans.size());
+//                Log.i("READ", "subscribe:bookShelfBeans =  "+bookShelfBeans.size());
 //            }
 //        });
     }

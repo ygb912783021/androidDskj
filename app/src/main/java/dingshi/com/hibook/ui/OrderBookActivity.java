@@ -150,7 +150,7 @@ public class OrderBookActivity extends BaseActivity {
             map.put("isbn", jsonData.getBook().getIsbn());
             map.put("lat", MyApplicationLike.lat);
             map.put("lng", MyApplicationLike.lng);
-            map.put("serial_number", jsonData.getSerial_number());
+            map.put("serial_number", jsonData.getSerial_number()+"");
             map.put("out_trade_no", orderId);
             if (backBook) {
                 intent.putExtra("type", 3);

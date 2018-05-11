@@ -1,11 +1,15 @@
 package dingshi.com.hibook.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -76,20 +80,18 @@ public class ConfirmOrderActivity extends BaseActivity implements IPayMent {
             }
 
         });
-                RecyclerView itemRecyclerView=helper.getView(R.id.shop_car_list_recycleview);
-                itemRecyclerView.setLayoutManager(new LinearLayoutManager(ConfirmOrderActivity.this, LinearLayoutManager.VERTICAL, false));
-                FuckYouAdapter itemadapter=new FuckYouAdapter(R.layout.view_shop_car_list_item, Arrays.asList("",""));
-                itemRecyclerView.setAdapter(itemadapter);
-                itemadapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
-                    @Override
-                    public void convertView(BaseViewHolder helper, Object item) {
-
-                    }
-                });
+//                RecyclerView itemRecyclerView=helper.getView(R.id.shop_car_list_recycleview);
+//                itemRecyclerView.setLayoutManager(new LinearLayoutManager(ConfirmOrderActivity.this, LinearLayoutManager.VERTICAL, false));
+//                FuckYouAdapter itemadapter=new FuckYouAdapter(R.layout.view_shop_car_list_item, Arrays.asList("",""));
+//                itemRecyclerView.setAdapter(itemadapter);
+//                itemadapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
+//                    @Override
+//                    public void convertView(BaseViewHolder helper, Object item) {
+//
+//                    }
+//                });
             }
 
-        });
-    }
 
     @OnClick({R.id.tiaozhuan,R.id.pay_confirm_coupon_layout, R.id.pay_confirm_money_layout,R.id.pay_confirm_wx_layout,
             R.id.comfirm_order_gopay,R.id.pay_confirm_ali_layout})
@@ -200,11 +202,11 @@ public class ConfirmOrderActivity extends BaseActivity implements IPayMent {
 
     }
 
-    @OnClick({R.id.tiaozhuan})
-    public  void onClick(View view){
-        Intent intent=new Intent(this,ReceiviaddressActivity.class);
-        startActivity(intent);
-    }
+//    @OnClick({R.id.tiaozhuan})
+//    public  void onClick(View view){
+//        Intent intent=new Intent(this,ReceiviaddressActivity.class);
+//        startActivity(intent);
+//    }
 
 
 }

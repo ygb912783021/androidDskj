@@ -53,16 +53,17 @@ public class Order extends Result {
         String bookcase_cell_id;
         String remark;
         private String out_trade_no;
-        private String user_id;
-        private int trade_platform;
-        private String serial_number;
+        private long user_id;
+        private String trade_platform;
+        private int serial_number;
         private int payment_status;
         private int comment_status;
         private String pay_fee;
         private int returned;
         private String pay_at;
+
         private int pickup_status;
-        private BookDetails.JsonDataBean book;
+        private Book book;
         private int borrow_day;
         private String borrow_interval;
         private int borrow_surplus_day;
@@ -93,29 +94,23 @@ public class Order extends Result {
             this.out_trade_no = out_trade_no;
         }
 
-        public String getUser_id() {
+//        public String getUser_id() {
+//            return user_id;
+//        }
+//
+//        public void setUser_id(String user_id) {
+//            this.user_id = user_id;
+//        }
+
+        public long getUser_id() {
             return user_id;
         }
 
-        public void setUser_id(String user_id) {
+        public void setUser_id(long user_id) {
             this.user_id = user_id;
         }
 
-        public int getTrade_platform() {
-            return trade_platform;
-        }
 
-        public void setTrade_platform(int trade_platform) {
-            this.trade_platform = trade_platform;
-        }
-
-        public String getSerial_number() {
-            return serial_number;
-        }
-
-        public void setSerial_number(String serial_number) {
-            this.serial_number = serial_number;
-        }
 
         public int getPayment_status() {
             return payment_status;
@@ -165,11 +160,27 @@ public class Order extends Result {
             this.pickup_status = pickup_status;
         }
 
-        public BookDetails.JsonDataBean getBook() {
+        public String getTrade_platform() {
+            return trade_platform;
+        }
+
+        public void setTrade_platform(String trade_platform) {
+            this.trade_platform = trade_platform;
+        }
+
+        public int getSerial_number() {
+            return serial_number;
+        }
+
+        public void setSerial_number(int serial_number) {
+            this.serial_number = serial_number;
+        }
+
+        public Book getBook() {
             return book;
         }
 
-        public void setBook(BookDetails.JsonDataBean book) {
+        public void setBook(Book book) {
             this.book = book;
         }
 

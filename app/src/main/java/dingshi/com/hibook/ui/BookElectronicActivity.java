@@ -198,10 +198,10 @@ public class BookElectronicActivity extends BaseActivity {
      */
     public void addToBookShelf(final BookShelfBean bookShelf) {
         if (bookShelf != null) {
-            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getChapterListBeanDao().insertOrReplaceInTx(bookShelf.getBookInfoBean().getChapterlist());
-            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookInfoBeanDao().insertOrReplace(bookShelf.getBookInfoBean());
-            //网络数据获取成功  存入BookShelf表数据库
-            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookShelfBeanDao().insertOrReplace(bookShelf);
+//            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getChapterListBeanDao().insertOrReplaceInTx(bookShelf.getBookInfoBean().getChapterlist());
+//            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookInfoBeanDao().insertOrReplace(bookShelf.getBookInfoBean());
+//            //网络数据获取成功  存入BookShelf表数据库
+//            DbHelper.getInstance(getApplicationContext()).getmDaoSession().getBookShelfBeanDao().insertOrReplace(bookShelf);
         }
     }
 

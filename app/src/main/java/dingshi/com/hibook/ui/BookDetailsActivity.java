@@ -445,10 +445,10 @@ public class BookDetailsActivity extends BaseActivity implements IBookDetailsVie
             case R.id.book_details_contact:
                 KefuUtils.jump(getApplication());
                 break;
-            case R.id.book_details_my_shopcar:
-                intent.setClass(this, ShopCarActivity.class);
-                startActivity(intent);
-                break;
+//            case R.id.book_details_my_shopcar:
+//                intent.setClass(this, ShopCarActivity.class);
+//                startActivity(intent);
+//                break;
             case R.id.book_details_eval_query:
                 intent.setClass(this, EvalBookListActivity.class);
                 startActivity(intent);

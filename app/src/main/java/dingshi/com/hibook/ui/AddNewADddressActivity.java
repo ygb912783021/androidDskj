@@ -36,9 +36,9 @@ public class AddNewADddressActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.add_newadd_savebtn})
-    public void onClick(View view){
-        //保存新建
-    }
+//    @OnClick({R.id.add_newadd_savebtn})
+//    public void onClick(View view){
+//        //保存新建
+//    }
 
 }

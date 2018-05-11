@@ -173,6 +173,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation project(':easeui')
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation project(':readbook')
 
@@ -221,9 +222,9 @@ dependencies {
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     // or 1.4-beta1
 
-    compile 'com.pgyersdk:sdk:2.8.1'
+    implementation 'com.pgyersdk:sdk:2.8.1'
 
-    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    implementation 'com.bugtags.library:bugtags-lib:latest.integration'
 
 }
 // 依赖插件脚本

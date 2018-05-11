@@ -132,7 +132,7 @@ public class OrderDetailsActivity extends BaseActivity {
         /*
             1.支付宝,2.微信,3.钱包
          */
-        switch (bean.getTrade_platform()) {
+        switch (Integer.parseInt(bean.getTrade_platform())) {
             case 1:
                 txPay.setText("支付宝");
                 break;

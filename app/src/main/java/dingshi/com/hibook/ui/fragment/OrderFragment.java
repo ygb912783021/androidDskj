@@ -121,7 +121,7 @@ public class OrderFragment extends BaseFragment implements IRequestView<Order> {
                     public void onClick(View v) {
                         //去支付
                         if (bean.getPayment_status() == 0) {
-                            present.pay(bean.getTrade_platform(), bean.getSign());
+                            present.pay(Integer.parseInt(bean.getTrade_platform()), bean.getSign());
                         } //去评价
                         else if (bean.getPayment_status() == 1 && bean.getComment_status() == 0) {
 
@@ -156,7 +156,7 @@ public class OrderFragment extends BaseFragment implements IRequestView<Order> {
         smartRefreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
-                page++;
+                page = 2;
                 present.load(user.getJsonData().getUser_id(), payment_status, page);
             }
         });

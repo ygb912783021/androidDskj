@@ -1,5 +1,7 @@
 package dingshi.com.hibook;
 
+
+
 import com.bugtags.library.Bugtags;
 import com.pgyersdk.crash.PgyCrashManager;
 import com.tencent.tinker.loader.app.TinkerApplication;
@@ -33,12 +35,12 @@ public class MyApplication extends TinkerApplication {
         }
     }
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        instance = this;
-        startService(new Intent(this, DownloadService.class));
-    }
+//    @Override
+//    public void onCreate() {
+//        super.onCreate();
+//        instance = this;
+//        startService(new Intent(this, DownloadService.class));
+//    }
     public static MyApplication getInstance() {
         return instance;
     }
