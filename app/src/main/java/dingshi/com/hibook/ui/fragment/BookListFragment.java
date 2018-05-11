@@ -4,7 +4,6 @@ package dingshi.com.hibook.ui.fragment;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -25,7 +24,6 @@ import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.BookList;
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.present.BookListPresent;
 import dingshi.com.hibook.ui.BookDetailsActivity;
 import dingshi.com.hibook.utils.GlideUtils;

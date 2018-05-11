@@ -8,10 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
@@ -22,15 +20,11 @@ import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.action.IRequestView;
 import dingshi.com.hibook.adapter.SaleMultiAdapter;
-import dingshi.com.hibook.adapter.StoreMultiAdapter;
 import dingshi.com.hibook.adapter.StoreMultipleItem;
 import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.bean.Home;
-import dingshi.com.hibook.bean.Order;
 import dingshi.com.hibook.present.BookStorePresent;
-import dingshi.com.hibook.ui.BookHouseActivity;
 import dingshi.com.hibook.ui.MyBorrowActivity;
-import dingshi.com.hibook.ui.OrderDetailsActivity;
 import dingshi.com.hibook.ui.SearchActivity;
 
 /**

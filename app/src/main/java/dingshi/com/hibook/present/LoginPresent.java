@@ -19,7 +19,6 @@ import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.share.AuthResult;
-import dingshi.com.hibook.share.EasyPayShare;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.PhoneUtils;
 import dingshi.com.hibook.utils.SpUtils;

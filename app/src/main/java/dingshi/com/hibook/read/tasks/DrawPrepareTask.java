@@ -15,10 +15,10 @@ import dingshi.com.hibook.read.utils.ELogger;
  */
 
 public class DrawPrepareTask implements ITxtTask {
-    private String tag = "DrawPrepareTask";
 
     @Override
     public void Run(ILoadListener callBack, TxtReaderContext readerContext) {
+     String tag = "DrawPrepareTask";
         callBack.onMessage("start do DrawPrepare");
         ELogger.log(tag, "do DrawPrepare");
         initPainContext(readerContext.getPaintContext(), readerContext.getTxtConfig());

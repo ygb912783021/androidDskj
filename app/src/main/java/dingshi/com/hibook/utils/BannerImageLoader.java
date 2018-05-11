@@ -1,11 +1,8 @@
 package dingshi.com.hibook.utils;
 
 import android.content.Context;
-import android.media.MediaMetadata;
-import android.util.Log;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.youth.banner.loader.ImageLoader;
 
 import dingshi.com.hibook.bean.Home;

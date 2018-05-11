@@ -6,12 +6,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMCmdMessageBody;
-import com.hyphenate.chat.EMMessage;
-import com.hyphenate.chat.EMTextMessageBody;
-import com.hyphenate.easeui.EaseConstant;
-import com.trello.rxlifecycle2.android.ActivityEvent;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -21,24 +15,22 @@ import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import dingshi.com.hibook.Constant;
+import dingshi.com.hibook.BuildConfig;
 import dingshi.com.hibook.MainActivity;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseFragment;
-import dingshi.com.hibook.bean.BookList;
 import dingshi.com.hibook.bean.User;
 import dingshi.com.hibook.bean.UserCenter;
-import dingshi.com.hibook.hx.ChatActivity;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.ui.AddressBookActivity;
-import dingshi.com.hibook.ui.InviteActivity;
-import dingshi.com.hibook.ui.MyBorrowActivity;
 import dingshi.com.hibook.ui.BookHouseActivity;
 import dingshi.com.hibook.ui.CouponActivity;
+import dingshi.com.hibook.ui.InviteActivity;
 import dingshi.com.hibook.ui.MoneyBagActivity;
+import dingshi.com.hibook.ui.MyBorrowActivity;
 import dingshi.com.hibook.ui.OrderActivity;
 import dingshi.com.hibook.ui.SettingActivity;
 import dingshi.com.hibook.ui.UserActivity;
@@ -70,6 +62,7 @@ public class BookMyFragment extends BaseFragment {
     TextView txCoupon;
 
 
+
     @Override
     public int getLayoutId() {
         return R.layout.fragment_book_my;
@@ -80,6 +73,8 @@ public class BookMyFragment extends BaseFragment {
         EventBus.getDefault().register(this);
         GlideUtils.loadCircleImage(mActivity, user.getJsonData().getAvatar(), myPhoto);
         txMoney.setText(user.getJsonData().getBalance());
+
+
     }
 
 

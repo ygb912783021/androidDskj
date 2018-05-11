@@ -1,8 +1,5 @@
 package dingshi.com.hibook.present;
 
-import android.content.Intent;
-import android.widget.Toast;
-
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import java.util.HashMap;
@@ -15,7 +12,6 @@ import dingshi.com.hibook.bean.BookCase;
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.BookPerson;
 import dingshi.com.hibook.bean.BookTalent;
-import dingshi.com.hibook.bean.CommGradeAdd;
 import dingshi.com.hibook.bean.CommentGrade;
 import dingshi.com.hibook.bean.CommentInfo;
 import dingshi.com.hibook.bean.Result;
@@ -26,7 +22,6 @@ import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import okhttp3.ResponseBody;
 
 /**
  * @author wangqi

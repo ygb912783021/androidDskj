@@ -8,13 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import dingshi.com.hibook.Constant;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.MyViewPagerAdapter;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.eventbus.EventBusHelper;
 import dingshi.com.hibook.ui.fragment.BookSaleFragment;
-import dingshi.com.hibook.ui.fragment.OrderFragment;
 import dingshi.com.hibook.view.SwitchViewPager;
 
 public class BookSaleActivity extends BaseActivity {

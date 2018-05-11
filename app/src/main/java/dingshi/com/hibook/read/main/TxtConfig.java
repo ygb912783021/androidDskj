@@ -26,7 +26,7 @@ public class TxtConfig {
     public static final int MIN_TEXT_SIZE = 30;//in px
     public static final int DEFAULT_SELECT_TEXT_COLOR = Color.parseColor("#44f6950b");
     public static final int DEFAULT_SLIDER_COLOR = Color.parseColor("#1f4cf5");
-    public  int textSize = MIN_TEXT_SIZE;
+    public int textSize = MIN_TEXT_SIZE;
     public int textColor = Color.BLACK;
     public int backgroundColor = Color.WHITE;
     public int NoteColor = Color.RED;
@@ -38,7 +38,7 @@ public class TxtConfig {
     public Boolean Bold = false;
 
 
-    private static final SharedPreferences getS(Context context) {
+    private static SharedPreferences getS(Context context) {
         SharedPreferences share = context.getSharedPreferences(SAVE_NAME, Context.MODE_PRIVATE);
         return share;
     }
@@ -93,7 +93,7 @@ public class TxtConfig {
 
     public static int getSelectTextColor(Context context) {
         SharedPreferences share = getS(context);
-        return share.getInt(C_SELECT_TEXT_COLOR,DEFAULT_SELECT_TEXT_COLOR);
+        return share.getInt(C_SELECT_TEXT_COLOR, DEFAULT_SELECT_TEXT_COLOR);
     }
 
 

@@ -1,12 +1,10 @@
 package dingshi.com.hibook.view;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
 import android.support.design.widget.BottomSheetDialog;
 import android.view.View;
-import android.widget.TextView;
 
 import dingshi.com.hibook.R;
 

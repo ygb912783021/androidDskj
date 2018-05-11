@@ -3,10 +3,8 @@ package dingshi.com.hibook.retrofit.observer;
 
 import android.text.TextUtils;
 
-
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.exception.ExceptionEngine;
-import dingshi.com.hibook.retrofit.exception.ServerException;
 import dingshi.com.hibook.retrofit.listener.HttpRequestListener;
 import dingshi.com.hibook.retrofit.listener.RxActionManagerImpl;
 import io.reactivex.Observer;

@@ -10,14 +10,12 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.action.ICase2BookView;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
@@ -43,7 +41,6 @@ public class Case2BookActivity extends BaseActivity implements ICase2BookView {
 
     List<Case2Book.JsonDataBean.CellsBean> list = new ArrayList<>();
 
-    private String serialNumber;
     private String radius;
 
     Case2BookPresent present = new Case2BookPresent(this, this);
@@ -55,7 +52,7 @@ public class Case2BookActivity extends BaseActivity implements ICase2BookView {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        serialNumber = getIntent().getStringExtra("serial_number");
+        String  serialNumber = getIntent().getStringExtra("serial_number");
         radius = getIntent().getStringExtra("radius");
 
 

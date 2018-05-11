@@ -2,11 +2,9 @@ package dingshi.com.hibook.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 
 import com.trello.rxlifecycle2.android.ActivityEvent;
@@ -18,7 +16,6 @@ import cn.bingoogolapple.qrcode.core.QRCodeView;
 import cn.bingoogolapple.qrcode.zxing.ZXingView;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.bean.card.CardDetails;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
@@ -32,7 +29,6 @@ import dingshi.com.hibook.utils.strategy.CaseStrategy;
 import dingshi.com.hibook.utils.strategy.CatalogStrategy;
 import dingshi.com.hibook.utils.strategy.HttpUrlStrategy;
 import dingshi.com.hibook.utils.strategy.Strategy;
-import dingshi.com.hibook.utils.strategy.StrategyHelper;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 

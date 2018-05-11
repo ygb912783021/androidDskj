@@ -5,23 +5,16 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.yuyh.easyadapter.helper.ViewHelper;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.share.EasyWxEntryActivity;
 
 public class ShopCarActivity extends BaseActivity {
     @BindView(R.id.shop_car_recyclerview)

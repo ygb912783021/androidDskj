@@ -30,7 +30,7 @@ public abstract class AnimationProvider {
         Direction(boolean isHorizontal) {
             IsHorizontal = isHorizontal;
         }
-    };
+    }
 
     public static enum Animation {
         none, curl, slide, shift

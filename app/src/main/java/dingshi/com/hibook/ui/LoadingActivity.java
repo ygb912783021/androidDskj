@@ -1,18 +1,15 @@
 package dingshi.com.hibook.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import java.util.HashMap;
 
 import butterknife.BindView;
 import dingshi.com.hibook.MainActivity;
-import dingshi.com.hibook.MyApplicationLike;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.Result;
@@ -20,11 +17,9 @@ import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
-import dingshi.com.hibook.ui.fragment.BackBookFragment;
 import dingshi.com.hibook.utils.AppManager;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.GlideUtils;
-import dingshi.com.hibook.view.LoadingLayout;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 

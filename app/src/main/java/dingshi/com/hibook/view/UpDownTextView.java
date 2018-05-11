@@ -8,7 +8,6 @@ package dingshi.com.hibook.view;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -17,9 +16,6 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-
-import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 import java.util.List;
 

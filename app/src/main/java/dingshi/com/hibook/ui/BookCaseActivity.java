@@ -1,7 +1,6 @@
 package dingshi.com.hibook.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,14 +24,11 @@ import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.BookCase;
-import dingshi.com.hibook.bean.BookTalent;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.PixelUtils;
-import dingshi.com.hibook.view.DividVerticalDecoration;
 import dingshi.com.hibook.view.LoadingLayout;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;

@@ -1,39 +1,11 @@
 package dingshi.com.hibook;
 
-import android.content.SyncStatusObserver;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.constraint.solver.Goal;
-import android.util.Base64;
-import android.util.Log;
-
-import com.google.gson.Gson;
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import org.junit.Test;
 
-import java.lang.reflect.Array;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import dingshi.com.hibook.bean.Avatar;
-import dingshi.com.hibook.bean.Captcha;
-import dingshi.com.hibook.bean.User;
-import dingshi.com.hibook.retrofit.api.ApiService;
-import dingshi.com.hibook.retrofit.gson.ResponseConverterFactory;
-import dingshi.com.hibook.retrofit.net.NetUtils;
-import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.EmailUtils;
-import dingshi.com.hibook.utils.SpUtils;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Consumer;
-import okhttp3.ResponseBody;
-import retrofit2.Retrofit;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

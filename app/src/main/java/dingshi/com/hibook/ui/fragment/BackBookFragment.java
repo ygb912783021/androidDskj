@@ -241,7 +241,7 @@ public class BackBookFragment extends BaseFragment {
                     @Override
                     public void onClick(View v) {
 
-                        HashMap<String, String> map = new HashMap<String, String>(2);
+                        HashMap<String, String> map = new HashMap<>(2);
                         map.put("isbn", bean.getIsbn());
                         map.put("out_trade_no", bean.getOut_trade_no());
                         map.put("order_type", "1");

@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
-
 import java.util.Arrays;
 
 import butterknife.BindView;
@@ -18,7 +17,6 @@ import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;
-import io.reactivex.internal.schedulers.NewThreadWorker;
 
 public class ReceiviaddressActivity extends BaseActivity{
     @BindView(R.id.receive_address_addtext)

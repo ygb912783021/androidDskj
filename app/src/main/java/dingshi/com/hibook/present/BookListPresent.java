@@ -8,14 +8,11 @@ import dingshi.com.hibook.action.IBookListView;
 import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.base.BasePresent;
 import dingshi.com.hibook.bean.BookList;
-import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.bean.User;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.SpUtils;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 

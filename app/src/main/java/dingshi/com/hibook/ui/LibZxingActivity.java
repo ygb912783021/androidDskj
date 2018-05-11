@@ -3,14 +3,8 @@ package dingshi.com.hibook.ui;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
-
-import com.yuyh.library.imgsel.bean.Image;
-
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
 
 import butterknife.BindView;
 import cn.bingoogolapple.qrcode.core.BGAQRCodeUtil;

@@ -1,7 +1,6 @@
 package dingshi.com.hibook;
 
 
-
 import com.bugtags.library.Bugtags;
 import com.pgyersdk.crash.PgyCrashManager;
 import com.squareup.leakcanary.LeakCanary;
@@ -20,6 +19,7 @@ public class MyApplication extends TinkerApplication {
     private static MyApplication instance;
 
     private RefWatcher mRefWatcher;
+
     public MyApplication() {
         super(ShareConstants.TINKER_ENABLE_ALL, "dingshi.com.hibook.MyApplicationLike",
                 "com.tencent.tinker.loader.TinkerLoader", false);
@@ -31,17 +31,17 @@ public class MyApplication extends TinkerApplication {
     public void onCreate() {
         super.onCreate();
 
-        if (BuildConfig.BUILD_TYPE.equals("debug")) {
+        if (BuildConfig.DEBUG) {
             //初始化蒲公英
             PgyCrashManager.register(this);
             //初始化bugtags
             Bugtags.start("50d8b7dca2e6f3b5dcc1ecdce58b9e0d", this, Bugtags.BTGInvocationEventBubble);
-//            LeakCanary.install(this);
+            //初始化LeakCanary,LeakCanary.install(this);
             mRefWatcher = LeakCanary.install(this);
         }
     }
 
-//    @Override
+    //    @Override
 //    public void onCreate() {
 //        super.onCreate();
 //        instance = this;

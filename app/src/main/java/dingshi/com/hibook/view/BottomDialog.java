@@ -2,15 +2,12 @@ package dingshi.com.hibook.view;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.RelativeLayout;
 
 import dingshi.com.hibook.R;
 
@@ -21,12 +18,10 @@ import dingshi.com.hibook.R;
 
 
 public class BottomDialog {
-    private Context context;
     private Dialog dialog;
     private Display display;
 
     public BottomDialog(Context context) {
-        this.context = context;
         WindowManager windowManager = (WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE);
 
@@ -49,13 +44,13 @@ public class BottomDialog {
 //        layoutParams.layoutAnimationParameters
 
 
-
         return this;
     }
 
     /**
      * 设置布局的比例
-     *‘
+     * ‘
+     *
      * @param view
      * @param scale 0到1   0.3
      * @return

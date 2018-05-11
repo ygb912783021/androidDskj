@@ -16,10 +16,10 @@ import dingshi.com.hibook.read.utils.TxtBitmapUtil;
  */
 
 public class BitmapProduceTask implements ITxtTask {
-    private String tag = "BitmapProduceTask";
 
     @Override
     public void Run(ILoadListener callBack, TxtReaderContext readerContext) {
+        String tag = "BitmapProduceTask";
         ELogger.log(tag, "Produce Bitmap");
         callBack.onMessage("start to  Produce Bitmap");
 

@@ -2,14 +2,11 @@ package dingshi.com.hibook.present;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
 import com.trello.rxlifecycle2.android.ActivityEvent;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.HashMap;
 
@@ -18,7 +15,6 @@ import dingshi.com.hibook.action.ILibManagerView;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.base.BasePresent;
 import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.eventbus.LibRefreshEvent;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;

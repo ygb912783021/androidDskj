@@ -1,7 +1,6 @@
 package dingshi.com.hibook.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatRatingBar;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,7 +32,6 @@ import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.present.BookDetailsPresent;
 import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.view.LoadingLayout;
-import retrofit2.http.Part;
 
 /**
  * @author wangqi

@@ -24,7 +24,7 @@ import dingshi.com.hibook.read.main.TxtConfig;
  */
 
 public class TxtBitmapUtil {
-    public static final Bitmap createHorizontalPage(Bitmap bg, PaintContext paintContext, PageParam pageParam, TxtConfig txtConfig, IPage page) {
+    public static Bitmap createHorizontalPage(Bitmap bg, PaintContext paintContext, PageParam pageParam, TxtConfig txtConfig, IPage page) {
         if (page == null || !page.HasData()) {
             return null;
         }

@@ -1,9 +1,8 @@
 package dingshi.com.hibook.ui.library;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,6 @@ import butterknife.BindView;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.MyViewPagerAdapter;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.ui.fragment.BookListFragment;
 import dingshi.com.hibook.ui.fragment.LibUserFragment;
 import dingshi.com.hibook.view.SwitchViewPager;

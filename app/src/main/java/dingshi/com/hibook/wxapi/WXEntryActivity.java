@@ -3,8 +3,6 @@ package dingshi.com.hibook.wxapi;
 
 import com.umeng.weixin.callback.WXCallbackActivity;
 
-import dingshi.com.hibook.share.EasyWxEntryActivity;
-
 /**
  * @author wangqi
  * @since 2017/11/7 17:39

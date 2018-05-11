@@ -1,7 +1,5 @@
 package dingshi.com.hibook.present;
 
-import android.widget.Toast;
-
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import java.util.HashMap;
@@ -10,12 +8,10 @@ import dingshi.com.hibook.action.ISettingView;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.base.BasePresent;
 import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.bean.User;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
-import dingshi.com.hibook.ui.SettingActivity;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.SpUtils;
 import io.reactivex.Observable;

@@ -8,7 +8,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,12 +18,10 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -32,22 +29,14 @@ import dingshi.com.hibook.R;
 import dingshi.com.hibook.action.ILibUserView;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseFragment;
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.bean.lib.LibIntro;
 import dingshi.com.hibook.eventbus.LibRefreshEvent;
 import dingshi.com.hibook.present.LibUserPresent;
-import dingshi.com.hibook.retrofit.exception.ApiException;
-import dingshi.com.hibook.retrofit.net.NetUtils;
-import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
-import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.ui.card.CardDetailsActivity;
-import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.CallUtils;
 import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.utils.PixelUtils;
 import dingshi.com.hibook.view.DividVerticalDecoration;
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 
 
 /**

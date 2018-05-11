@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -24,9 +23,7 @@ import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.utils.SpUtils;
-import dingshi.com.hibook.view.TitleView;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 
@@ -48,7 +45,6 @@ public class MoneyBagActivity extends BaseActivity {
      */
     private boolean isForegift;
 
-    private String tip;
 
     @Override
     public int getLayoutId() {
@@ -123,7 +119,7 @@ public class MoneyBagActivity extends BaseActivity {
 
     public void updateUI(User u) {
         txMoney.setText(u.getJsonData().getBalance());
-
+        String tip;
         if (u.getJsonData().getBalance_refund_status() == 0) {
             if (u.getJsonData().getCert_status() == 1) {
                 isForegift = true;

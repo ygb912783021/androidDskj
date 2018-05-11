@@ -14,9 +14,6 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import java.util.HashMap;
 
 import butterknife.BindView;

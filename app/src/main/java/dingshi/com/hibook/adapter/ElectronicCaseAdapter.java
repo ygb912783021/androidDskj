@@ -1,7 +1,6 @@
 package dingshi.com.hibook.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,24 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-//import com.hw.txtreaderlib.ui.HwTxtPlayActivity;
-
-import com.example.administrator.readbook.BitIntentDataManager;
-import com.example.administrator.readbook.bean.BookShelfBean;
-import com.example.administrator.readbook.dao.BookShelfBeanDao;
-import com.example.administrator.readbook.dao.DbHelper;
-import com.example.administrator.readbook.presenter.impl.ReadBookPresenterImpl;
-import com.example.administrator.readbook.view.impl.MainActivity;
-import com.example.administrator.readbook.view.impl.ReadBookActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.bean.BookShelf;
-import dingshi.com.hibook.bean.EbookGratis;
 import dingshi.com.hibook.bean.EbookList;
-import dingshi.com.hibook.ui.BookReadActivity;
+
+//import com.hw.txtreaderlib.ui.HwTxtPlayActivity;
 
 public class ElectronicCaseAdapter extends BaseAdapter {
     Context context;

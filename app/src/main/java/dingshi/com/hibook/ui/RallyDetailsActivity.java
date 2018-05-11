@@ -24,7 +24,6 @@ import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.MyViewPagerAdapter;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.bean.card.CardList;
 import dingshi.com.hibook.bean.lib.LibCreate;
 import dingshi.com.hibook.bean.lib.LibList;
 import dingshi.com.hibook.eventbus.EventBusHelper;

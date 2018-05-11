@@ -18,7 +18,6 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.trello.rxlifecycle2.android.ActivityEvent;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -33,7 +32,6 @@ import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.bean.card.CardDetails;
-import dingshi.com.hibook.bean.lib.LibCreate;
 import dingshi.com.hibook.bean.lib.LibIntro;
 import dingshi.com.hibook.bean.lib.LibList;
 import dingshi.com.hibook.eventbus.LibRefreshEvent;

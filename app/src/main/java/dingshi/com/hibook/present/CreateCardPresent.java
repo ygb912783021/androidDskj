@@ -15,7 +15,6 @@ import java.util.HashMap;
 import dingshi.com.hibook.action.ICreateCardView;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.base.BasePresent;
-import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;

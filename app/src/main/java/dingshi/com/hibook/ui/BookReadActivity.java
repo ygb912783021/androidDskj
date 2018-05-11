@@ -4,38 +4,25 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.graphics.drawable.AnimationDrawable;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.media.UMImage;
-import com.umeng.socialize.media.UMWeb;
 
 import java.util.ArrayList;
+
 import dingshi.com.hibook.R;
-import dingshi.com.hibook.base.BaseUmengActivity;
 import dingshi.com.hibook.read.bean.TxtMsg;
 import dingshi.com.hibook.read.interfaces.ILoadListener;
 import dingshi.com.hibook.read.main.TxtReaderView;
@@ -50,11 +37,9 @@ public class BookReadActivity extends Activity implements View.OnClickListener {
     DrawerLayout dl_left;
     TxtReaderView mTxtReaderView;
     LinearLayout line_bottom;
-    private ListView lv_left_menu;
     FuckDialog fuckDialog;
     View mStyle1,mStyle2,mStyle3,mStyle4,mStyle5;
     RelativeLayout relative_r,relative_1;
-    private LinearLayout read_sidebar;
     private ArrayList<String > arrayList = new ArrayList<>();
     private ArrayList<String > stringArrayList = new ArrayList<>();
     @SuppressLint("WrongViewCast")
@@ -70,10 +55,10 @@ public class BookReadActivity extends Activity implements View.OnClickListener {
         arrayList.add("第一章。。。。。。");
         arrayList.add("第一章。。。。。。");
         arrayList.add("第一章。。。。。。");
-        lv_left_menu = findViewById(R.id.lv_left_menu);
+        ListView lv_left_menu = findViewById(R.id.lv_left_menu);
         MySidebarAdapter mySidebarAdapter = new MySidebarAdapter(this);
         lv_left_menu.setAdapter(mySidebarAdapter);
-        read_sidebar = findViewById(R.id.read_sidebar);
+        LinearLayout  read_sidebar = findViewById(R.id.read_sidebar);
         dl_left = findViewById(R.id.dl_left);
         mTxtReaderView = (TxtReaderView) findViewById(R.id.activity_hwtxtplay_readerView);
         line_bottom = findViewById(R.id.line_bottom);

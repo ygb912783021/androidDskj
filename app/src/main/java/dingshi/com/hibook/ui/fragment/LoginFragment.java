@@ -1,18 +1,11 @@
 package dingshi.com.hibook.ui.fragment;
 
 
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -20,22 +13,21 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import dingshi.com.hibook.BuildConfig;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.action.ILoginView;
 import dingshi.com.hibook.base.BaseFragment;
-import dingshi.com.hibook.base.BaseUmengActivity;
 import dingshi.com.hibook.bean.WexinInfo;
 import dingshi.com.hibook.present.LoginPresent;
+import dingshi.com.hibook.retrofit.net.EnvironmentManager;
 import dingshi.com.hibook.share.AuthResult;
 import dingshi.com.hibook.share.EasyPayShare;
 import dingshi.com.hibook.ui.LoginActivity;
-import dingshi.com.hibook.utils.CheckWecheatUtil;
 import dingshi.com.hibook.utils.PhoneUtils;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -61,6 +53,8 @@ public class LoginFragment extends BaseFragment implements ILoginView {
     TextView txCaptch;
     @BindView(R.id.login_captcha)
     TextView txCapchaTip;
+    @BindView(R.id.tv_login_switch)
+    TextView tvEnvSwitch;
 
 
     LoginActivity activity;
@@ -68,11 +62,15 @@ public class LoginFragment extends BaseFragment implements ILoginView {
 
     boolean pswShow = false;
 
+    /**
+     * 是否后台测试环境
+     */
+    boolean release = true;
 
     /**
      * 判断当前登录方式
      */
-    boolean isCaptchLogin ;
+    boolean isCaptchLogin;
 
     @Override
     public int getLayoutId() {
@@ -84,9 +82,17 @@ public class LoginFragment extends BaseFragment implements ILoginView {
         switchLogin();
         activity = (LoginActivity) mActivity;
         EventBus.getDefault().register(this);
+
+
+        if (BuildConfig.DEBUG) {
+            tvEnvSwitch.setClickable(true);
+            tvEnvSwitch.setText(EnvironmentManager.getInstance().getEnvLabel());
+        } else {
+            tvEnvSwitch.setClickable(false);
+        }
     }
 
-    @OnClick({R.id.login_login, R.id.login_register, R.id.login_zhifubao,
+    @OnClick({R.id.tv_login_switch, R.id.login_login, R.id.login_register, R.id.login_zhifubao,
             R.id.login_weixin, R.id.login_password_show, R.id.login_captcha,
             R.id.login_captch_show, R.id.login_forget})
     public void onClick(View v) {
@@ -134,8 +140,20 @@ public class LoginFragment extends BaseFragment implements ILoginView {
                 loginPresent.captcha(mobileEdit.getText().toString().trim(), "4");
                 sendCaptch();
                 break;
+            case R.id.tv_login_switch:
+
+                switchBaseEnvironment();
+
+
+                break;
             default:
         }
+    }
+
+    private void switchBaseEnvironment() {
+        release = !release;
+        EnvironmentManager.getInstance().switchEnvironment(release);
+        tvEnvSwitch.setText(EnvironmentManager.getInstance().getEnvLabel());
     }
 
     @Override

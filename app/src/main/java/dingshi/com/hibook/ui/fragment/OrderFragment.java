@@ -67,7 +67,7 @@ public class OrderFragment extends BaseFragment implements IRequestView<Order> {
     @Override
     public void initView() {
         payment_status = getArguments().getInt("payment_status");
-        fuckYouAdapter = new FuckYouAdapter<Order.JsonDataBean>(R.layout.view_item_order, list);
+        fuckYouAdapter = new FuckYouAdapter<>(R.layout.view_item_order, list);
         recyclerView.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new SpacesItemDecoration(13));
         recyclerView.setAdapter(fuckYouAdapter);
