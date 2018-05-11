@@ -13,7 +13,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.bean.BookList;
 import dingshi.com.hibook.bean.Order;
 import dingshi.com.hibook.bean.OrderDetails;
 import dingshi.com.hibook.retrofit.exception.ApiException;
@@ -22,7 +21,6 @@ import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.GlideUtils;
-import dingshi.com.hibook.view.TitleView;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 

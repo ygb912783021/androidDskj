@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import dingshi.com.hibook.BuildConfig;
 import dingshi.com.hibook.retrofit.api.ApiService;
 import dingshi.com.hibook.retrofit.gson.ResponseConverterFactory;
+import dingshi.com.hibook.retrofit.interceptroutils.HttpLogger;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -61,8 +62,7 @@ public class NetUtils {
     }
 
     private static OkHttpClient getHttpClient() {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLogger());
         if (BuildConfig.DEBUG) {
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         } else {
@@ -70,10 +70,11 @@ public class NetUtils {
         }
 
         return new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
+                .addNetworkInterceptor(new HttpLoggingInterceptor(new HttpLogger()))
                 .addInterceptor(new HeaderInterceptor())
                 .retryOnConnectionFailure(true)
                 .connectTimeout(10, TimeUnit.SECONDS)
+                .addNetworkInterceptor(interceptor)
                 .build();
     }
 

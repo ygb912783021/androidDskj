@@ -27,7 +27,7 @@ public class CheckWecheatUtil {
         if (pinfo != null) {
             for (int i = 0; i < pinfo.size(); i++) {                        //3.从所有已安装app的列表中查询
                 String pn = pinfo.get(i).packageName;
-                Log.d(TAG, "onClick package name ::: " + pn);
+//                Log.d(TAG, "onClick package name ::: " + pn);
                 if (pn.equals(WECHEAT_PACKAGENAME))
                     return true;
             }

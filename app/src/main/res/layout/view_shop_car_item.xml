@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
-    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/dp_1"
     android:layout_marginHorizontal="@dimen/dp_5"
-    android:layout_marginBottom="@dimen/dp_1">
+    android:background="@color/white"
+    android:orientation="horizontal">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/shop_car_item_checkbox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
         android:drawableLeft="@drawable/charge_choose"
         android:drawablePadding="@dimen/sp_15"
-        android:textSize="@dimen/sp_17"
-        android:layout_margin="@dimen/dp_5"
-        android:text="京东自营1号店" />
+        android:text="京东自营1号店"
+        android:textSize="@dimen/sp_17" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/shop_car_item_recycleview"
         android:layout_width="match_parent"
@@ -29,5 +25,4 @@
         android:layout_margin="@dimen/dp_5">
 
     </android.support.v7.widget.RecyclerView>
-</LinearLayout>
 </LinearLayout>

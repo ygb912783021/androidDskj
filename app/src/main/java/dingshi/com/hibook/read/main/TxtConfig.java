@@ -49,7 +49,7 @@ public class TxtConfig {
         SharedPreferences share = getS(context);
         SharedPreferences.Editor editor = share.edit();
         editor.putInt(C_TEXT_SIZE, textSize);
-        editor.commit();
+        editor.apply();
     }
 
     public static int getTextSize(Context context) {

@@ -242,6 +242,7 @@
         android:layout_marginRight="@dimen/dp_10"
         android:background="@drawable/shap_black_7"
         android:clickable="true"
+        android:focusable="true"
         android:gravity="center"
         android:paddingBottom="@dimen/dp_8"
         android:paddingLeft="@dimen/dp_10"

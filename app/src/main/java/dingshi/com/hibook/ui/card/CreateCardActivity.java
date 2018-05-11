@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -395,7 +396,7 @@ public class CreateCardActivity extends BaseActivity implements ICreateCardView 
 
     @Override
     public void onBirth(String birth) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
         String currentDate = simpleDateFormat.format(new Date(System.currentTimeMillis()));
         String bircheck = birth.replace("-", "");
         currentDate = currentDate.replace("-", "");

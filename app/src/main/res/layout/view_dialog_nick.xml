@@ -36,6 +36,7 @@
         android:layout_marginTop="@dimen/dp_10"
         android:background="@color/colorAccent"
         android:clickable="true"
+        android:focusable="true"
         android:paddingBottom="@dimen/dp_5"
         android:paddingLeft="@dimen/dp_10"
         android:paddingRight="@dimen/dp_10"

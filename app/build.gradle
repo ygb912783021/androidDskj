@@ -5,7 +5,7 @@ android {
         release {
             keyAlias 'hibook'
             keyPassword 'hibook'
-            storeFile file('D:/project backup/2/hibook/app/hibook.jks')
+            storeFile file('/Users/blank/WorkSpace/ASSpace/androidDskjs/app/hibook.jks')
             storePassword 'hibook'
         }
     }
@@ -177,7 +177,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation project(':readbook')
 
-    implementation 'com.android.support:appcompat-v7:28.0.0 rc1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.jakewharton:butterknife:8.8.1'
     implementation 'com.android.support:support-v4:27.1.1'
@@ -221,11 +221,10 @@ dependencies {
     // or 1.4-beta1
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     // or 1.4-beta1
-
-    implementation 'com.pgyersdk:sdk:2.8.1'
-
-    implementation 'com.bugtags.library:bugtags-lib:latest.integration'
-
+    compile 'com.pgyersdk:sdk:2.8.1'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
 }
 // 依赖插件脚本
 apply from: 'tinker-support.gradle'

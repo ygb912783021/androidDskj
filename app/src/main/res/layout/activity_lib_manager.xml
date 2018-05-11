@@ -72,8 +72,8 @@
         android:textColor="@color/gray_a5"
         android:textSize="@dimen/sp_14"
         app:layout_constraintBottom_toTopOf="@+id/lib_manager_tab2"
-        app:layout_constraintTop_toBottomOf="@+id/lib_manager_tab1"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lib_manager_tab1" />
 
 
     <RelativeLayout

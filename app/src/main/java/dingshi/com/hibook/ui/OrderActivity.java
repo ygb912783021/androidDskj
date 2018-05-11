@@ -1,10 +1,9 @@
 package dingshi.com.hibook.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +13,6 @@ import dingshi.com.hibook.MainActivity;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.MyViewPagerAdapter;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.base.BaseFragment;
-import dingshi.com.hibook.ui.fragment.MoneyDetailsFragment;
 import dingshi.com.hibook.ui.fragment.OrderFragment;
 import dingshi.com.hibook.utils.AppManager;
 import dingshi.com.hibook.view.SwitchViewPager;

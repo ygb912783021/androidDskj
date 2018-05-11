@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -54,7 +55,7 @@ public class EduActivity extends BaseActivity {
     private String strLevel = "";
     private String strContent = "";
 //    获取当前时间
-    int cdate=Integer.valueOf(new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis())).replace("-", ""));
+    int cdate=Integer.valueOf(new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA).format(new Date(System.currentTimeMillis())).replace("-", ""));
     int stTime=0;
     int entime=0;
 

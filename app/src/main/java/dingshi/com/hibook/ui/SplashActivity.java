@@ -78,7 +78,7 @@ public class SplashActivity extends BaseActivity {
             requestPermission();
         } else {
             jumpActivity();
-            PushManager.getInstance().initialize(this.getApplicationContext(), userPushService);
+            PushManager.getInstance().initialize(getApplicationContext(), userPushService);
         }
         // 注册 intentService 后 PushDemoReceiver 无效, sdk 会使用 DemoIntentService 传递数据,
         // AndroidManifest 对应保留一个即可(如果注册 DemoIntentService, 可以去掉 PushDemoReceiver, 如果注册了

@@ -1,7 +1,6 @@
 package dingshi.com.hibook.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +19,6 @@ import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.Order;
 import dingshi.com.hibook.bean.OrderDetails;
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
