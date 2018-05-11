@@ -1,10 +1,8 @@
 package dingshi.com.hibook.ui.fragment;
 
 
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;

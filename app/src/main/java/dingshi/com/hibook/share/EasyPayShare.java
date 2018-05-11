@@ -5,14 +5,11 @@ import android.content.Context;
 import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.alipay.sdk.app.AuthTask;
 import com.google.gson.Gson;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -21,17 +18,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import dingshi.com.hibook.base.BaseUmengActivity;
 import dingshi.com.hibook.bean.Payment;
-import dingshi.com.hibook.bean.User;
-import dingshi.com.hibook.retrofit.exception.ApiException;
-import dingshi.com.hibook.retrofit.net.NetUtils;
-import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
-import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.SpUtils;
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 
 
 /**

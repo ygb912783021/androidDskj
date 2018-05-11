@@ -1,14 +1,8 @@
 package dingshi.com.hibook.ui.fragment;
 
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -17,8 +11,6 @@ import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -27,18 +19,10 @@ import dingshi.com.hibook.action.IRequestView;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseFragment;
 import dingshi.com.hibook.bean.MoneyDetails;
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.present.MoneyDetailsPresent;
-import dingshi.com.hibook.retrofit.exception.ApiException;
-import dingshi.com.hibook.retrofit.net.NetUtils;
-import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
-import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
-import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.PixelUtils;
 import dingshi.com.hibook.view.DividVerticalDecoration;
 import dingshi.com.hibook.view.LoadingLayout;
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 
 /**
  * @author wangqi

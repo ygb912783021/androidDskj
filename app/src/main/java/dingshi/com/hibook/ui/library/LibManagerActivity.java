@@ -3,20 +3,12 @@ package dingshi.com.hibook.ui.library;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-
-import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -26,30 +18,18 @@ import dingshi.com.hibook.Constant;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.action.ILibManagerView;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.bean.BookDetails;
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.bean.lib.LibList;
 import dingshi.com.hibook.eventbus.LibDeleteEvent;
 import dingshi.com.hibook.eventbus.LibRefreshEvent;
 import dingshi.com.hibook.present.LibManagerPresent;
-import dingshi.com.hibook.retrofit.exception.ApiException;
-import dingshi.com.hibook.retrofit.net.NetUtils;
-import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
-import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.ui.LibZxingActivity;
-import dingshi.com.hibook.ui.card.CardDetailsActivity;
-import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.EmailUtils;
 import dingshi.com.hibook.utils.JoinBitmapUtils;
-import dingshi.com.hibook.view.FuckDialog;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
 import io.reactivex.FlowableOnSubscribe;
-import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 

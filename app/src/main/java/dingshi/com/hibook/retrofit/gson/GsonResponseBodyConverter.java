@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 
 import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.exception.ServerException;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;

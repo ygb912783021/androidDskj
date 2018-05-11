@@ -1,6 +1,5 @@
 package dingshi.com.hibook.action;
 
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.bean.lib.LibCreate;
 
 /**

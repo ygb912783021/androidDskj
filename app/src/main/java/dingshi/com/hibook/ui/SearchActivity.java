@@ -17,10 +17,8 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -29,15 +27,7 @@ import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.bean.BookList;
-import dingshi.com.hibook.retrofit.exception.ApiException;
-import dingshi.com.hibook.retrofit.net.NetUtils;
-import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
-import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
-import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.SpUtils;
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 
 /**
  * @author wangqi

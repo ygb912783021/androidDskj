@@ -12,6 +12,7 @@ import com.baidu.mapapi.SDKInitializer;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
@@ -37,7 +38,7 @@ public class LocationUtils {
     Application application;
 
     public void registerLocation(Application application, LocationListner locationListner) {
-        this.locationListner = locationListner;
+        listnerWeakReference = new WeakReference<>(locationListner);
         this.application = application;
 
         SDKInitializer.initialize(application);
@@ -93,7 +94,7 @@ public class LocationUtils {
             if (location == null) {
                 return;
             }
-            locationListner.location(location.getLatitude(), location.getLongitude());
+            listnerWeakReference.get().location(location.getLatitude(), location.getLongitude());
         }
     }
 
@@ -105,10 +106,10 @@ public class LocationUtils {
     }
 
 
-    LocationListner locationListner;
+    WeakReference<LocationListner> listnerWeakReference;
 
     public void setLocationListner(LocationListner locationListner) {
-        this.locationListner = locationListner;
+        listnerWeakReference = new WeakReference<>(locationListner);
     }
 
     public interface LocationListner {

@@ -6,10 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
-import io.reactivex.internal.schedulers.NewThreadWorker;
 
 public class AddNewADddressActivity extends BaseActivity {
     @BindView(R.id.add_newadd_choose)

@@ -2,7 +2,6 @@ package dingshi.com.hibook.utils;
 
 import android.os.Build;
 import android.util.Base64;
-import android.util.Log;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -11,10 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import dingshi.com.hibook.BuildConfig;
-import dingshi.com.hibook.Constant;
 import dingshi.com.hibook.MyApplicationLike;
 
 /**
@@ -35,7 +31,7 @@ public class AppSign {
     public static HashMap<String, String> buildMap(HashMap<String, String> map) {
         map.putAll(getParams());
 
-        List<String> keys = new ArrayList<String>(map.keySet());
+        List<String> keys = new ArrayList<>(map.keySet());
         Collections.sort(keys);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < keys.size() - 1; i++) {
@@ -66,7 +62,7 @@ public class AppSign {
     public static String buildString(HashMap<String, String> map) {
         map.putAll(getParams());
 
-        List<String> keys = new ArrayList<String>(map.keySet());
+        List<String> keys = new ArrayList<>(map.keySet());
         Collections.sort(keys);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < keys.size() - 1; i++) {
@@ -95,7 +91,7 @@ public class AppSign {
 
 
     public static String buidParam(HashMap<String, String> map) {
-        List<String> keys = new ArrayList<String>(map.keySet());
+        List<String> keys = new ArrayList<>(map.keySet());
         Collections.sort(keys);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < keys.size() - 1; i++) {

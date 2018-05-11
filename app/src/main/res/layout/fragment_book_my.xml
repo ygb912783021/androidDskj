@@ -51,6 +51,8 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/my_default_photo" />
 
+
+
         </android.support.design.widget.CollapsingToolbarLayout>
 
 
@@ -186,6 +188,7 @@
                     android:textColor="@color/black_3f"
                     android:textSize="@dimen/sp_15" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -219,8 +222,6 @@
                     android:textColor="@color/black_3f"
                     android:textSize="@dimen/sp_15" />
             </RelativeLayout>
-
-
 
 
             <RelativeLayout

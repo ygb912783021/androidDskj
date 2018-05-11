@@ -15,7 +15,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.widget.ImageView;
 
 /**
  * 实现圆形、圆角，椭圆等自定义图片View。

@@ -3,7 +3,6 @@ package dingshi.com.hibook.utils;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.support.v4.BuildConfig;
 import android.text.TextUtils;
 
 /**

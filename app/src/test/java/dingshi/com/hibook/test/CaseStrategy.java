@@ -1,7 +1,5 @@
 package dingshi.com.hibook.test;
 
-import org.junit.*;
-
 /**
  * @author wangqi
  * @since 2018/3/2 13:38

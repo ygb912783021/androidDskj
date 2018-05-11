@@ -1,7 +1,5 @@
 package dingshi.com.hibook.bean;
 
-import java.io.Serializable;
-
 public class EbookList {
     private int book_id;
 

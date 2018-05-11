@@ -2,8 +2,6 @@ package dingshi.com.hibook.ui.library;
 
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.EditText;

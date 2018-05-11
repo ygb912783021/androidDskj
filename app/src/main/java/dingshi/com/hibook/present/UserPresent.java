@@ -28,16 +28,10 @@ import dingshi.com.hibook.utils.SpUtils;
 import dingshi.com.hibook.view.FuckDialog;
 import dingshi.com.hibook.view.GenderView;
 import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-
-import static android.R.attr.path;
 
 /**
  * @author wangqi

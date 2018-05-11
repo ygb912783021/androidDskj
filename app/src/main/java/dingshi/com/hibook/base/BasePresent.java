@@ -86,9 +86,6 @@ public class BasePresent<V, A> implements LifeCycleListener {
         }
     }
 
-    /**
-     * 判断当前是否已关联软引用
-     */
 
     /**
      * 是否已经关联

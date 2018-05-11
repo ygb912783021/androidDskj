@@ -1,12 +1,9 @@
 package dingshi.com.hibook.share;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Looper;
-import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
 

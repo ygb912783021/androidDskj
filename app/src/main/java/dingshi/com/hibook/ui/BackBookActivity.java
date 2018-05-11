@@ -1,20 +1,21 @@
 package dingshi.com.hibook.ui;
+
 import android.content.Intent;
-import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.trello.rxlifecycle2.android.ActivityEvent;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 import dingshi.com.hibook.MyApplicationLike;
@@ -23,14 +24,10 @@ import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.BookCase;
 import dingshi.com.hibook.bean.BookDetails;
-import dingshi.com.hibook.bean.Borrows;
-import dingshi.com.hibook.bean.Order;
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
-import dingshi.com.hibook.ui.fragment.BackBookFragment;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.GlideUtils;
 import io.reactivex.Observable;

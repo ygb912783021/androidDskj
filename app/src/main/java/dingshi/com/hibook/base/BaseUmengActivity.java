@@ -3,7 +3,6 @@ package dingshi.com.hibook.base;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -152,33 +151,6 @@ public class BaseUmengActivity extends BaseRxActivity {
 
     public void loginSuccess(Map<String, String> map) {
 
-        /**
-         * openid :
-         * platform_type : 3
-         * user_id : 491823389864890376
-         * sex : 0
-         * nick_name : 15055407294
-         * avatar :
-         * balance : 0  余额
-         * mobile : 15055407294
-         * birthday: "2017-11-16",
-         * province :
-         * city :
-         * cert_status :  押金 没0  交过1
-         * disable : 0
-         * signable : 1
-         * created_at : 2017-11-09 14:05:16
-         * token : a15da4b74b8c15d8220e41c5323a6ef886a5a814
-         * foregift : 用户押金的钱是多少
-         * read_num   读书量
-         * book_num   藏书量
-         * balance_refund_status  押金的状态  0、无状态  1、审核中
-         */
-
-
-//        for (Map.Entry entry : map.entrySet()) {
-//            Log.d(TAG, entry.getKey() + "---" + entry.getValue());
-//        }
     }
 
     private String get(Map<String, String> dataSrc, String key) {

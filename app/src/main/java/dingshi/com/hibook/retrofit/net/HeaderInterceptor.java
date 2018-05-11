@@ -1,7 +1,5 @@
 package dingshi.com.hibook.retrofit.net;
 
-import android.util.Log;
-
 import java.io.IOException;
 
 import dingshi.com.hibook.utils.SpUtils;

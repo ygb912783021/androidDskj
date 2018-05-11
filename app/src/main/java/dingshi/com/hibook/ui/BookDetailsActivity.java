@@ -11,16 +11,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
@@ -36,19 +33,12 @@ import dingshi.com.hibook.bean.BookTalent;
 import dingshi.com.hibook.bean.CommentGrade;
 import dingshi.com.hibook.bean.CommentInfo;
 import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.bean.UserCenter;
 import dingshi.com.hibook.present.BookDetailsPresent;
 import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.utils.KefuUtils;
 import dingshi.com.hibook.view.AbsRecyclerView;
 import dingshi.com.hibook.view.ExpandTextView;
 import dingshi.com.hibook.view.FuckDialog;
-import retrofit2.http.Part;
-
-import static dingshi.com.hibook.R.id.default_activity_button;
-import static dingshi.com.hibook.R.id.item_book_details_friend_photo;
-import static dingshi.com.hibook.R.id.start;
-import static dingshi.com.hibook.R.id.withText;
 
 /**
  * @author wangqi

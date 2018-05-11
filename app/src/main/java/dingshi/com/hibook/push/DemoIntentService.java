@@ -2,7 +2,6 @@ package dingshi.com.hibook.push;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import com.igexin.sdk.GTIntentService;
 import com.igexin.sdk.PushConsts;
@@ -17,7 +16,6 @@ import com.igexin.sdk.message.UnBindAliasCmdMessage;
 import dingshi.com.hibook.MainActivity;
 import dingshi.com.hibook.ui.SplashActivity;
 import dingshi.com.hibook.utils.AppManager;
-import dingshi.com.hibook.utils.SpUtils;
 
 /**
  * 继承 GTIntentService 接收来自个推的消息, 所有消息在线程中回调, 如果注册了该服务, 则务必要在 AndroidManifest中声明, 否则无法接受消息<br>

@@ -1,7 +1,5 @@
 package dingshi.com.hibook.retrofit.gson;
 
-import android.util.Log;
-
 import com.google.gson.Gson;
 
 import java.lang.annotation.Annotation;

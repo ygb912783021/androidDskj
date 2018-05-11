@@ -2,15 +2,11 @@ package dingshi.com.hibook.ui.fragment;
 
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,12 +18,9 @@ import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -35,9 +28,6 @@ import butterknife.BindView;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseFragment;
-import dingshi.com.hibook.bean.Result;
-import dingshi.com.hibook.bean.User;
-import dingshi.com.hibook.bean.lib.LibCreate;
 import dingshi.com.hibook.bean.lib.LibIntro;
 import dingshi.com.hibook.bean.lib.LibList;
 import dingshi.com.hibook.eventbus.EventBusHelper;
@@ -47,14 +37,10 @@ import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.ui.card.CardDetailsActivity;
-import dingshi.com.hibook.ui.card.MyCardActivity;
-import dingshi.com.hibook.ui.library.JoinLibActivity;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.GlideUtils;
-import dingshi.com.hibook.utils.SpUtils;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import retrofit2.http.Part;
 
 /**
  * @author wangqi

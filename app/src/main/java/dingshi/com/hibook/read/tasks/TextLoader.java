@@ -17,9 +17,9 @@ import dingshi.com.hibook.read.utils.ELogger;
  * on 2018/1/28.
  */
 
-public class TextLoader  {
-    private String tag = "FileDataLoadTask";
+public class TextLoader {
     public void load(String text, TxtReaderContext readerContext, ILoadListener callBack) {
+        String tag = "FileDataLoadTask";
         IParagraphData paragraphData = new ParagraphData();
         List<IChapter> chapter = new ArrayList<>();
         callBack.onMessage("start read text");

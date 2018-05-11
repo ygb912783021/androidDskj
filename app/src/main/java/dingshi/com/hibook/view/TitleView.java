@@ -2,10 +2,8 @@ package dingshi.com.hibook.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.media.Image;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,7 +20,6 @@ import dingshi.com.hibook.utils.PixelUtils;
 
 public class TitleView extends LinearLayout {
 
-    private View view;
     private ImageView backImg;
     private ImageView rightImage;
     private TextView centerText;
@@ -54,7 +51,7 @@ public class TitleView extends LinearLayout {
     }
 
     private void initView(Context context) {
-        view = LayoutInflater.from(context).inflate(R.layout.view_title, null, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.view_title, null, false);
         view.setBackgroundColor(backGroundColor);
         LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, PixelUtils.dip2Px(context, 45));
         addView(view, params);

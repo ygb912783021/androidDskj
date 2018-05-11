@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.tencent.mm.opensdk.modelbase.BaseReq;

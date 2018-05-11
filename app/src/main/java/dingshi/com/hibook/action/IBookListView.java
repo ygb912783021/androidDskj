@@ -1,7 +1,6 @@
 package dingshi.com.hibook.action;
 
 import dingshi.com.hibook.bean.BookList;
-import dingshi.com.hibook.bean.Result;
 
 /**
  * @author wangqi

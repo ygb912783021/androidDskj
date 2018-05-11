@@ -1,8 +1,6 @@
 package dingshi.com.hibook.hx;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -22,10 +20,8 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baidu.platform.comapi.map.E;
 import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMConversationListener;
 import com.hyphenate.EMError;
@@ -35,7 +31,6 @@ import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.adapter.EaseConversationAdapter;
 import com.hyphenate.easeui.ui.EaseBaseFragment;
 import com.hyphenate.easeui.widget.EaseConversationList;
-import com.hyphenate.easeui.widget.EaseImageView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,7 +41,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import dingshi.com.hibook.utils.KefuUtils;
-import dingshi.com.hibook.utils.SpUtils;
 
 /**
  * conversation list fragment

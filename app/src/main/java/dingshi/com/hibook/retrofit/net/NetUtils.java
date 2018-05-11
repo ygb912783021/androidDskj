@@ -1,5 +1,6 @@
 package dingshi.com.hibook.retrofit.net;
 
+import com.baidu.platform.comapi.map.E;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -8,6 +9,7 @@ import dingshi.com.hibook.BuildConfig;
 import dingshi.com.hibook.retrofit.api.ApiService;
 import dingshi.com.hibook.retrofit.gson.ResponseConverterFactory;
 import dingshi.com.hibook.retrofit.interceptroutils.HttpLogger;
+import dingshi.com.hibook.utils.SpUtils;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -19,13 +21,17 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 
 public class NetUtils {
+
+    public static String base_url = SpUtils.getBaseEnv();
+
     private static final Retrofit RETROFIT = new Retrofit.Builder()
-            .baseUrl(BuildConfig.LOCALHOST)
-//            .baseUrl("http://192.168.2.137/hellobook_api/")
+//            .baseUrl(BuildConfig.LOCALHOST)
+            .baseUrl(base_url)
             .client(getHttpClient())
             .addConverterFactory(ResponseConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build();
+
 
     /**
      * RxJava gson
@@ -38,8 +44,8 @@ public class NetUtils {
 
     public static ApiService getGsonCall() {
         return new Retrofit.Builder()
-                .baseUrl(BuildConfig.LOCALHOST)
-//                .baseUrl("http://192.168.2.137/hellobook_api/")
+//                .baseUrl(BuildConfig.LOCALHOST)
+                .baseUrl(base_url)
 
                 .client(getHttpClient())
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -53,8 +59,8 @@ public class NetUtils {
      */
     public static ApiService getStringRetrofit() {
         return new Retrofit.Builder()
-                .baseUrl(BuildConfig.LOCALHOST)
-//                .baseUrl("http://192.168.2.137/hellobook_api/")
+//                .baseUrl(BuildConfig.LOCALHOST)
+                .baseUrl(base_url)
                 .client(getHttpClient())
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -77,6 +83,7 @@ public class NetUtils {
                 .addNetworkInterceptor(interceptor)
                 .build();
     }
+
 
 
 }

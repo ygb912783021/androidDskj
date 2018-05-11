@@ -2,7 +2,6 @@ package dingshi.com.hibook.action;
 
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.Douban;
-import dingshi.com.hibook.bean.Zxing;
 
 /**
  * @author wangqi

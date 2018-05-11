@@ -23,18 +23,6 @@ import com.pgyersdk.update.PgyUpdateManager;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-
-import dingshi.com.hibook.action.ISettingView;
-import dingshi.com.hibook.bean.Avatar;
-import dingshi.com.hibook.bean.Book;
-import dingshi.com.hibook.bean.EbookGratis;
-import dingshi.com.hibook.bean.User;
-import dingshi.com.hibook.bean.lib.LibCreate;
-import dingshi.com.hibook.hx.Constant;
-
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -44,14 +32,6 @@ import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.hx.Constant;
 import dingshi.com.hibook.hx.DemoHelper;
 import dingshi.com.hibook.present.SettingPresent;
-import dingshi.com.hibook.push.DemoIntentService;
-import dingshi.com.hibook.push.DemoPushService;
-import dingshi.com.hibook.retrofit.exception.ApiException;
-import dingshi.com.hibook.retrofit.net.NetUtils;
-import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
-import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
-import dingshi.com.hibook.ui.BookElectronicActivity;
-import dingshi.com.hibook.ui.BookElectronicCaseActivity;
 import dingshi.com.hibook.ui.LoginActivity;
 import dingshi.com.hibook.ui.ZxingBorrowActivity;
 import dingshi.com.hibook.ui.fragment.BookMyFragment;

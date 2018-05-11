@@ -1,9 +1,7 @@
 package dingshi.com.hibook.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -16,7 +14,6 @@ import butterknife.OnClick;
 import dingshi.com.hibook.MainActivity;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.bean.CommGradeAdd;
 import dingshi.com.hibook.bean.CommInfoAdd;
 import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;

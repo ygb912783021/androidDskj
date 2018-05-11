@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.trello.rxlifecycle2.android.ActivityEvent;
-import com.trello.rxlifecycle2.android.FragmentEvent;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
@@ -38,11 +37,9 @@ import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.ui.fragment.BookHouseFragment;
-import dingshi.com.hibook.ui.fragment.BookMyFragment;
 import dingshi.com.hibook.ui.fragment.FriendRecFragment;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.GlideUtils;
-import dingshi.com.hibook.utils.SpUtils;
 import dingshi.com.hibook.view.SwitchViewPager;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;

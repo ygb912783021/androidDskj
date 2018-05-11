@@ -81,7 +81,7 @@ public class BookStoreFragment extends BaseFragment implements IRequestView<Home
          * 滑动的距离超过第一个item就设置不透明
          * */
         toolbar.getBackground().mutate().setAlpha(0);
-        mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 LinearLayoutManager manager = (LinearLayoutManager) recyclerView.getLayoutManager();

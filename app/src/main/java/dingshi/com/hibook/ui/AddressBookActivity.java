@@ -1,7 +1,5 @@
 package dingshi.com.hibook.ui;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +12,6 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.trello.rxlifecycle2.android.ActivityEvent;
-import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -17,13 +17,13 @@ import dingshi.com.hibook.read.utils.FileUtil;
  */
 
 public class TxtFileLoader {
-    private String tag = "TxtFileLoader";
 
     public void load(String filePath, TxtReaderContext readerContext, ILoadListener loadListener) {
         load(filePath, null, readerContext, loadListener);
     }
 
     public void load(String filePath, String fileName, TxtReaderContext readerContext, ILoadListener loadListener) {
+        String tag = "TxtFileLoader";
         if (!FileUtil.FileExist(filePath)) {
             loadListener.onFail(TxtMsg.FileNoExist);
             return;
@@ -48,7 +48,7 @@ public class TxtFileLoader {
         fileMsg.CurrentParagraphIndex = 0;
         fileMsg.PreParagraphIndex = 0;
         fileMsg.PreCharIndex = 0;
-        if (fileName == null||fileName.trim().length()==0) {
+        if (fileName == null || fileName.trim().length() == 0) {
             fileName = file.getName();
         }
         fileMsg.FileName = fileName;

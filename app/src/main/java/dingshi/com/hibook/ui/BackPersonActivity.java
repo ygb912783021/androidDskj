@@ -1,12 +1,10 @@
 package dingshi.com.hibook.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
@@ -24,7 +22,6 @@ import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.BorrowRefresh;
-import dingshi.com.hibook.bean.Order;
 import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.bean.User;
 import dingshi.com.hibook.hx.ChatActivity;

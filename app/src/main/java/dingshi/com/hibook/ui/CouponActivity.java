@@ -16,12 +16,10 @@ import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
 import dingshi.com.hibook.R;
-import dingshi.com.hibook.action.ICouponView;
 import dingshi.com.hibook.action.IRequestView;
 import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;

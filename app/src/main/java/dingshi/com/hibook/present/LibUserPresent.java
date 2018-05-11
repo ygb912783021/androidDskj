@@ -92,10 +92,9 @@ public class LibUserPresent extends BasePresent<ILibUserView, BaseFragment> {
         HttpRxObservable.getObservable(user, getActivity(), FragmentEvent.PAUSE).subscribe(httpRxObserver);
     }
 
-    private AlertDialog dialog;
 
     public void deleteUserShowDialog(final String catalogId, final String uid) {
-        dialog = new AlertDialog.Builder(getActivity().mActivity).setTitle("提醒")
+        new AlertDialog.Builder(getActivity().mActivity).setTitle("提醒")
                 .setMessage("确定将此人踢出图书目录?")
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
@@ -103,11 +102,10 @@ public class LibUserPresent extends BasePresent<ILibUserView, BaseFragment> {
                         deleteUser(catalogId, uid);
                     }
                 }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                }).create();
-        dialog.show();
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        }).create().show();
     }
 }

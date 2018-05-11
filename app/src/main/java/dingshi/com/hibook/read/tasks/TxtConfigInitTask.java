@@ -17,10 +17,10 @@ import dingshi.com.hibook.read.utils.TxtBitmapUtil;
  */
 
 public class TxtConfigInitTask implements ITxtTask {
-    private String atg = "TxtConfigInitTask";
 
     @Override
     public void Run(ILoadListener callBack, TxtReaderContext readerContext) {
+        String atg = "TxtConfigInitTask";
         ELogger.log(atg, "do TxtConfigInit");
         callBack.onMessage("start init settings in TxtConfigInitTask");
 

@@ -26,13 +26,11 @@ import dingshi.com.hibook.adapter.FuckYouAdapter;
 import dingshi.com.hibook.base.BaseActivity;
 import dingshi.com.hibook.bean.BookDetails;
 import dingshi.com.hibook.bean.BookList;
-import dingshi.com.hibook.bean.Result;
 import dingshi.com.hibook.present.BookSearchPresent;
 import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.utils.PixelUtils;
 import dingshi.com.hibook.view.DividVerticalDecoration;
 import dingshi.com.hibook.view.LoadingLayout;
-import retrofit2.http.Part;
 
 /**
  * @author wangqi

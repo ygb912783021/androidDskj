@@ -1,7 +1,6 @@
 package dingshi.com.hibook.present;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 
 import com.trello.rxlifecycle2.android.ActivityEvent;

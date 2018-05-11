@@ -7,11 +7,10 @@ import android.content.SharedPreferences;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
+import dingshi.com.hibook.BuildConfig;
 import dingshi.com.hibook.bean.Avatar;
-import dingshi.com.hibook.bean.Book;
 import dingshi.com.hibook.bean.User;
 
 /**
@@ -116,6 +115,16 @@ public class SpUtils {
         SharedPreferences.Editor editor = sp.edit();
         editor.putBoolean(KEY_BOOT, true);
         editor.apply();
+    }
+
+    public static void putBaseEnv(String baseUrl) {
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("env", baseUrl);
+        editor.apply();
+    }
+
+    public static String getBaseEnv() {
+        return sp.getString("env", BuildConfig.LOCALHOST);
     }
 
 

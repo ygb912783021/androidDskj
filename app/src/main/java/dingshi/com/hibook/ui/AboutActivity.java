@@ -1,15 +1,12 @@
 package dingshi.com.hibook.ui;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.Html;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.TextView;
+
 import butterknife.BindView;
 import dingshi.com.hibook.R;
 import dingshi.com.hibook.base.BaseActivity;
-import dingshi.com.hibook.view.BottomDialog;
-import dingshi.com.hibook.view.FuckDialog;
 
 /**
  * @author wangqi

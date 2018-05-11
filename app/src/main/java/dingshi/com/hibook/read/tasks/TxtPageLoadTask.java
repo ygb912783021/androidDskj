@@ -1,11 +1,9 @@
 package dingshi.com.hibook.read.tasks;
 
 
-
 import dingshi.com.hibook.read.interfaces.ILoadListener;
 import dingshi.com.hibook.read.interfaces.IPage;
 import dingshi.com.hibook.read.interfaces.ITxtTask;
-import dingshi.com.hibook.read.main.LoadListenerAdapter;
 import dingshi.com.hibook.read.main.TxtReaderContext;
 import dingshi.com.hibook.read.utils.ELogger;
 
@@ -15,7 +13,6 @@ import dingshi.com.hibook.read.utils.ELogger;
  */
 
 public class TxtPageLoadTask implements ITxtTask {
-    private String tag = "TxtPageLoadTask";
     private int startParagraphIndex;
     private int startCharIndex;
 
@@ -26,6 +23,7 @@ public class TxtPageLoadTask implements ITxtTask {
 
     @Override
     public void Run(ILoadListener callBack, TxtReaderContext readerContext) {
+     String tag = "TxtPageLoadTask";
         callBack.onMessage("start load pageData");
 
         IPage firstPage = null;

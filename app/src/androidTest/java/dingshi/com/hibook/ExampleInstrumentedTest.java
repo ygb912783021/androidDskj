@@ -3,14 +3,9 @@ package dingshi.com.hibook;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
-import android.util.Base64;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import dingshi.com.hibook.utils.AppSign;
-
-import static org.junit.Assert.*;
 
 /**
  * Instrumentation test, which will execute on an Android device.

@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -34,7 +33,6 @@ import dingshi.com.hibook.ui.ReceiviaddressActivity;
 import dingshi.com.hibook.ui.UserListActivity;
 import dingshi.com.hibook.ui.WebActivity;
 import dingshi.com.hibook.utils.BannerImageLoader;
-import dingshi.com.hibook.utils.BannerRoundLoader;
 import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.view.UpDownTextView;
 

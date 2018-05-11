@@ -39,10 +39,7 @@ import dingshi.com.hibook.utils.SpUtils;
 
 public class DemoHelper {
     protected static final String TAG = "DemoHelper";
-    /**
-     * 本地的广播
-     */
-    private LocalBroadcastManager broadcastManager;
+
     private static DemoHelper instance = null;
     private Context appContext;
     private EaseUI easeUI;
@@ -65,7 +62,7 @@ public class DemoHelper {
             //设置一些用户的信息
             setEaseUIProviders();
             setGlobalListeners();
-            broadcastManager = LocalBroadcastManager.getInstance(appContext);
+            LocalBroadcastManager  broadcastManager = LocalBroadcastManager.getInstance(appContext);
         }
     }
 

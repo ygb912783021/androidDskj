@@ -2,20 +2,12 @@ package dingshi.com.hibook.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.util.Log;
-
 import android.view.View;
 import android.widget.GridView;
-
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
-import com.example.administrator.readbook.base.observer.SimpleObserver;
-import com.example.administrator.readbook.bean.BookInfoBean;
 import com.example.administrator.readbook.bean.BookShelfBean;
-import com.example.administrator.readbook.common.RxBusTag;
-import com.example.administrator.readbook.dao.DbHelper;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import java.util.ArrayList;
@@ -36,13 +28,8 @@ import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
 import dingshi.com.hibook.utils.AppSign;
-import dingshi.com.hibook.utils.SpUtils;
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author yangguangbing
