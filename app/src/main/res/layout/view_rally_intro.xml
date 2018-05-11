@@ -6,7 +6,9 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding="@dimen/dp_10">
+    android:padding="@dimen/dp_10"
+    android:id="@+id/address_cardShow"
+    >
 
 
     <TextView

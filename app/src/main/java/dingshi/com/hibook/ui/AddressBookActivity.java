@@ -29,6 +29,7 @@ import dingshi.com.hibook.retrofit.exception.ApiException;
 import dingshi.com.hibook.retrofit.net.NetUtils;
 import dingshi.com.hibook.retrofit.observer.HttpRxObservable;
 import dingshi.com.hibook.retrofit.observer.HttpRxObserver;
+import dingshi.com.hibook.ui.card.CardDetailsActivity;
 import dingshi.com.hibook.utils.AppSign;
 import dingshi.com.hibook.utils.GlideUtils;
 import dingshi.com.hibook.utils.KefuUtils;
@@ -65,7 +66,6 @@ public class AddressBookActivity extends BaseActivity {
         fuckYouAdapter = new FuckYouAdapter<>(R.layout.view_rally_intro, list);
         recyclerView.setAdapter(fuckYouAdapter);
 
-
         fuckYouAdapter.setOnCallBackData(new FuckYouAdapter.OnCallBackData() {
             @Override
             public void convertView(BaseViewHolder helper, Object item) {
@@ -92,6 +92,15 @@ public class AddressBookActivity extends BaseActivity {
                     @Override
                     public void onClick(View v) {
                         KefuUtils.callPhone(getApplication(), bean.getPhone());
+                    }
+                });
+                helper.getView(R.id.address_cardShow).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(AddressBookActivity.this, CardDetailsActivity.class);
+                        intent.putExtra("card_id",bean.getCard_id());
+                        intent.putExtra("uid",bean.getUser_id());
+                        startActivity(intent);
                     }
                 });
             }
